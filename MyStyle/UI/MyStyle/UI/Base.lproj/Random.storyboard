@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZIc-gn-htA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Random View Controller-->
+        <scene sceneID="Zic-Pi-N9C">
+            <objects>
+                <viewController storyboardIdentifier="RandomViewController" id="ZIc-gn-htA" customClass="RandomViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IUg-9f-CbT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XVB-Dd-h9h">
+                                <rect key="frame" x="16" y="224" width="382" height="458"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UZU-oO-8wj">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="229"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AL7-U0-JsH">
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="229"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvi-AM-Bdd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="208.5"/>
+                                                        <state key="normal" image="steamed_cake"/>
+                                                        <connections>
+                                                            <action selector="four:" destination="ZIc-gn-htA" eventType="touchUpInside" id="uvU-aV-CrO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="三菜一汤" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMO-g7-rGF">
+                                                        <rect key="frame" x="0.0" y="208.5" width="191" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-I5-HpR">
+                                                <rect key="frame" x="191" y="0.0" width="191" height="229"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mao-xx-LPX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="208.5"/>
+                                                        <state key="normal" image="onion"/>
+                                                        <connections>
+                                                            <action selector="eight:" destination="ZIc-gn-htA" eventType="touchUpInside" id="hhC-bc-1Dq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="六菜两汤" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzK-cN-tkp">
+                                                        <rect key="frame" x="0.0" y="208.5" width="191" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8ea-nI-KRX">
+                                        <rect key="frame" x="0.0" y="229" width="382" height="229"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0cn-1d-uDJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="229"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyU-fF-FqU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="208.5"/>
+                                                        <state key="normal" image="watermelon"/>
+                                                        <connections>
+                                                            <action selector="five:" destination="ZIc-gn-htA" eventType="touchUpInside" id="zdj-gc-xn2"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="四菜一汤" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtO-UK-kJN">
+                                                        <rect key="frame" x="0.0" y="208.5" width="191" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hMs-8G-NN3">
+                                                <rect key="frame" x="191" y="0.0" width="191" height="229"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzB-29-PxV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="208.5"/>
+                                                        <state key="normal" image="melon"/>
+                                                        <connections>
+                                                            <action selector="ten:" destination="ZIc-gn-htA" eventType="touchUpInside" id="fNX-3i-zhs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="八菜两汤" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7i-ek-Lx8">
+                                                        <rect key="frame" x="0.0" y="208.5" width="191" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XVB-Dd-h9h" secondAttribute="height" multiplier="5:6" id="8o9-gB-FxK"/>
+                                    <constraint firstItem="UZU-oO-8wj" firstAttribute="height" secondItem="8ea-nI-KRX" secondAttribute="height" id="d42-GQ-k4w"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F6I-Ra-xpw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XVB-Dd-h9h" firstAttribute="height" secondItem="IUg-9f-CbT" secondAttribute="height" priority="750" id="45a-Id-77I"/>
+                            <constraint firstItem="XVB-Dd-h9h" firstAttribute="width" relation="lessThanOrEqual" secondItem="IUg-9f-CbT" secondAttribute="width" constant="-32" id="9de-WK-a3D"/>
+                            <constraint firstItem="XVB-Dd-h9h" firstAttribute="width" secondItem="IUg-9f-CbT" secondAttribute="width" priority="750" id="AIc-8c-azt"/>
+                            <constraint firstItem="XVB-Dd-h9h" firstAttribute="height" relation="lessThanOrEqual" secondItem="IUg-9f-CbT" secondAttribute="height" constant="-32" id="LmQ-ci-wef"/>
+                            <constraint firstItem="XVB-Dd-h9h" firstAttribute="centerX" secondItem="F6I-Ra-xpw" secondAttribute="centerX" id="el3-xB-aoU"/>
+                            <constraint firstItem="XVB-Dd-h9h" firstAttribute="centerY" secondItem="F6I-Ra-xpw" secondAttribute="centerY" id="x1p-MZ-uLv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PP6-88-AvC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eua-hV-uKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-630" y="386"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="melon" width="298" height="298"/>
+        <image name="onion" width="298" height="298"/>
+        <image name="steamed_cake" width="298" height="298"/>
+        <image name="watermelon" width="298" height="298"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
