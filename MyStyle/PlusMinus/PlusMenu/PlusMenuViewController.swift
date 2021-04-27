@@ -13,6 +13,12 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     
     let sectionTitle = ["已选", "待选"]
     
+    var picked: Bool!
+    
+    let imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var menuImage: RoundedCornerImageView!
+    
     @IBOutlet weak var plusMinusTableView: UITableView!
     @IBOutlet weak var textCountLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -32,11 +38,12 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
             cell.thumbnailImageView.backgroundColor = UIColor.randomColor()
             return cell
         })
-
+        
         // Do any additional setup after loading the view.
         textField.delegate = self
         plusMinusTableView.delegate = self
         plusMinusTableView.dataSource = dataSource
+        imagePicker.delegate = self
         
         snapshot = NSDiffableDataSourceSnapshot<Int, Material>()
         snapshot.appendSections([0, 1])
@@ -47,8 +54,24 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
             self.dataSource.apply(self.snapshot, animatingDifferences: true)
         }
         
+        picked = false
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        menuImage.isUserInteractionEnabled = true
+        menuImage.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        // Your action
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        if !picked {
+            present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
     
     // MARK: - Textfield
     
@@ -75,7 +98,7 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     // MARK: - Tableview
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
+        
         // Get the selected movie
         guard var material = self.dataSource.itemIdentifier(for: indexPath) else {
             return UISwipeActionsConfiguration()
@@ -138,6 +161,24 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
+    }
+    
+}
+
+extension PlusMenuViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            menuImage.contentMode = .scaleAspectFit
+            menuImage.image = pickedImage
+            picked = true
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
