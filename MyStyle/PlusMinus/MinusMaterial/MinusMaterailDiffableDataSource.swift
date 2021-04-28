@@ -14,14 +14,4 @@ class MinusMaterailDiffableDataSource: UITableViewDiffableDataSource<Int, Materi
         return true
     }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            if let materail = self.itemIdentifier(for: indexPath) {
-//                var snapshot = self.snapshot()
-//                snapshot.deleteItems([materail])
-//                self.apply(snapshot, animatingDifferences: true)
-//            }
-//        }
-//    }
-    
 }

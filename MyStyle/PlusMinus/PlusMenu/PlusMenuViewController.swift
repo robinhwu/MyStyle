@@ -65,10 +65,11 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         // Your action
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         if !picked {
             present(imagePicker, animated: true, completion: nil)
+            picked = true
         }
         
     }
@@ -76,13 +77,13 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     // MARK: - Textfield
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 10
+        let maxLength = 8
         let currentString: NSString = (textField.text ?? "") as NSString
         let newString: NSString =
             currentString.replacingCharacters(in: range, with: string) as NSString
         if newString.length <= maxLength {
             let textCount = newString.length
-            textCountLabel.text = "\((0) + textCount)/10"
+            textCountLabel.text = "\((0) + textCount)/8"
             return true
         } else {
             return false
@@ -137,6 +138,10 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         return UISwipeActionsConfiguration(actions: [plusMinusAction])
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        plusMinusTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     /*
      // MARK: - Navigation
      
@@ -168,7 +173,7 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
 extension PlusMenuViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             menuImage.contentMode = .scaleAspectFit
             menuImage.image = pickedImage
             picked = true

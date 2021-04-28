@@ -20,13 +20,13 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 10
+        let maxLength = 8
         let currentString: NSString = (textField.text ?? "") as NSString
         let newString: NSString =
             currentString.replacingCharacters(in: range, with: string) as NSString
         if newString.length <= maxLength {
             let textCount = newString.length
-            textCountLabel.text = "\((0) + textCount)/10"
+            textCountLabel.text = "\((0) + textCount)/8"
             return true
         } else {
             return false

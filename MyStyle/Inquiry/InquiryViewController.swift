@@ -31,7 +31,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     }
     
     
-    // MARJL - Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
         definesPresentationContext = true
-//        present(searchController, animated: true, completion: nil)
+        present(searchController, animated: true, completion: nil)
         searchController.searchBar.scopeButtonTitles = ["All", "Dish", "Soup"]
         searchController.searchBar.delegate = self
         
@@ -84,6 +84,11 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         cell.nameLabel.text = menu.name
         cell.thumbnailImageView.image = UIImage(named: menu.image)
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        inquiryTableView.deselectRow(at: indexPath, animated: true)
     }
     
     func filterContent(for searchText: String, category: String) {
@@ -157,6 +162,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         
         let menu = (isFiltering) ? result[indexPath.row] : menus[indexPath.row]
         detailViewController.menu = menu
+        
     }
 }
 
