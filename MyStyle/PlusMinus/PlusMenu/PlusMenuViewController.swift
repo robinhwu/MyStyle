@@ -183,6 +183,7 @@ extension PlusMenuViewController: UIImagePickerControllerDelegate, UINavigationC
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picked = false
         dismiss(animated: true, completion: nil)
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
@@ -30,6 +31,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
             (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
+    var audioPlayer: AVAudioPlayer!
     
     // MARK: - Lifecycle
     
@@ -46,8 +48,8 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
         definesPresentationContext = true
-        present(searchController, animated: true, completion: nil)
-        searchController.searchBar.scopeButtonTitles = ["All", "Dish", "Soup"]
+        
+        searchController.searchBar.scopeButtonTitles = ["全部", "菜", "汤"]
         searchController.searchBar.delegate = self
         
         let notificationCenter = NotificationCenter.default
@@ -88,6 +90,16 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let path = Bundle.main.path(forResource: "click.wav", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.play()
+        } catch {
+            // couldn't load file :(
+        }
+        
         inquiryTableView.deselectRow(at: indexPath, animated: true)
     }
     

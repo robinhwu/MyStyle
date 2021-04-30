@@ -280,7 +280,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vid-s7-mOe" customClass="RoundedCornerImageView" customModule="MyStyle" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="1" width="80" height="77.5"/>
-                                                        <color key="tintColor" red="0.26274509800000001" green="0.80392156859999997" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="tintColor" systemColor="systemGreenColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="vid-s7-mOe" secondAttribute="height" multiplier="1:1" id="FaH-Ah-qcc"/>
                                                             <constraint firstAttribute="width" secondItem="vid-s7-mOe" secondAttribute="height" multiplier="1:1" id="kW3-4C-kyY"/>
@@ -326,7 +326,7 @@
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zso-iR-ffm">
                                                                 <rect key="frame" x="215" y="1" width="51" height="31"/>
-                                                                <color key="onTintColor" red="0.26274509800000001" green="0.80392156859999997" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="onTintColor" systemColor="systemGreenColor"/>
                                                             </switch>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="汤 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSa-Jx-N2s">
                                                                 <rect key="frame" x="272" y="6.5" width="22" height="20.5"/>
@@ -488,6 +488,9 @@
         <image name="photo" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

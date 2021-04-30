@@ -30,6 +30,8 @@
 		310A143A262949F800506242 /* MinusMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1439262949F800506242 /* MinusMenuViewController.swift */; };
 		310A143F2629507500506242 /* MinusMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A143E2629507500506242 /* MinusMaterialViewController.swift */; };
 		310A1444262950C000506242 /* PlusMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1443262950C000506242 /* PlusMaterialViewController.swift */; };
+		310F524C263C3F0800878249 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 310F524B263C3F0800878249 /* click.wav */; };
+		310F524E263C3F1300878249 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 310F524D263C3F1300878249 /* click.mp3 */; };
 		316804D026355E7700D31978 /* PlusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */; };
 		31A712C1263296E500FC8044 /* SelectDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A712C0263296E500FC8044 /* SelectDiffableDataSource.swift */; };
 		31A712F72635240A00FC8044 /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A712F52635240A00FC8044 /* Select.storyboard */; };
@@ -93,6 +95,8 @@
 		310A1439262949F800506242 /* MinusMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMenuViewController.swift; sourceTree = "<group>"; };
 		310A143E2629507500506242 /* MinusMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMaterialViewController.swift; sourceTree = "<group>"; };
 		310A1443262950C000506242 /* PlusMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMaterialViewController.swift; sourceTree = "<group>"; };
+		310F524B263C3F0800878249 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		310F524D263C3F1300878249 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
 		31A712C0263296E500FC8044 /* SelectDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDiffableDataSource.swift; sourceTree = "<group>"; };
 		31A712F62635240A00FC8044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/Select.storyboard; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		3102C7A026289AC600DC226D /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				310F524A263C3ED900878249 /* Sounds */,
 				310A14182629291E00506242 /* Select */,
 				310A14172629291400506242 /* Random */,
 				310A14052629279E00506242 /* PlusMinus */,
@@ -271,6 +276,15 @@
 				31EAE84426308DC600E7D2ED /* SelectTableViewCell.swift */,
 			);
 			path = Select;
+			sourceTree = "<group>";
+		};
+		310F524A263C3ED900878249 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				310F524D263C3F1300878249 /* click.mp3 */,
+				310F524B263C3F0800878249 /* click.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		31DE7B43262DCF1B00EC1AE1 /* MinusMenu */ = {
@@ -414,9 +428,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				310F524E263C3F1300878249 /* click.mp3 in Resources */,
 				3102C7B126289AC600DC226D /* LaunchScreen.storyboard in Resources */,
 				31A712F72635240A00FC8044 /* Select.storyboard in Resources */,
 				310A1425262929AE00506242 /* Random.storyboard in Resources */,
+				310F524C263C3F0800878249 /* click.wav in Resources */,
 				3102C7AE26289AC600DC226D /* Assets.xcassets in Resources */,
 				310A14102629280600506242 /* PlusMinus.storyboard in Resources */,
 				310A13FB262918C400506242 /* Inquiry.storyboard in Resources */,

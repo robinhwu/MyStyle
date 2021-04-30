@@ -56,10 +56,12 @@ class SearchFooter: UIView {
     if (filteredItemCount == totalItemCount) {
       setNotFiltering()
     } else if (filteredItemCount == 0) {
-      label.text = "No items match your query"
+//      label.text = "No items match your query"
+        label.text = "没有找到菜肴"
       showFooter()
     } else {
-      label.text = "Filtering \(filteredItemCount) of \(totalItemCount)"
+//      label.text = "Filtering \(filteredItemCount) of \(totalItemCount)"
+        label.text = "从\(totalItemCount)个菜肴中找到\(filteredItemCount)个菜肴"
       showFooter()
     }
   }
@@ -77,7 +79,7 @@ class SearchFooter: UIView {
   }
   
   func configureView() {
-    backgroundColor = UIColor(red: 67.0/255.0, green: 205.0/255.0, blue: 135.0/255.0, alpha: 1.0)
+    backgroundColor = UIColor.systemGreen
     alpha = 0.0
     
     label.textAlignment = .center
