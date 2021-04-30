@@ -6,16 +6,76 @@
 //
 
 import UIKit
+import EventKit
 
 class RandomViewController: UIViewController {
-
+    
+    let eventStore : EKEventStore = EKEventStore()
+    
     // MARK: - Random Actions
     
     func randomMenu(quantity: Int) {
+        
+        let title: String!
+        var notes = ""
+        var materailDict: [String: Int] = [:]
+        
+        switch quantity {
+        case 4:
+            title = "三菜一汤"
+        case 5:
+            title = "四菜一汤"
+        case 8:
+            title = "六菜两汤"
+        case 10:
+            title = "八菜两汤"
+        default:
+            title = ""
+        }
+        
         menus.shuffle()
         for i in 0...(quantity-1) {
-            print(menus[i].name ?? "")
+            notes += (menus[i].name + "\n")
+  
+            for materail in menus[i].meterials {
+                if materailDict[materail] != nil {
+                    materailDict[materail]! += 1
+                } else {
+                    materailDict[materail] = 1
+                }
+            }
         }
+        
+        for (material, quantity) in materailDict {
+            notes += (material + " x " + String(quantity) + "\n")
+        }
+        
+        eventStore.requestAccess(to: .event) { (granted, error) in
+            
+            if (granted) && (error == nil) {
+//                print("granted \(granted)")
+//                print("error \(String(describing: error))")
+                
+                let event:EKEvent = EKEvent(eventStore: self.eventStore)
+                
+                event.title = title
+                event.startDate = Date()
+                event.endDate = Date()
+                event.isAllDay = true
+                event.notes = notes
+                event.calendar = self.eventStore.defaultCalendarForNewEvents
+                do {
+                    try self.eventStore.save(event, span: .thisEvent)
+                } catch let error as NSError {
+                    print("failed to save event with error : \(error)")
+                }
+//                print("Saved Event")
+            }
+            else{
+                print("failed to save event with error : \(String(describing: error)) or access not granted")
+            }
+        }
+        
         
         navigationController?.popToRootViewController(animated: true)
     }
@@ -42,19 +102,19 @@ class RandomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

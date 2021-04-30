@@ -64,5 +64,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This Application need to access your calender to add event on it</string>
 </dict>
 </plist>
