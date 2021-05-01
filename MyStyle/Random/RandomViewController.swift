@@ -17,38 +17,11 @@ class RandomViewController: UIViewController {
     func randomMenu(quantity: Int) {
         
         let title: String!
-        var notes = ""
-        var materailDict: [String: Int] = [:]
+        var notes: String!
         
-        switch quantity {
-        case 4:
-            title = "三菜一汤"
-        case 5:
-            title = "四菜一汤"
-        case 8:
-            title = "六菜两汤"
-        case 10:
-            title = "八菜两汤"
-        default:
-            title = ""
-        }
+        title = getTitle(quantity: quantity)
         
-        menus.shuffle()
-        for i in 0...(quantity-1) {
-            notes += (menus[i].name + "\n")
-  
-            for materail in menus[i].meterials {
-                if materailDict[materail] != nil {
-                    materailDict[materail]! += 1
-                } else {
-                    materailDict[materail] = 1
-                }
-            }
-        }
-        
-        for (material, quantity) in materailDict {
-            notes += (material + " x " + String(quantity) + "\n")
-        }
+        notes = getNote(quantity:quantity)
         
         eventStore.requestAccess(to: .event) { (granted, error) in
             
@@ -76,8 +49,46 @@ class RandomViewController: UIViewController {
             }
         }
         
-        
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func getTitle(quantity: Int) -> String {
+        switch quantity {
+        case 4:
+            return "三菜一汤"
+        case 5:
+            return "四菜一汤"
+        case 8:
+            return "六菜两汤"
+        case 10:
+            return "八菜两汤"
+        default:
+            return ""
+        }
+    }
+    
+    func getNote(quantity: Int) -> String {
+        var notes = ""
+        var materailDict: [String: Int] = [:]
+        
+        menus.shuffle()
+        for i in 0...(quantity-1) {
+            notes += (menus[i].name + "\n")
+  
+            for materail in menus[i].meterials {
+                if materailDict[materail] != nil {
+                    materailDict[materail]! += 1
+                } else {
+                    materailDict[materail] = 1
+                }
+            }
+        }
+        
+        for (material, quantity) in materailDict {
+            notes += (material + " x " + String(quantity) + "\n")
+        }
+        
+        return notes
     }
     
     @IBAction func four(_ sender: Any) {

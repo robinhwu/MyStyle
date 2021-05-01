@@ -26,13 +26,20 @@ struct Menu: Hashable {
 
 struct Material:Hashable {
     var name: String
+    var count: Int
     var chosen: Bool!
     
     init(name: String) {
         self.name = name
+        self.count = 1
         self.chosen = false
     }
     
+    init(name: String, count: Int) {
+        self.name = name
+        self.count = count
+        self.chosen = false
+    }
 }
 
 
