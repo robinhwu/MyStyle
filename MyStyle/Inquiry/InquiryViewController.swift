@@ -105,11 +105,11 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     func filterContent(for searchText: String, category: String) {
         switch category {
-        case "Dish":
+        case "菜":
             categoryMenu = menus.filter( {(menu) -> Bool in
                 return menu.type
             })
-        case "Soup":
+        case "汤":
             categoryMenu = menus.filter( {(menu) -> Bool in
                 return !menu.type
             })
