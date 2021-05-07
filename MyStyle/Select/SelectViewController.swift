@@ -25,8 +25,9 @@ class SelectViewController: UITableViewController {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemGreen
-        button.setTitle("添加", for: .normal)
+        button.setTitle("确定", for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
+        button.showsTouchWhenHighlighted = true
         return button
     }()
     
@@ -46,7 +47,7 @@ class SelectViewController: UITableViewController {
         
         snapshot = NSDiffableDataSourceSnapshot<Int, Menu>()
         snapshot.appendSections([0, 1])
-        snapshot.appendItems(menus, toSection: 1)
+        snapshot.appendItems(notSelectedMenu, toSection: 1)
         
         //Force the update on the main thread to silence a warning about tableview not being in the hierarchy!
         DispatchQueue.main.async {
@@ -82,12 +83,6 @@ class SelectViewController: UITableViewController {
         faButton.layer.borderWidth = 4
     }
     
-    @objc func fabTapped(_ button: UIButton) {
-        print("button tapped")
-    }
-    
-    
-    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         // Get the selected movie
@@ -103,9 +98,17 @@ class SelectViewController: UITableViewController {
             if (menu.chosen == true) {
                 menu.chosen = false
                 snapshot.appendItems([menu], toSection: 1)
+                self.notSelectedMenu.append(menu)
+                self.selectedMenu = self.selectedMenu.filter{
+                    $0.name != menu.name
+                }
             } else {
                 menu.chosen = true
                 snapshot.appendItems([menu], toSection: 0)
+                self.selectedMenu.append(menu)
+                self.notSelectedMenu = self.notSelectedMenu.filter{
+                    $0.name != menu.name
+                }
             }
             
             self.dataSource.apply(snapshot, animatingDifferences: true)
@@ -152,6 +155,53 @@ class SelectViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
+    }
+    
+    // MARK: - Actions
+    
+    @objc func fabTapped(_ button: UIButton) {
+        print("button tapped")
+        performSegue(withIdentifier: "toSelected", sender: self)
+    }
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! SelectedViewController
+        
+        controller.menusList = getMenusList()
+        controller.materialsList = getMaterialsList()
+    }
+    
+    func getMenusList() -> [String] {
+        var menusList: [String] = []
+        
+        for menu in selectedMenu {
+            menusList.append(menu.name)
+        }
+        
+        return menusList
+    }
+    
+    func getMaterialsList() -> [String] {
+        var materialsList: [String] = []
+        var materailDict: [String: Int] = [:]
+        
+        for menu in selectedMenu {
+  
+            for materail in menu.meterials {
+                if materailDict[materail] != nil {
+                    materailDict[materail]! += 1
+                } else {
+                    materailDict[materail] = 1
+                }
+            }
+        }
+        
+        for (material, quantity) in materailDict {
+            materialsList.append(material + " x " + String(quantity))
+        }
+        
+        return materialsList
     }
 }
 

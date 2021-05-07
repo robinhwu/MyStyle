@@ -32,6 +32,11 @@
 		310A1444262950C000506242 /* PlusMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1443262950C000506242 /* PlusMaterialViewController.swift */; };
 		310F524C263C3F0800878249 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 310F524B263C3F0800878249 /* click.wav */; };
 		310F524E263C3F1300878249 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 310F524D263C3F1300878249 /* click.mp3 */; };
+		310F52532645767B00878249 /* open.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 310F524F2645767A00878249 /* open.mp3 */; };
+		310F52542645767B00878249 /* close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 310F52502645767B00878249 /* close.wav */; };
+		310F52552645767B00878249 /* close.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 310F52512645767B00878249 /* close.mp3 */; };
+		310F52562645767B00878249 /* open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 310F52522645767B00878249 /* open.wav */; };
+		310F52582645924000878249 /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F52572645924000878249 /* SelectedViewController.swift */; };
 		316804D026355E7700D31978 /* PlusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */; };
 		31A712C1263296E500FC8044 /* SelectDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A712C0263296E500FC8044 /* SelectDiffableDataSource.swift */; };
 		31A712F72635240A00FC8044 /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A712F52635240A00FC8044 /* Select.storyboard */; };
@@ -97,6 +102,11 @@
 		310A1443262950C000506242 /* PlusMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMaterialViewController.swift; sourceTree = "<group>"; };
 		310F524B263C3F0800878249 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		310F524D263C3F1300878249 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
+		310F524F2645767A00878249 /* open.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = open.mp3; sourceTree = "<group>"; };
+		310F52502645767B00878249 /* close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = close.wav; sourceTree = "<group>"; };
+		310F52512645767B00878249 /* close.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = close.mp3; sourceTree = "<group>"; };
+		310F52522645767B00878249 /* open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = open.wav; sourceTree = "<group>"; };
+		310F52572645924000878249 /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedViewController.swift; path = MyStyle/Select/SelectedViewController.swift; sourceTree = SOURCE_ROOT; };
 		316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
 		31A712C0263296E500FC8044 /* SelectDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDiffableDataSource.swift; sourceTree = "<group>"; };
 		31A712F62635240A00FC8044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/Select.storyboard; sourceTree = "<group>"; };
@@ -274,6 +284,7 @@
 				310A141E2629297400506242 /* SelectViewController.swift */,
 				31A712C0263296E500FC8044 /* SelectDiffableDataSource.swift */,
 				31EAE84426308DC600E7D2ED /* SelectTableViewCell.swift */,
+				310F52572645924000878249 /* SelectedViewController.swift */,
 			);
 			path = Select;
 			sourceTree = "<group>";
@@ -283,6 +294,10 @@
 			children = (
 				310F524D263C3F1300878249 /* click.mp3 */,
 				310F524B263C3F0800878249 /* click.wav */,
+				310F52512645767B00878249 /* close.mp3 */,
+				310F52502645767B00878249 /* close.wav */,
+				310F524F2645767A00878249 /* open.mp3 */,
+				310F52522645767B00878249 /* open.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -430,11 +445,15 @@
 			files = (
 				310F524E263C3F1300878249 /* click.mp3 in Resources */,
 				3102C7B126289AC600DC226D /* LaunchScreen.storyboard in Resources */,
+				310F52542645767B00878249 /* close.wav in Resources */,
+				310F52562645767B00878249 /* open.wav in Resources */,
 				31A712F72635240A00FC8044 /* Select.storyboard in Resources */,
 				310A1425262929AE00506242 /* Random.storyboard in Resources */,
 				310F524C263C3F0800878249 /* click.wav in Resources */,
 				3102C7AE26289AC600DC226D /* Assets.xcassets in Resources */,
+				310F52532645767B00878249 /* open.mp3 in Resources */,
 				310A14102629280600506242 /* PlusMinus.storyboard in Resources */,
+				310F52552645767B00878249 /* close.mp3 in Resources */,
 				310A13FB262918C400506242 /* Inquiry.storyboard in Resources */,
 				3102C7A926289AC600DC226D /* Main.storyboard in Resources */,
 			);
@@ -469,6 +488,7 @@
 				3102C7DF26289BBC00DC226D /* RoundedCornerButton.swift in Sources */,
 				31DE7B85262EA61F00EC1AE1 /* InquiryTableViewCell.swift in Sources */,
 				31DE7B51262DCFA600EC1AE1 /* PlusMenuTableViewCell.swift in Sources */,
+				310F52582645924000878249 /* SelectedViewController.swift in Sources */,
 				316804D026355E7700D31978 /* PlusMenuDiffableDataSource.swift in Sources */,
 				310A143A262949F800506242 /* MinusMenuViewController.swift in Sources */,
 				31DE7B7B262E81B400EC1AE1 /* MinusMaterialTableViewCell.swift in Sources */,

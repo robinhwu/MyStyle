@@ -21,7 +21,7 @@ class RandomViewController: UIViewController {
         
         title = getTitle(quantity: quantity)
         
-        notes = getNote(quantity:quantity)
+        notes = getMaterials(quantity:quantity)
         
         eventStore.requestAccess(to: .event) { (granted, error) in
             
@@ -67,13 +67,13 @@ class RandomViewController: UIViewController {
         }
     }
     
-    func getNote(quantity: Int) -> String {
-        var notes = ""
+    func getMaterials(quantity: Int) -> String {
+        var materials = ""
         var materailDict: [String: Int] = [:]
         
         menus.shuffle()
         for i in 0...(quantity-1) {
-            notes += (menus[i].name + "\n")
+            materials += (menus[i].name + "\n")
   
             for materail in menus[i].meterials {
                 if materailDict[materail] != nil {
@@ -85,10 +85,10 @@ class RandomViewController: UIViewController {
         }
         
         for (material, quantity) in materailDict {
-            notes += (material + " x " + String(quantity) + "\n")
+            materials += (material + " x " + String(quantity) + "\n")
         }
         
-        return notes
+        return materials
     }
     
     @IBAction func four(_ sender: Any) {

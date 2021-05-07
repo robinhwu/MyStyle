@@ -57,7 +57,7 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.8,
+        UIView.animate(withDuration: 1.8,
                        delay: 0.0,
                        usingSpringWithDamping: 0.6,
                        initialSpringVelocity: 0.6,

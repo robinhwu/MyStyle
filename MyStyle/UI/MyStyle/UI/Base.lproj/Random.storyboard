@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZIc-gn-htA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZIc-gn-htA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Random View Controller-->
+        <!--随机-->
         <scene sceneID="Zic-Pi-N9C">
             <objects>
                 <viewController storyboardIdentifier="RandomViewController" id="ZIc-gn-htA" customClass="RandomViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,11 +119,11 @@
                             <constraint firstItem="XVB-Dd-h9h" firstAttribute="centerY" secondItem="F6I-Ra-xpw" secondAttribute="centerY" id="x1p-MZ-uLv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PP6-88-AvC"/>
+                    <navigationItem key="navigationItem" title="随机" id="PP6-88-AvC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eua-hV-uKT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-630" y="386"/>
+            <point key="canvasLocation" x="-1004" y="383"/>
         </scene>
     </scenes>
     <resources>

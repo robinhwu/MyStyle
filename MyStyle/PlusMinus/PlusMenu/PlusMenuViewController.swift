@@ -19,6 +19,7 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         button.backgroundColor = .systemGreen
         button.setTitle("添加", for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
+        button.showsTouchWhenHighlighted = true
         return button
     }()
     
@@ -36,24 +37,17 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     var chosen:[Material] = []
     var notChosen = materials
     
-    var dataSource: PlusMenuDiffableDataSource!
+    lazy var dataSource = configureDataSource()
     var snapshot: NSDiffableDataSourceSnapshot<Int, Material>!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataSource = PlusMenuDiffableDataSource(tableView: plusMinusTableView, cellProvider: { (tableView, indexPath, material) -> UITableViewCell? in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlusMenuTableViewCell
-            cell.nameLabel.text = material.name
-            cell.thumbnailImageView.backgroundColor = UIColor.randomColor()
-            return cell
-        })
-        
         // Do any additional setup after loading the view.
         textField.delegate = self
         plusMinusTableView.delegate = self
-        plusMinusTableView.dataSource = dataSource
+        plusMinusTableView.dataSource = self.dataSource
         imagePicker.delegate = self
         
         snapshot = NSDiffableDataSourceSnapshot<Int, Material>()
@@ -70,6 +64,22 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         menuImage.isUserInteractionEnabled = true
         menuImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func configureDataSource() -> UITableViewDiffableDataSource<Int, Material> {
+        let dataSource = PlusMenuDiffableDataSource(
+            tableView: plusMinusTableView,
+            cellProvider: {  tableView, indexPath, material in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PlusMenuTableViewCell
+                
+                cell.nameLabel.text = material.name
+                
+                cell.thumbnailImageView.backgroundColor = UIColor.randomColor()
+                
+                return cell
+            }
+        )
+        return dataSource
     }
     
     override func viewDidAppear(_ animated: Bool) {

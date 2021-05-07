@@ -20,6 +20,7 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
         button.backgroundColor = .systemGreen
         button.setTitle("添加", for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
+        button.showsTouchWhenHighlighted = true
         return button
     }()
     

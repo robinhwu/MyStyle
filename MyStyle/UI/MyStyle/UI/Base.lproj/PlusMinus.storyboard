@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Plus Minus View Controller-->
+        <!--加减-->
         <scene sceneID="8Fa-T4-HMg">
             <objects>
                 <viewController id="gay-ZH-xFr" customClass="PlusMinusViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,13 +120,13 @@
                             <constraint firstItem="vGc-iE-434" firstAttribute="width" secondItem="PfV-uA-nNv" secondAttribute="width" priority="750" id="yu1-j7-tzb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gHU-eE-hJ4"/>
+                    <navigationItem key="navigationItem" title="加减" id="gHU-eE-hJ4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xK9-Cn-irL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="353.57142857142856"/>
         </scene>
-        <!--Minus Menu View Controller-->
+        <!--减菜-->
         <scene sceneID="E5a-Mz-iVY">
             <objects>
                 <tableViewController id="efo-YO-OSj" customClass="MinusMenuViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,7 +183,7 @@
                             <outlet property="delegate" destination="efo-YO-OSj" id="W7C-zI-L87"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kbB-A8-xB4"/>
+                    <navigationItem key="navigationItem" title="减菜" id="kbB-A8-xB4"/>
                     <connections>
                         <outlet property="minusTableView" destination="4bp-nw-C0Q" id="mBf-7M-zud"/>
                     </connections>
@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="3383" y="-135"/>
         </scene>
-        <!--Minus Material View Controller-->
+        <!--减料-->
         <scene sceneID="q22-KF-1mQ">
             <objects>
                 <tableViewController id="8BM-ZS-xuE" customClass="MinusMaterialViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
@@ -252,7 +252,7 @@
                             <outlet property="delegate" destination="8BM-ZS-xuE" id="LD3-3y-W6B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Mut-Mr-Au9"/>
+                    <navigationItem key="navigationItem" title="减料" id="Mut-Mr-Au9"/>
                     <connections>
                         <outlet property="MinusMaterialTableView" destination="sXn-sF-SNG" id="xL1-22-IAq"/>
                     </connections>
@@ -261,7 +261,7 @@
             </objects>
             <point key="canvasLocation" x="3383" y="743"/>
         </scene>
-        <!--Plus Menu View Controller-->
+        <!--加菜-->
         <scene sceneID="5qp-bO-cV8">
             <objects>
                 <viewController id="Xc5-S4-tu5" customClass="PlusMenuViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
@@ -425,7 +425,7 @@
                             <constraint firstItem="IkT-45-fda" firstAttribute="centerX" secondItem="MaF-DZ-yQD" secondAttribute="centerX" id="n5h-uZ-o3n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="V6W-eS-LIe"/>
+                    <navigationItem key="navigationItem" title="加菜" id="V6W-eS-LIe"/>
                     <connections>
                         <outlet property="menuImage" destination="vid-s7-mOe" id="Tpj-tM-Z5Z"/>
                         <outlet property="plusMinusTableView" destination="FHc-Wg-v6p" id="PYj-rS-xM4"/>
@@ -437,7 +437,7 @@
             </objects>
             <point key="canvasLocation" x="2696" y="-135"/>
         </scene>
-        <!--Plus Material View Controller-->
+        <!--加料-->
         <scene sceneID="S3C-2d-Yhc">
             <objects>
                 <viewController id="Pjp-vo-HHT" customClass="PlusMaterialViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
@@ -469,7 +469,7 @@
                             <constraint firstItem="m31-jZ-A51" firstAttribute="centerX" secondItem="9yc-bz-spI" secondAttribute="centerX" id="vum-ak-C43"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GBZ-EI-5sd"/>
+                    <navigationItem key="navigationItem" title="加料" id="GBZ-EI-5sd"/>
                     <connections>
                         <outlet property="textCountLabel" destination="W3l-Ds-1kN" id="LbS-wR-EfP"/>
                         <outlet property="textField" destination="7If-Qh-HlI" id="snm-ht-HQh"/>

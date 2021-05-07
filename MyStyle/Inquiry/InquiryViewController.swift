@@ -90,7 +90,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let path = Bundle.main.path(forResource: "click.wav", ofType:nil)!
+        let path = Bundle.main.path(forResource: "close.wav", ofType:nil)!
         let url = URL(fileURLWithPath: path)
 
         do {
