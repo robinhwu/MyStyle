@@ -134,17 +134,7 @@ class SelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+        
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: 30))
         label.textColor = UIColor.black
@@ -156,6 +146,16 @@ class SelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     // MARK: - Actions
     
@@ -172,11 +172,11 @@ class SelectViewController: UITableViewController {
         controller.materialsList = getMaterialsList()
     }
     
-    func getMenusList() -> [String] {
-        var menusList: [String] = []
+    func getMenusList() -> [Menu] {
+        var menusList: [Menu] = []
         
         for menu in selectedMenu {
-            menusList.append(menu.name)
+            menusList.append(menu)
         }
         
         return menusList
