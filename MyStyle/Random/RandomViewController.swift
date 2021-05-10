@@ -47,7 +47,13 @@ class RandomViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        randomMenusList = []
+        randomMaterialsList = []
+        
+    }
     /*
      // MARK: - Navigation
      

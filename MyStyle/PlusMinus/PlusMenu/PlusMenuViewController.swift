@@ -122,7 +122,29 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     }
     
     @objc func fabTapped(_ button: UIButton) {
+        
+        if !picked {
+            showToast(controller: self, message: "请添加菜肴图片。", seconds: 0.8)
+        } else if textField.text?.count == 0 {
+            showToast(controller: self, message: "请输入菜肴名字。", seconds: 0.8)
+        } else if chosen.count == 0 {
+            showToast(controller: self, message: "请添加食材。", seconds: 0.8)
+        }
+        
         print("button tapped")
+    }
+    
+    func showToast(controller: UIViewController, message : String, seconds: Double) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.view.backgroundColor = UIColor.black
+        alert.view.alpha = 0.6
+        alert.view.layer.cornerRadius = 15
+
+        controller.present(alert, animated: true)
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+            alert.dismiss(animated: true)
+        }
     }
     
     // MARK: - Textfield
