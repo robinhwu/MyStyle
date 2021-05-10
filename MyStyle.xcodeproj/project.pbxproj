@@ -39,6 +39,9 @@
 		310F52582645924000878249 /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F52572645924000878249 /* SelectedViewController.swift */; };
 		310F525A2646651B00878249 /* SelectedMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F52592646651B00878249 /* SelectedMenuTableViewCell.swift */; };
 		316804D026355E7700D31978 /* PlusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */; };
+		31A5C8C62648FFB800DE72DD /* RandomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5C8C52648FFB800DE72DD /* RandomDetailViewController.swift */; };
+		31A5C8C8264908D600DE72DD /* RandomMenusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5C8C7264908D600DE72DD /* RandomMenusTableViewCell.swift */; };
+		31A5C8CA264908F900DE72DD /* RandomMaterailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5C8C9264908F900DE72DD /* RandomMaterailsTableViewCell.swift */; };
 		31A712C1263296E500FC8044 /* SelectDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A712C0263296E500FC8044 /* SelectDiffableDataSource.swift */; };
 		31A712F72635240A00FC8044 /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A712F52635240A00FC8044 /* Select.storyboard */; };
 		31AF622C262FBAC20061EF3F /* InquiryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AF622B262FBAC20061EF3F /* InquiryDetailViewController.swift */; };
@@ -111,6 +114,9 @@
 		310F52572645924000878249 /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedViewController.swift; path = MyStyle/Select/SelectedViewController.swift; sourceTree = SOURCE_ROOT; };
 		310F52592646651B00878249 /* SelectedMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMenuTableViewCell.swift; sourceTree = "<group>"; };
 		316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
+		31A5C8C52648FFB800DE72DD /* RandomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDetailViewController.swift; sourceTree = "<group>"; };
+		31A5C8C7264908D600DE72DD /* RandomMenusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMenusTableViewCell.swift; sourceTree = "<group>"; };
+		31A5C8C9264908F900DE72DD /* RandomMaterailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMaterailsTableViewCell.swift; sourceTree = "<group>"; };
 		31A712C0263296E500FC8044 /* SelectDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDiffableDataSource.swift; sourceTree = "<group>"; };
 		31A712F62635240A00FC8044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/Select.storyboard; sourceTree = "<group>"; };
 		31AF622B262FBAC20061EF3F /* InquiryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryDetailViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +284,9 @@
 			isa = PBXGroup;
 			children = (
 				310A14192629295F00506242 /* RandomViewController.swift */,
+				31A5C8C52648FFB800DE72DD /* RandomDetailViewController.swift */,
+				31A5C8C7264908D600DE72DD /* RandomMenusTableViewCell.swift */,
+				31A5C8C9264908F900DE72DD /* RandomMaterailsTableViewCell.swift */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -499,6 +508,7 @@
 				310A143A262949F800506242 /* MinusMenuViewController.swift in Sources */,
 				31DE7B7B262E81B400EC1AE1 /* MinusMaterialTableViewCell.swift in Sources */,
 				3102C7A626289AC600DC226D /* GatewayViewController.swift in Sources */,
+				31A5C8CA264908F900DE72DD /* RandomMaterailsTableViewCell.swift in Sources */,
 				3102C7A226289AC600DC226D /* AppDelegate.swift in Sources */,
 				31E35ACA262977160096C25B /* Data.swift in Sources */,
 				31EAE8402630257100E7D2ED /* InquiryDetailTableViewCell.swift in Sources */,
@@ -514,6 +524,8 @@
 				3102C7A426289AC600DC226D /* SceneDelegate.swift in Sources */,
 				31DE7B3A262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift in Sources */,
 				310A14352629362F00506242 /* PlusMenuViewController.swift in Sources */,
+				31A5C8C8264908D600DE72DD /* RandomMenusTableViewCell.swift in Sources */,
+				31A5C8C62648FFB800DE72DD /* RandomDetailViewController.swift in Sources */,
 				310A141F2629297400506242 /* SelectViewController.swift in Sources */,
 				310A143F2629507500506242 /* MinusMaterialViewController.swift in Sources */,
 				3102C7AC26289AC600DC226D /* MyStyle.xcdatamodeld in Sources */,

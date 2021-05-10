@@ -11,13 +11,23 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     
     // MARK: - Properties
     
+    let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+    
+    lazy var faButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemGreen
+        button.setTitle("返回", for: .normal)
+        button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
+        button.showsTouchWhenHighlighted = true
+        return button
+    }()
+    
     var menu: Menu!
     
     var selectedMenuMaterails: [String]!
     
     @IBOutlet weak var containerView: UIStackView!
-    
-    @IBOutlet weak var closeButton: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -30,6 +40,9 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     lazy var dataSource = configureDataSource()
+    
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +80,34 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
                        }, completion: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let view = keyWindow {
+            view.addSubview(faButton)
+            setupButton()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let view = keyWindow, faButton.isDescendant(of: view) {
+            faButton.removeFromSuperview()
+        }
+    }
+    
+    func setupButton() {
+        NSLayoutConstraint.activate([
+            faButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36),
+            faButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -36),
+            faButton.heightAnchor.constraint(equalToConstant: 80),
+            faButton.widthAnchor.constraint(equalToConstant: 80)
+        ])
+        faButton.layer.cornerRadius = 40
+        faButton.layer.masksToBounds = true
+        faButton.layer.borderColor = UIColor.lightGray.cgColor
+        faButton.layer.borderWidth = 4
+    }
+    
     func configureView() {
         if let menu = menu {
             nameLabel.text = menu.name
@@ -100,8 +141,11 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
      }
      */
     
-    @IBAction func close(_ sender: Any) {
+    // MARK: - Actions
+    
+    @objc func fabTapped(_ button: UIButton) {
+        print("button tapped")
+//        navigationController?.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
-    
 }

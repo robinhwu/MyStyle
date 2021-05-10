@@ -128,13 +128,13 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     // MARK: - Textfield
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 8
+        let maxLength = 6
         let currentString: NSString = (textField.text ?? "") as NSString
         let newString: NSString =
             currentString.replacingCharacters(in: range, with: string) as NSString
         if newString.length <= maxLength {
             let textCount = newString.length
-            textCountLabel.text = "\((0) + textCount)/8"
+            textCountLabel.text = "\((0) + textCount)/6"
             return true
         } else {
             return false

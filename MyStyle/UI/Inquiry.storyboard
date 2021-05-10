@@ -111,23 +111,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SuC-tV-D1V">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="P86-dI-BAV">
-                                <rect key="frame" x="20" y="10" width="374" height="328"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="P86-dI-BAV">
+                                <rect key="frame" x="20" y="10" width="374" height="308"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="MvY-kT-hUC">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OT2-aS-Yah">
-                                                <rect key="frame" x="0.0" y="16" width="32" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="Aq7-dw-bnT"/>
-                                                    <constraint firstAttribute="width" secondItem="OT2-aS-Yah" secondAttribute="height" multiplier="1:1" id="Z59-s1-WLn"/>
-                                                    <constraint firstAttribute="width" constant="32" id="bdR-rY-13w"/>
-                                                </constraints>
-                                                <state key="normal" image="cross"/>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EG-cw-Rbc" customClass="RoundedCornerLabel" customModule="MyStyle" customModuleProvider="target">
-                                                <rect key="frame" x="56" y="17" width="262" height="30"/>
+                                                <rect key="frame" x="0.0" y="17" width="374" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
@@ -138,33 +129,13 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT5-hB-K7b" customClass="RoundedCornerButton" customModule="MyStyle" customModuleProvider="target">
-                                                <rect key="frame" x="342" y="16" width="32" height="32"/>
-                                                <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="32" id="EOm-YX-tx4"/>
-                                                    <constraint firstAttribute="width" secondItem="aT5-hB-K7b" secondAttribute="height" multiplier="1:1" id="uB7-A8-Bbs"/>
-                                                    <constraint firstAttribute="height" constant="32" id="ySn-2u-Vbu"/>
-                                                </constraints>
-                                                <state key="normal" image="cross"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="close:" destination="jEe-KD-hb0" eventType="touchUpInside" id="lDj-YC-UUs"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="RXb-S9-7Z1"/>
-                                            <constraint firstItem="OT2-aS-Yah" firstAttribute="width" secondItem="OT2-aS-Yah" secondAttribute="height" multiplier="1:1" id="RqV-55-wbV"/>
-                                            <constraint firstItem="aT5-hB-K7b" firstAttribute="centerY" secondItem="MvY-kT-hUC" secondAttribute="centerY" id="tL3-zP-OmR"/>
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SIj-Wt-LQ0" customClass="RoundedCornerTableView" customModule="MyStyle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="374" height="240"/>
+                                        <rect key="frame" x="0.0" y="68" width="374" height="240"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="240" id="3Hz-JI-5Z5"/>
@@ -218,7 +189,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="5VS-rs-Et9"/>
                     <connections>
-                        <outlet property="closeButton" destination="aT5-hB-K7b" id="Qd0-0c-Uoq"/>
                         <outlet property="containerView" destination="P86-dI-BAV" id="rjb-i7-tjT"/>
                         <outlet property="materialListTableView" destination="SIj-Wt-LQ0" id="KzK-Rv-vY6"/>
                         <outlet property="menuImage" destination="SuC-tV-D1V" id="8ld-dS-TYR"/>
@@ -231,12 +201,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cross" width="33" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

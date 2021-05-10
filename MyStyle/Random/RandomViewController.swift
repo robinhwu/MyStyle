@@ -10,102 +10,32 @@ import EventKit
 
 class RandomViewController: UIViewController {
     
-    let eventStore : EKEventStore = EKEventStore()
+    // MARK: - Properties
+    
+    var randomMenusList: [Menu] = []
+    var randomMaterialsList: [String] = []
     
     // MARK: - Random Actions
     
-    func randomMenu(quantity: Int) {
-        
-        let title: String!
-        var notes: String!
-        
-        title = getTitle(quantity: quantity)
-        
-        notes = getMaterials(quantity:quantity)
-        
-        eventStore.requestAccess(to: .event) { (granted, error) in
-            
-            if (granted) && (error == nil) {
-//                print("granted \(granted)")
-//                print("error \(String(describing: error))")
-                
-                let event:EKEvent = EKEvent(eventStore: self.eventStore)
-                
-                event.title = title
-                event.startDate = Date()
-                event.endDate = Date()
-                event.isAllDay = true
-                event.notes = notes
-                event.calendar = self.eventStore.defaultCalendarForNewEvents
-                do {
-                    try self.eventStore.save(event, span: .thisEvent)
-                } catch let error as NSError {
-                    print("failed to save event with error : \(error)")
-                }
-//                print("Saved Event")
-            }
-            else{
-                print("failed to save event with error : \(String(describing: error)) or access not granted")
-            }
-        }
-        
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func getTitle(quantity: Int) -> String {
-        switch quantity {
-        case 4:
-            return "三菜一汤"
-        case 5:
-            return "四菜一汤"
-        case 8:
-            return "六菜两汤"
-        case 10:
-            return "八菜两汤"
-        default:
-            return ""
-        }
-    }
-    
-    func getMaterials(quantity: Int) -> String {
-        var materials = ""
-        var materailDict: [String: Int] = [:]
-        
-        menus.shuffle()
-        for i in 0...(quantity-1) {
-            materials += (menus[i].name + "\n")
-  
-            for materail in menus[i].meterials {
-                if materailDict[materail] != nil {
-                    materailDict[materail]! += 1
-                } else {
-                    materailDict[materail] = 1
-                }
-            }
-        }
-        
-        for (material, quantity) in materailDict {
-            materials += (material + " x " + String(quantity) + "\n")
-        }
-        
-        return materials
-    }
-    
     @IBAction func four(_ sender: Any) {
         randomMenu(quantity: 4)
+        performSegue(withIdentifier: "toRandom", sender: self)
     }
     
     
     @IBAction func five(_ sender: Any) {
         randomMenu(quantity: 5)
+        performSegue(withIdentifier: "toRandom", sender: self)
     }
     
     @IBAction func eight(_ sender: Any) {
         randomMenu(quantity: 8)
+        performSegue(withIdentifier: "toRandom", sender: self)
     }
     
     @IBAction func ten(_ sender: Any) {
         randomMenu(quantity: 10)
+        performSegue(withIdentifier: "toRandom", sender: self)
     }
     
     
@@ -127,5 +57,38 @@ class RandomViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    func randomMenu(quantity: Int) {
+        
+        menus.shuffle()
+        
+        for i in 0...(quantity-1) {
+            randomMenusList.append(menus[i])
+        }
+        var randomMaterialsDict: [String: Int] = [:]
+
+        for menu in randomMenusList {
+
+            for materail in menu.meterials {
+                if randomMaterialsDict[materail] != nil {
+                    randomMaterialsDict[materail]! += 1
+                } else {
+                    randomMaterialsDict[materail] = 1
+                }
+            }
+        }
+
+        for (material, quantity) in randomMaterialsDict {
+            randomMaterialsList.append(material + " x " + String(quantity))
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! RandomDetailViewController
+        
+        controller.randomMenusList = randomMenusList
+        controller.randomMaterialsList = randomMaterialsList
+    }
     
 }

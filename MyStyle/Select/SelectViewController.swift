@@ -157,8 +157,6 @@ class SelectViewController: UITableViewController {
      }
      */
     
-    // MARK: - Actions
-    
     @objc func fabTapped(_ button: UIButton) {
         print("button tapped")
         performSegue(withIdentifier: "toSelected", sender: self)
