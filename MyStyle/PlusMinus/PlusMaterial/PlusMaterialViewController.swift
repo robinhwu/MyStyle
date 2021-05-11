@@ -52,7 +52,19 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func fabTapped(_ button: UIButton) {
-        print("button tapped")
+        
+        if textField.text?.count == 0 {
+            showToast(controller: self, message: "请输入食材名字。", seconds: 0.8)
+            return
+        } else {
+            materialName = textField.text
+            for material in materials {
+                if (material.name == materialName) {
+                    showToast(controller: self, message: "\(materialName!)已存在。", seconds: 0.8)
+                    return
+                }
+            }
+        }
         
         materialName = textField.text
         

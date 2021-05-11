@@ -138,11 +138,16 @@ class PlusMenuViewController: UIViewController {
         
         var menu = Menu(name: menuName, type: menuTypeSwitch.isOn, meterials: chosen, imagePath: menuImagePath)
         
+        for material in menu.meterials {
+            let index = self.findIndex(material: material, list: materials)
+            materials[index].count += 1
+        }
+        
         menu.isPreload = false
         
         menus.append(menu)
         
-        print("button tapped")
+        navigationController?.popToRootViewController(animated: true)
     }
     
     /*
@@ -169,6 +174,15 @@ extension PlusMenuViewController {
         faButton.layer.masksToBounds = true
         faButton.layer.borderColor = UIColor.lightGray.cgColor
         faButton.layer.borderWidth = 4
+    }
+    
+    func findIndex(material selectedMaterial: Material, list materialsList: [Material])-> Int {
+        for i in 0...materialsList.count-1 {
+            if (materialsList[i].name == selectedMaterial.name) {
+                return i
+            }
+        }
+        return -1
     }
 }
 
@@ -245,16 +259,6 @@ extension PlusMenuViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [plusMinusAction])
     }
     
-    
-    func findIndex(material selectedMaterial: Material, list materialsList: [Material])-> Int {
-        for i in 0...materialsList.count-1 {
-            if (materialsList[i].name == selectedMaterial.name) {
-                return i
-            }
-        }
-        return -1
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         plusMinusTableView.deselectRow(at: indexPath, animated: true)
     }
@@ -306,3 +310,5 @@ extension PlusMenuViewController: UIImagePickerControllerDelegate, UINavigationC
         dismiss(animated: true, completion: nil)
     }
 }
+
+

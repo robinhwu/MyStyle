@@ -145,7 +145,6 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     // MARK: - Actions
     
     @objc func fabTapped(_ button: UIButton) {
-        print("button tapped")
         dismiss(animated: true, completion: nil)
     }
 }

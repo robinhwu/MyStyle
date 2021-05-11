@@ -64,22 +64,18 @@ class RandomViewController: UIViewController {
         switch quantity {
         case 4:
             if (dishes.count < 3 || soups.count < 1) {
-                print("444")
                 return false
             }
         case 5:
             if (dishes.count < 4 || soups.count < 1) {
-                print("555")
                 return false
             }
         case 8:
             if (dishes.count < 6 || soups.count < 2) {
-                print("888")
                 return false
             }
         case 10:
             if (dishes.count < 8 || soups.count < 2) {
-                print("101010")
                 return false
             }
         default:

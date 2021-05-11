@@ -153,7 +153,6 @@ class RandomDetailViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: - Actions
     
     @objc func fabTapped(_ button: UIButton) {
-        print("button tapped")
         navigationController?.popToRootViewController(animated: true)
     }
     
