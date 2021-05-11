@@ -14,30 +14,79 @@ class RandomViewController: UIViewController {
     
     var randomMenusList: [Menu] = []
     var randomMaterialsList: [String] = []
+    var dishes = menus.filter {
+        $0.type == true
+    }
+    var soups = menus.filter {
+        $0.type == false
+    }
     
     // MARK: - Random Actions
     
     @IBAction func four(_ sender: Any) {
-        randomMenu(quantity: 4)
-        performSegue(withIdentifier: "toRandom", sender: self)
+        if isEnough(quantity: 4) {
+            randomMenu(quantity: 4)
+            performSegue(withIdentifier: "toRandom", sender: self)
+        } else {
+            
+        }
     }
     
     
     @IBAction func five(_ sender: Any) {
-        randomMenu(quantity: 5)
-        performSegue(withIdentifier: "toRandom", sender: self)
+        if isEnough(quantity: 5) {
+            randomMenu(quantity: 5)
+            performSegue(withIdentifier: "toRandom", sender: self)
+        } else {
+            
+        }
     }
     
     @IBAction func eight(_ sender: Any) {
-        randomMenu(quantity: 8)
-        performSegue(withIdentifier: "toRandom", sender: self)
+        if isEnough(quantity: 8) {
+            randomMenu(quantity: 8)
+            performSegue(withIdentifier: "toRandom", sender: self)
+        } else {
+            
+        }
     }
     
     @IBAction func ten(_ sender: Any) {
-        randomMenu(quantity: 10)
-        performSegue(withIdentifier: "toRandom", sender: self)
+        if isEnough(quantity: 10) {
+            randomMenu(quantity: 10)
+            performSegue(withIdentifier: "toRandom", sender: self)
+        } else {
+            
+        }
     }
     
+    func isEnough(quantity: Int) -> Bool {
+        switch quantity {
+        case 4:
+            if (dishes.count < 3 || soups.count < 1) {
+                print("444")
+                return false
+            }
+        case 5:
+            if (dishes.count < 4 || soups.count < 1) {
+                print("555")
+                return false
+            }
+        case 8:
+            if (dishes.count < 6 || soups.count < 2) {
+                print("888")
+                return false
+            }
+        case 10:
+            if (dishes.count < 8 || soups.count < 2) {
+                print("101010")
+                return false
+            }
+        default:
+            fatalError()
+        }
+        return true
+    }
     
     // MARK: - Lifecycle
     
@@ -71,7 +120,7 @@ class RandomViewController: UIViewController {
         for i in 0...(quantity-1) {
             randomMenusList.append(menus[i])
         }
-        var randomMaterialsDict: [String: Int] = [:]
+        var randomMaterialsDict: [Material: Int] = [:]
 
         for menu in randomMenusList {
 
@@ -85,7 +134,7 @@ class RandomViewController: UIViewController {
         }
 
         for (material, quantity) in randomMaterialsDict {
-            randomMaterialsList.append(material + " x " + String(quantity))
+            randomMaterialsList.append(material.name + " x " + String(quantity))
         }
         
     }

@@ -84,7 +84,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         let menu = (isFiltering) ? result[indexPath.row] : menus[indexPath.row]
         
         cell.nameLabel.text = menu.name
-        cell.thumbnailImageView.image = UIImage(named: menu.image)
+        cell.thumbnailImageView.image = UIImage(named: menu.imagePath)
         return cell
     }
     

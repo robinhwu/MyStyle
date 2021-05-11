@@ -25,7 +25,7 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     
     var menu: Menu!
     
-    var selectedMenuMaterails: [String]!
+    var selectedMenuMaterails: [String] = []
     
     @IBOutlet weak var containerView: UIStackView!
     
@@ -60,7 +60,7 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
         
         dataSource.apply(snapshot, animatingDifferences: false)
         
-        menuImage.image = UIImage(named: menu.image)
+        menuImage.image = UIImage(named: menu.imagePath)
         
         let scaleTransform = CGAffineTransform.init(scaleX: 0, y: 0)
         let translateTransform = CGAffineTransform.init(translationX: 0, y: -1000)
@@ -111,8 +111,9 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     func configureView() {
         if let menu = menu {
             nameLabel.text = menu.name
-            //        menuImage.image = UIImage(named: menu.image)
-            selectedMenuMaterails = menu.meterials
+            for material in menu.meterials {
+                selectedMenuMaterails.append(material.name)
+            }
         }
     }
     
@@ -145,7 +146,6 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     
     @objc func fabTapped(_ button: UIButton) {
         print("button tapped")
-//        navigationController?.popToRootViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
 }

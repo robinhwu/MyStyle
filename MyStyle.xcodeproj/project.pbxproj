@@ -46,6 +46,8 @@
 		31A712F72635240A00FC8044 /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A712F52635240A00FC8044 /* Select.storyboard */; };
 		31AF622C262FBAC20061EF3F /* InquiryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AF622B262FBAC20061EF3F /* InquiryDetailViewController.swift */; };
 		31AF6237262FF3ED0061EF3F /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AF6236262FF3ED0061EF3F /* SearchFooter.swift */; };
+		31BB65CE264A3278009A581F /* ShowToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB65CD264A3278009A581F /* ShowToast.swift */; };
+		31BB65D0264A4DB2009A581F /* SetupButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB65CF264A4DB2009A581F /* SetupButton.swift */; };
 		31CEFEF42646CFD800042BD7 /* SelectedMaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEFEF32646CFD800042BD7 /* SelectedMaterialTableViewCell.swift */; };
 		31DE7B3A262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE7B39262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift */; };
 		31DE7B3F262DC83600EC1AE1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE7B3E262DC83600EC1AE1 /* UIColorExtensions.swift */; };
@@ -121,6 +123,8 @@
 		31A712F62635240A00FC8044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/Select.storyboard; sourceTree = "<group>"; };
 		31AF622B262FBAC20061EF3F /* InquiryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryDetailViewController.swift; sourceTree = "<group>"; };
 		31AF6236262FF3ED0061EF3F /* SearchFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
+		31BB65CD264A3278009A581F /* ShowToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowToast.swift; sourceTree = "<group>"; };
+		31BB65CF264A4DB2009A581F /* SetupButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupButton.swift; sourceTree = "<group>"; };
 		31CEFEF32646CFD800042BD7 /* SelectedMaterialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMaterialTableViewCell.swift; sourceTree = "<group>"; };
 		31DE7B39262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMenuTableViewCell.swift; sourceTree = "<group>"; };
 		31DE7B3E262DC83600EC1AE1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -251,7 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				31AF6236262FF3ED0061EF3F /* SearchFooter.swift */,
+				31BB65CF264A4DB2009A581F /* SetupButton.swift */,
 				31DE7B3E262DC83600EC1AE1 /* UIColorExtensions.swift */,
+				31BB65CD264A3278009A581F /* ShowToast.swift */,
 				3102C7DE26289BBC00DC226D /* RoundedCornerButton.swift */,
 			);
 			path = Utility;
@@ -512,6 +518,7 @@
 				3102C7A226289AC600DC226D /* AppDelegate.swift in Sources */,
 				31E35ACA262977160096C25B /* Data.swift in Sources */,
 				31EAE8402630257100E7D2ED /* InquiryDetailTableViewCell.swift in Sources */,
+				31BB65D0264A4DB2009A581F /* SetupButton.swift in Sources */,
 				310F525A2646651B00878249 /* SelectedMenuTableViewCell.swift in Sources */,
 				31AF622C262FBAC20061EF3F /* InquiryDetailViewController.swift in Sources */,
 				31DE7B3F262DC83600EC1AE1 /* UIColorExtensions.swift in Sources */,
@@ -525,6 +532,7 @@
 				31DE7B3A262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift in Sources */,
 				310A14352629362F00506242 /* PlusMenuViewController.swift in Sources */,
 				31A5C8C8264908D600DE72DD /* RandomMenusTableViewCell.swift in Sources */,
+				31BB65CE264A3278009A581F /* ShowToast.swift in Sources */,
 				31A5C8C62648FFB800DE72DD /* RandomDetailViewController.swift in Sources */,
 				310A141F2629297400506242 /* SelectViewController.swift in Sources */,
 				310A143F2629507500506242 /* MinusMaterialViewController.swift in Sources */,

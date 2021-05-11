@@ -12,6 +12,8 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textCountLabel: UILabel!
     
+    var materialName: String!
+    
     let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
     
     lazy var faButton: UIButton = {
@@ -47,21 +49,27 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func setupButton() {
-        NSLayoutConstraint.activate([
-            faButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36),
-            faButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -36),
-            faButton.heightAnchor.constraint(equalToConstant: 80),
-            faButton.widthAnchor.constraint(equalToConstant: 80)
-        ])
-        faButton.layer.cornerRadius = 40
-        faButton.layer.masksToBounds = true
-        faButton.layer.borderColor = UIColor.lightGray.cgColor
-        faButton.layer.borderWidth = 4
-    }
+    
     
     @objc func fabTapped(_ button: UIButton) {
         print("button tapped")
+        
+        materialName = textField.text
+        
+        for material in materials {
+            if (material.name == materialName) {
+                showToast(controller: self, message: "\(materialName!)已存在。", seconds: 0.8)
+                return
+            }
+        }
+        
+        var material = Material(name: materialName)
+        
+        material.count = 0
+        
+        materials.append(material)
+        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -80,7 +88,6 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-//        self.view.endEditing(true)
         return true
     }
 
@@ -94,4 +101,19 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+}
+
+extension PlusMaterialViewController {
+    func setupButton() {
+        NSLayoutConstraint.activate([
+            faButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36),
+            faButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -36),
+            faButton.heightAnchor.constraint(equalToConstant: 80),
+            faButton.widthAnchor.constraint(equalToConstant: 80)
+        ])
+        faButton.layer.cornerRadius = 40
+        faButton.layer.masksToBounds = true
+        faButton.layer.borderColor = UIColor.lightGray.cgColor
+        faButton.layer.borderWidth = 4
+    }
 }

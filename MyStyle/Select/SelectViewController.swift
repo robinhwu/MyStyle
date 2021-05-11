@@ -39,7 +39,7 @@ class SelectViewController: UITableViewController {
         dataSource = SelectDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, menu) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SelectTableViewCell
             cell.nameLabel.text = menu.name
-            cell.thumbnailImageView.image = UIImage(named: menu.image)
+            cell.thumbnailImageView.image = UIImage(named: menu.imagePath)
             return cell
         })
         tableView.dataSource = dataSource
@@ -182,7 +182,7 @@ class SelectViewController: UITableViewController {
     
     func getMaterialsList() -> [String] {
         var materialsList: [String] = []
-        var materailDict: [String: Int] = [:]
+        var materailDict: [Material: Int] = [:]
         
         for menu in selectedMenu {
   
@@ -196,7 +196,7 @@ class SelectViewController: UITableViewController {
         }
         
         for (material, quantity) in materailDict {
-            materialsList.append(material + " x " + String(quantity))
+            materialsList.append(material.name + " x " + String(quantity))
         }
         
         return materialsList

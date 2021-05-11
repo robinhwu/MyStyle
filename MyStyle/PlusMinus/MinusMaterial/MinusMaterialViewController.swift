@@ -9,9 +9,15 @@ import UIKit
 
 class MinusMaterialViewController: UITableViewController {
 
+    // MARK: - Properties
+    
     @IBOutlet var minusMaterialTableView: UITableView!
     
     lazy var dataSource = configureDataSource()
+    
+    var deleteMaterials = materials.filter{
+        $0.count == 0
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +33,7 @@ class MinusMaterialViewController: UITableViewController {
         
         var snapshot = NSDiffableDataSourceSnapshot<Int, Material>()
         snapshot.appendSections([0])
-        snapshot.appendItems(materials, toSection: 0)
+        snapshot.appendItems(deleteMaterials, toSection: 0)
         
         dataSource.apply(snapshot, animatingDifferences: false)
         
@@ -112,13 +118,14 @@ class MinusMaterialViewController: UITableViewController {
         }
         
         // Delete action
-        let minusAction = UIContextualAction(style: .destructive, title: "加") { (action, view, completionHandler) in
+        let minusAction = UIContextualAction(style: .destructive, title: nil) { (action, view, completionHandler) in
             
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([material])
-            
+            materials = materials.filter{
+                $0.name != material.name
+            }
             self.dataSource.apply(snapshot, animatingDifferences: true)
-            
             
             // Call completion handler to dismiss the action button
             completionHandler(true)

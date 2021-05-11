@@ -44,16 +44,18 @@ class MinusMenuViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MinusMenuTableViewCell
                 
                 cell.nameLabel.text = menu.name
-                
-                cell.thumbnailImageView.image = UIImage(named: menu.image)
-                
+                if menu.isPreload {
+                    cell.thumbnailImageView.image = UIImage(named: menu.imagePath)
+                } else {
+                    let pngImage = UIImage(contentsOfFile: menu.imagePath)
+                    cell.thumbnailImageView.image = pngImage
+                }
                 return cell
             }
         )
         
         return dataSource
     }
-    
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -63,13 +65,20 @@ class MinusMenuViewController: UITableViewController {
         }
         
         // Delete action
-        let minusAction = UIContextualAction(style: .destructive, title: "加") { (action, view, completionHandler) in
+        let minusAction = UIContextualAction(style: .destructive, title: nil) { (action, view, completionHandler) in
             
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([menu])
+            menus = menus.filter{
+                $0.name != menu.name
+            }
+            
+            for material in menu.meterials {
+                let index = self.findIndex(material: material, list: materials)
+                materials[index].count -= 1
+            }
             
             self.dataSource.apply(snapshot, animatingDifferences: true)
-            
             
             // Call completion handler to dismiss the action button
             completionHandler(true)
@@ -80,6 +89,16 @@ class MinusMenuViewController: UITableViewController {
         minusAction.image = UIImage(systemName: "trash")
         
         return UISwipeActionsConfiguration(actions: [minusAction])
+    }
+    
+    
+    func findIndex(material selectedMaterial: Material, list materialsList: [Material])-> Int {
+        for i in 0...materialsList.count-1 {
+            if (materialsList[i].name == selectedMaterial.name) {
+                return i
+            }
+        }
+        return -1
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

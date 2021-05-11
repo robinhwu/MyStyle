@@ -93,7 +93,7 @@ class SelectedViewController: UIViewController, UITableViewDelegate, UITableView
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Menu", for: indexPath) as! SelectedMenuTableViewCell
             cell.nameLabel.text = menusList[indexPath.row].name
-            cell.thumbnailImageView.image = UIImage(named: menusList[indexPath.row].image)
+            cell.thumbnailImageView.image = UIImage(named: menusList[indexPath.row].imagePath)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Material", for: indexPath) as! SelectedMaterialTableViewCell

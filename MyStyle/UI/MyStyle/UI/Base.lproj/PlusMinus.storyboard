@@ -426,10 +426,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="加菜" id="V6W-eS-LIe"/>
                     <connections>
-                        <outlet property="menuImage" destination="vid-s7-mOe" id="Tpj-tM-Z5Z"/>
+                        <outlet property="menuTypeSwitch" destination="zso-iR-ffm" id="GRI-yY-Rts"/>
                         <outlet property="plusMinusTableView" destination="FHc-Wg-v6p" id="PYj-rS-xM4"/>
                         <outlet property="textCountLabel" destination="Nff-yG-9eI" id="fem-Je-BWK"/>
                         <outlet property="textField" destination="dn7-hf-PDH" id="9EY-cu-h84"/>
+                        <outlet property="thumbnailImageView" destination="vid-s7-mOe" id="Tpj-tM-Z5Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gpu-II-gcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -11,16 +11,18 @@ struct Menu: Hashable {
     
     var name: String!
     var type: Bool!
-    var meterials: Array<String>!
-    var image: String!
+    var meterials: Array<Material>!
+    var imagePath: String!
     var chosen: Bool!
+    var isPreload: Bool!
     
-    init(name: String, type: Bool, meterials: Array<String>, image: String) {
+    init(name: String, type: Bool, meterials: Array<Material>, imagePath: String) {
         self.name = name
         self.type = type
         self.meterials = meterials
-        self.image = image
+        self.imagePath = imagePath
         self.chosen = false
+        self.isPreload = true
     }
 }
 

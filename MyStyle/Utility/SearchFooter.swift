@@ -60,7 +60,6 @@ class SearchFooter: UIView {
         label.text = "没有找到菜肴"
       showFooter()
     } else {
-//      label.text = "Filtering \(filteredItemCount) of \(totalItemCount)"
         label.text = "从\(totalItemCount)个菜肴中找到\(filteredItemCount)个菜肴"
       showFooter()
     }
@@ -83,7 +82,7 @@ class SearchFooter: UIView {
     alpha = 0.0
     
     label.textAlignment = .center
-    label.textColor = UIColor.white
+//    label.textColor = UIColor.white
     addSubview(label)
   }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate {
+class PlusMenuViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -29,13 +29,17 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     
     let imagePicker = UIImagePickerController()
     
-    @IBOutlet weak var menuImage: RoundedCornerImageView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     
     @IBOutlet weak var plusMinusTableView: UITableView!
     @IBOutlet weak var textCountLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var menuTypeSwitch: UISwitch!
     var chosen:[Material] = []
     var notChosen = materials
+    var menuName: String!
+    var menuImage: UIImage!
+    var menuImagePath: String!
     
     lazy var dataSource = configureDataSource()
     var snapshot: NSDiffableDataSourceSnapshot<Int, Material>!
@@ -62,8 +66,8 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         picked = false
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        menuImage.isUserInteractionEnabled = true
-        menuImage.addGestureRecognizer(tapGestureRecognizer)
+        thumbnailImageView.isUserInteractionEnabled = true
+        thumbnailImageView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func configureDataSource() -> UITableViewDiffableDataSource<Int, Material> {
@@ -108,6 +112,52 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         }
     }
     
+    
+    
+    @objc func fabTapped(_ button: UIButton) {
+        if !picked {
+            showToast(controller: self, message: "请添加菜肴图片。", seconds: 0.8)
+            return
+        } else if textField.text?.count == 0 {
+            showToast(controller: self, message: "请输入菜肴名字。", seconds: 0.8)
+            return
+        } else if chosen.count == 0 {
+            showToast(controller: self, message: "请添加食材。", seconds: 0.8)
+            return
+        } else {
+            menuName = textField.text
+            for menu in menus {
+                if (menu.name == menuName) {
+                    showToast(controller: self, message: "\(menuName!)已存在。", seconds: 0.8)
+                    return
+                }
+            }
+        }
+        
+        savePng(menuImage)
+        
+        var menu = Menu(name: menuName, type: menuTypeSwitch.isOn, meterials: chosen, imagePath: menuImagePath)
+        
+        menu.isPreload = false
+        
+        menus.append(menu)
+        
+        print("button tapped")
+    }
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
+
+extension PlusMenuViewController {
     func setupButton() {
         NSLayoutConstraint.activate([
             faButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36),
@@ -120,33 +170,9 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         faButton.layer.borderColor = UIColor.lightGray.cgColor
         faButton.layer.borderWidth = 4
     }
-    
-    @objc func fabTapped(_ button: UIButton) {
-        
-        if !picked {
-            showToast(controller: self, message: "请添加菜肴图片。", seconds: 0.8)
-        } else if textField.text?.count == 0 {
-            showToast(controller: self, message: "请输入菜肴名字。", seconds: 0.8)
-        } else if chosen.count == 0 {
-            showToast(controller: self, message: "请添加食材。", seconds: 0.8)
-        }
-        
-        print("button tapped")
-    }
-    
-    func showToast(controller: UIViewController, message : String, seconds: Double) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alert.view.backgroundColor = UIColor.black
-        alert.view.alpha = 0.6
-        alert.view.layer.cornerRadius = 15
+}
 
-        controller.present(alert, animated: true)
-
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
-            alert.dismiss(animated: true)
-        }
-    }
-    
+extension PlusMenuViewController: UITextFieldDelegate {
     // MARK: - Textfield
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -168,6 +194,9 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         //        self.view.endEditing(true)
         return true
     }
+}
+
+extension PlusMenuViewController: UITableViewDelegate {
     
     // MARK: - Tableview
     
@@ -180,14 +209,20 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         
         // Delete action
         let plusMinusAction = UIContextualAction(style: .destructive, title: "加") { (action, view, completionHandler) in
-            
+            let index: Int!
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([material])
             if (material.chosen == true) {
                 material.chosen = false
+                self.notChosen.append(material)
+                index = self.findIndex(material: material, list: self.chosen)
+                self.chosen.remove(at: index)
                 snapshot.appendItems([material], toSection: 1)
             } else {
                 material.chosen = true
+                self.chosen.append(material)
+                index = self.findIndex(material: material, list: self.notChosen)
+                self.notChosen.remove(at: index)
                 snapshot.appendItems([material], toSection: 0)
             }
             
@@ -210,21 +245,19 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
         return UISwipeActionsConfiguration(actions: [plusMinusAction])
     }
     
+    
+    func findIndex(material selectedMaterial: Material, list materialsList: [Material])-> Int {
+        for i in 0...materialsList.count-1 {
+            if (materialsList[i].name == selectedMaterial.name) {
+                return i
+            }
+        }
+        return -1
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         plusMinusTableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
     
     // MARK: - HeaderInSection
     
@@ -239,24 +272,37 @@ class PlusMenuViewController: UIViewController, UITextFieldDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
-    
 }
 
 extension PlusMenuViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            menuImage.contentMode = .scaleAspectFit
-            menuImage.image = pickedImage
+            thumbnailImageView.contentMode = .scaleAspectFit
+            thumbnailImageView.image = pickedImage
             picked = true
+            menuImage = pickedImage
         }
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
+    }
+    
+    func savePng(_ image: UIImage) {
+        if let pngData = image.pngData(),
+           let path = documentDirectoryPath()?.appendingPathComponent(menuName + ".png") {
+            try? pngData.write(to: path)
+            menuImagePath = path.path
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picked = false
         dismiss(animated: true, completion: nil)
     }
-    
 }

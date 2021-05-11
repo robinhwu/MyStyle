@@ -94,7 +94,7 @@ class RandomDetailViewController: UIViewController, UITableViewDelegate, UITable
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Menu", for: indexPath) as! RandomMenusTableViewCell
             cell.nameLabel.text = randomMenusList[indexPath.row].name
-            cell.thumbnailImageView.image = UIImage(named: randomMenusList[indexPath.row].image)
+            cell.thumbnailImageView.image = UIImage(named: randomMenusList[indexPath.row].imagePath)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Material", for: indexPath) as! RandomMaterailsTableViewCell
