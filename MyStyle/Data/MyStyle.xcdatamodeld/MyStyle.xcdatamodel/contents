@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Material" representedClassName="Material" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="menu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Menu" inverseName="materials" inverseEntity="Menu"/>
+    </entity>
+    <entity name="Menu" representedClassName="Menu" syncable="YES" codeGenerationType="class">
+        <attribute name="chosen" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String"/>
+        <attribute name="isPreload" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Material" inverseName="menu" inverseEntity="Material"/>
+    </entity>
+    <elements>
+        <element name="Menu" positionX="-7310.484375" positionY="2292.1796875" width="128" height="133"/>
+        <element name="Material" positionX="-7491.3984375" positionY="2289.1171875" width="128" height="103"/>
+    </elements>
 </model>
