@@ -11,10 +11,17 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        let isPreloaded = defaults.bool(forKey: "isPreloaded")
+        if !isPreloaded {
+            preloadData()
+            defaults.set(true, forKey: "isPreloaded")
+        }
+        
+        print("Documents Directory: ", FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).last ?? "Not Found!")
+        
         return true
     }
 
@@ -77,5 +84,89 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    // MARK: - Preload Data
+    
+    func preloadData() {
+        print("preloadData()")
+        removeData()
+        let context = persistentContainer.viewContext
+        for material in materialsData {
+            let materialItem = Material(context: context)
+            materialItem.name = material.name
+            materialItem.count = Int32(material.count)
+            materialItem.chosen = material.chosen
+        }
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+        
+        let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
+        var materials:[Material] = []
+        do {
+            materials = try context.fetch(fetchRequest)
+        } catch {
+            print("Failed to retrieve record")
+            print(error)
+        }
+        
+        for menu in menusData {
+            let menuItem = Menu(context: context)
+            menuItem.name = menu.name
+            menuItem.chosen = false
+            menuItem.type = menu.type
+            menuItem.imageName = menu.imageName
+            menuItem.isPreload = true
+            for material in menu.materialData {
+                let materialName = material.name
+                let index = findIndex(name: materialName, list: materials)
+                menuItem.addToMaterials(materials[index])
+                materials[index].count += 1
+            }
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
+    
+    func findIndex(name materialName: String, list materialsList: [Material])-> Int {
+        for i in 0...materialsList.count-1 {
+            if (materialsList[i].name == materialName) {
+                return i
+            }
+        }
+        return -1
+    }
+    
+    func removeData() {
+        print("removeData()")
+
+        let context = persistentContainer.viewContext
+        let fetchMaterialsRequest = NSFetchRequest<Material>(entityName: "Material")
+        do {
+            let materailItems = try context.fetch(fetchMaterialsRequest)
+            for materialItem in materailItems {
+                context.delete(materialItem)
+            }
+            saveContext()
+        } catch {
+            fatalError()
+        }
+        
+        let fetchMenusRequest = NSFetchRequest<Menu>(entityName: "Menu")
+        do {
+            let menuItems = try context.fetch(fetchMenusRequest)
+            for menuItem in menuItems {
+                context.delete(menuItem)
+            }
+            saveContext()
+        } catch {
+            fatalError()
+        }
+    }
 }
 

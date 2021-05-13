@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class PlusMenuViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var materialItems:[Material] = []
+    var fetchResultController: NSFetchedResultsController<Material>!
+
     let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
     
     lazy var faButton: UIButton = {
@@ -36,10 +40,10 @@ class PlusMenuViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var menuTypeSwitch: UISwitch!
     var chosen:[Material] = []
-    var notChosen = materials
+    var notChosen:[Material]!
     var menuName: String!
     var menuImage: UIImage!
-    var menuImagePath: String!
+    var menuImageName: String!
     
     lazy var dataSource = configureDataSource()
     var snapshot: NSDiffableDataSourceSnapshot<Int, Material>!
@@ -54,9 +58,30 @@ class PlusMenuViewController: UIViewController {
         plusMinusTableView.dataSource = self.dataSource
         imagePicker.delegate = self
         
+        // Load material items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [nameSortDescriptor]
+//            fetchRequest.predicate = NSPredicate(format: "%K = %@", "count", "0")
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            do {
+                notChosen = try context.fetch(fetchRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+        }
+        
         snapshot = NSDiffableDataSourceSnapshot<Int, Material>()
         snapshot.appendSections([0, 1])
-        snapshot.appendItems(materials, toSection: 1)
+        snapshot.appendItems(chosen, toSection: 0)
+        snapshot.appendItems(notChosen, toSection: 1)
         
         //Force the update on the main thread to silence a warning about tableview not being in the hierarchy!
         DispatchQueue.main.async {
@@ -136,16 +161,42 @@ class PlusMenuViewController: UIViewController {
         
         savePng(menuImage)
         
-        var menu = Menu(name: menuName, type: menuTypeSwitch.isOn, meterials: chosen, imagePath: menuImagePath)
-        
-        for material in menu.meterials {
-            let index = self.findIndex(material: material, list: materials)
-            materials[index].count += 1
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let menu = Menu(context: appDelegate.persistentContainer.viewContext)
+            menu.name = menuName
+            menu.type = menuTypeSwitch.isOn
+            menu.chosen = false
+            menu.isPreload = false
+            menu.imageName = menuImageName
+            
+            for material in chosen {
+                print("add \(material.name!) to \(menu.name!)")
+                menu.addToMaterials(material)
+            }
+            
+            print("Saving data to context ...")
+            
+            appDelegate.saveContext()
+            
+            for material in chosen {
+                print("plus \(material.name!) count")
+                material.count += 1
+                material.chosen = false
+                appDelegate.saveContext()
+            }
         }
         
-        menu.isPreload = false
+
+//        var menu = Menu(name: menuName, type: menuTypeSwitch.isOn, meterials: chosen, imagePath: menuImagePath)
         
-        menus.append(menu)
+//        for material in menu.meterials {
+//            let index = self.findIndex(material: material, list: materials)
+//            materials[index].count += 1
+//        }
+//        
+//        menu.isPreload = false
+//        
+//        menus.append(menu)
         
         navigationController?.popToRootViewController(animated: true)
     }
@@ -217,12 +268,12 @@ extension PlusMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         // Get the selected movie
-        guard var material = self.dataSource.itemIdentifier(for: indexPath) else {
+        guard let material = self.dataSource.itemIdentifier(for: indexPath) else {
             return UISwipeActionsConfiguration()
         }
         
         // Delete action
-        let plusMinusAction = UIContextualAction(style: .destructive, title: "加") { (action, view, completionHandler) in
+        let plusMinusAction = UIContextualAction(style: .destructive, title: nil) { (action, view, completionHandler) in
             let index: Int!
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([material])
@@ -299,9 +350,9 @@ extension PlusMenuViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func savePng(_ image: UIImage) {
         if let pngData = image.pngData(),
-           let path = documentDirectoryPath()?.appendingPathComponent(menuName + ".png") {
-            try? pngData.write(to: path)
-            menuImagePath = path.path
+           let url = documentDirectoryPath()?.appendingPathComponent("\(menuName!).png") {
+            try? pngData.write(to: url)
+            menuImageName = "\(menuName!).png"
         }
     }
     

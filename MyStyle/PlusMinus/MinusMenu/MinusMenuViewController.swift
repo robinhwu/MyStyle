@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import CoreData
 
-class MinusMenuViewController: UITableViewController {
+class MinusMenuViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    // MARK: - Properties
     
     @IBOutlet var minusTableView: UITableView!
     
     lazy var dataSource = configureDataSource()
+    
+    private var menuItems:[Menu] = []
+    var fetchResultController: NSFetchedResultsController<Menu>!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +29,33 @@ class MinusMenuViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         minusTableView.delegate = self
         minusTableView.dataSource = dataSource
         
+        // Load menu items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchRequest: NSFetchRequest<Menu> = Menu.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [nameSortDescriptor]
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            fetchResultController.delegate = self
+            do {
+                menuItems = try context.fetch(fetchRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+        }
+        
         var snapshot = NSDiffableDataSourceSnapshot<Int, Menu>()
         snapshot.appendSections([0])
-        snapshot.appendItems(menus, toSection: 0)
+        snapshot.appendItems(menuItems, toSection: 0)
         
         dataSource.apply(snapshot, animatingDifferences: false)
     }
@@ -40,14 +69,17 @@ class MinusMenuViewController: UITableViewController {
         
         let dataSource = MinusMenuDiffableDataSource(
             tableView: tableView,
-            cellProvider: {  tableView, indexPath, menu in
+            cellProvider: { [self]  tableView, indexPath, menu in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MinusMenuTableViewCell
                 
                 cell.nameLabel.text = menu.name
+                
                 if menu.isPreload {
-                    cell.thumbnailImageView.image = UIImage(named: menu.imagePath)
+                    cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
                 } else {
-                    let pngImage = UIImage(contentsOfFile: menu.imagePath)
+                    let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
+                    print(url!.path)
+                    let pngImage = UIImage(contentsOfFile: url!.path)
                     cell.thumbnailImageView.image = pngImage
                 }
                 return cell
@@ -57,9 +89,15 @@ class MinusMenuViewController: UITableViewController {
         return dataSource
     }
     
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
+    }
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-        // Get the selected movie
+        // Get the selected menu
         guard let menu = self.dataSource.itemIdentifier(for: indexPath) else {
             return UISwipeActionsConfiguration()
         }
@@ -69,14 +107,35 @@ class MinusMenuViewController: UITableViewController {
             
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([menu])
-            menus = menus.filter{
-                $0.name != menu.name
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let context = appDelegate.persistentContainer.viewContext
+                let menuToDelete = menu
+                
+                print(menuToDelete.name!)
+                
+                for material in menuToDelete.materials as! Set<Material> {
+                    print("minus \(material.name!) count")
+                    material.count -= 1
+                    material.removeFromMenus(menuToDelete)
+                    appDelegate.saveContext()
+                }
+                
+                context.delete(menuToDelete)
+                
+                appDelegate.saveContext()
             }
             
-            for material in menu.meterials {
-                let index = self.findIndex(material: material, list: materials)
-                materials[index].count -= 1
-            }
+            
+            
+//            menus = menus.filter{
+//                $0.name != menu.name
+//            }
+            
+//            for material in menu.meterials {
+//                let index = self.findIndex(material: material, list: materials)
+//                materials[index].count -= 1
+//            }
             
             self.dataSource.apply(snapshot, animatingDifferences: true)
             

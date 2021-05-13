@@ -39,7 +39,7 @@ class SelectViewController: UITableViewController {
         dataSource = SelectDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, menu) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SelectTableViewCell
             cell.nameLabel.text = menu.name
-            cell.thumbnailImageView.image = UIImage(named: menu.imagePath)
+            cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
             return cell
         })
         tableView.dataSource = dataSource
@@ -86,7 +86,7 @@ class SelectViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         // Get the selected movie
-        guard var menu = self.dataSource.itemIdentifier(for: indexPath) else {
+        guard let menu = self.dataSource.itemIdentifier(for: indexPath) else {
             return UISwipeActionsConfiguration()
         }
         
@@ -186,18 +186,18 @@ class SelectViewController: UITableViewController {
         
         for menu in selectedMenu {
   
-            for materail in menu.meterials {
-                if materailDict[materail] != nil {
-                    materailDict[materail]! += 1
-                } else {
-                    materailDict[materail] = 1
-                }
-            }
+//            for materail in menu.meterials {
+//                if materailDict[materail] != nil {
+//                    materailDict[materail]! += 1
+//                } else {
+//                    materailDict[materail] = 1
+//                }
+//            }
         }
         
-        for (material, quantity) in materailDict {
-            materialsList.append(material.name + " x " + String(quantity))
-        }
+//        for (material, quantity) in materailDict {
+//            materialsList.append(material.name + " x " + String(quantity))
+//        }
         
         return materialsList
     }

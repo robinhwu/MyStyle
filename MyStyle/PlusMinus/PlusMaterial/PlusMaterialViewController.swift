@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textCountLabel: UILabel!
+    
+    private var materialItems:[Material] = []
+    var fetchResultController: NSFetchedResultsController<Material>!
     
     var materialName: String!
     
@@ -32,6 +36,26 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         textField.delegate = self
+        
+        // Load material items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [nameSortDescriptor]
+            fetchRequest.predicate = NSPredicate(format: "%K = %@", "count", "0")
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            do {
+                materialItems = try context.fetch(fetchRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,7 +82,7 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
             return
         } else {
             materialName = textField.text
-            for material in materials {
+            for material in materialItems {
                 if (material.name == materialName) {
                     showToast(controller: self, message: "\(materialName!)已存在。", seconds: 0.8)
                     return
@@ -68,18 +92,29 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
         
         materialName = textField.text
         
-        for material in materials {
+        for material in materialItems {
             if (material.name == materialName) {
                 showToast(controller: self, message: "\(materialName!)已存在。", seconds: 0.8)
                 return
             }
         }
         
-        var material = Material(name: materialName)
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let material = Material(context: appDelegate.persistentContainer.viewContext)
+            material.name = materialName
+            material.count = 0
+            material.chosen = false
+            
+            print("Saving data to context ...")
+            
+            appDelegate.saveContext()
+        }
         
-        material.count = 0
-        
-        materials.append(material)
+//        var material = Material(name: materialName)
+//        
+//        material.count = 0
+//        
+//        materials.append(material)
         
         navigationController?.popToRootViewController(animated: true)
     }

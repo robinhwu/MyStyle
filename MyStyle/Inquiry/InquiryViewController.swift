@@ -84,7 +84,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         let menu = (isFiltering) ? result[indexPath.row] : menus[indexPath.row]
         
         cell.nameLabel.text = menu.name
-        cell.thumbnailImageView.image = UIImage(named: menu.imagePath)
+        cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
         return cell
     }
     
@@ -121,7 +121,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
             result = categoryMenu
         } else {
             result = categoryMenu.filter({ (menu) -> Bool in
-                let isMatch = menu.name.localizedCaseInsensitiveContains(searchText)
+                let isMatch = menu.name!.localizedCaseInsensitiveContains(searchText)
                 return isMatch
             })
         }

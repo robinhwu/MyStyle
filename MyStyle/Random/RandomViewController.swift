@@ -120,17 +120,17 @@ class RandomViewController: UIViewController {
 
         for menu in randomMenusList {
 
-            for materail in menu.meterials {
-                if randomMaterialsDict[materail] != nil {
-                    randomMaterialsDict[materail]! += 1
-                } else {
-                    randomMaterialsDict[materail] = 1
-                }
-            }
+//            for materail in menu.meterials {
+//                if randomMaterialsDict[materail] != nil {
+//                    randomMaterialsDict[materail]! += 1
+//                } else {
+//                    randomMaterialsDict[materail] = 1
+//                }
+//            }
         }
 
         for (material, quantity) in randomMaterialsDict {
-            randomMaterialsList.append(material.name + " x " + String(quantity))
+            randomMaterialsList.append(material.name! + " x " + String(quantity))
         }
         
     }

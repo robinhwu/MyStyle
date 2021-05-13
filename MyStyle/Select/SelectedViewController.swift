@@ -93,7 +93,7 @@ class SelectedViewController: UIViewController, UITableViewDelegate, UITableView
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Menu", for: indexPath) as! SelectedMenuTableViewCell
             cell.nameLabel.text = menusList[indexPath.row].name
-            cell.thumbnailImageView.image = UIImage(named: menusList[indexPath.row].imagePath)
+            cell.thumbnailImageView.image = UIImage(named: menusList[indexPath.row].imageName!)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Material", for: indexPath) as! SelectedMaterialTableViewCell
@@ -153,7 +153,6 @@ class SelectedViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Actions
     
     @objc func fabTapped(_ button: UIButton) {
-        print("button tapped")
         navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -60,7 +60,7 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
         
         dataSource.apply(snapshot, animatingDifferences: false)
         
-        menuImage.image = UIImage(named: menu.imagePath)
+        menuImage.image = UIImage(named: menu.imageName!)
         
         let scaleTransform = CGAffineTransform.init(scaleX: 0, y: 0)
         let translateTransform = CGAffineTransform.init(translationX: 0, y: -1000)
@@ -111,9 +111,9 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     func configureView() {
         if let menu = menu {
             nameLabel.text = menu.name
-            for material in menu.meterials {
-                selectedMenuMaterails.append(material.name)
-            }
+//            for material in menu.meterials {
+//                selectedMenuMaterails.append(material.name)
+//            }
         }
     }
     
