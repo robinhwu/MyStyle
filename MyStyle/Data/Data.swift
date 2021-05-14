@@ -7,8 +7,8 @@
 
 import Foundation
 
-var menus: [Menu] = []
-var materials: [Material] = []
+//var menus: [Menu] = []
+//var materials: [Material] = []
 
 var menusData: [MenuData] = [
     MenuData(name: "西红柿炒鸡蛋", type: true, meterials: [materialsData[0], materialsData[1]], imageName: "tomato_scrambled_eggs"),

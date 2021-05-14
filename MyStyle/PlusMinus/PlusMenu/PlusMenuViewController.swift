@@ -12,6 +12,8 @@ class PlusMenuViewController: UIViewController {
     
     // MARK: - Properties
     
+    var menus: [Menu] = []
+    
     private var materialItems:[Material] = []
     var fetchResultController: NSFetchedResultsController<Material>!
 
@@ -185,18 +187,6 @@ class PlusMenuViewController: UIViewController {
                 appDelegate.saveContext()
             }
         }
-        
-
-//        var menu = Menu(name: menuName, type: menuTypeSwitch.isOn, meterials: chosen, imagePath: menuImagePath)
-        
-//        for material in menu.meterials {
-//            let index = self.findIndex(material: material, list: materials)
-//            materials[index].count += 1
-//        }
-//        
-//        menu.isPreload = false
-//        
-//        menus.append(menu)
         
         navigationController?.popToRootViewController(animated: true)
     }

@@ -11,10 +11,12 @@ class SelectViewController: UITableViewController {
     
     // MARK: - Properties
     
+    var menus: [Menu] = []
+    
     let sectionTitle = ["已选", "待选"]
     
     var selectedMenu:[Menu] = []
-    var notSelectedMenu = menus
+    var notSelectedMenu: [Menu] = []
     
     var dataSource: SelectDiffableDataSource!
     var snapshot: NSDiffableDataSourceSnapshot<Int, Menu>!

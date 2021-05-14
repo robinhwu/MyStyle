@@ -126,17 +126,6 @@ class MinusMenuViewController: UITableViewController, NSFetchedResultsController
                 appDelegate.saveContext()
             }
             
-            
-            
-//            menus = menus.filter{
-//                $0.name != menu.name
-//            }
-            
-//            for material in menu.meterials {
-//                let index = self.findIndex(material: material, list: materials)
-//                materials[index].count -= 1
-//            }
-            
             self.dataSource.apply(snapshot, animatingDifferences: true)
             
             // Call completion handler to dismiss the action button

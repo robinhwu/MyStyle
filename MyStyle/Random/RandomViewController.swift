@@ -12,13 +12,18 @@ class RandomViewController: UIViewController {
     
     // MARK: - Properties
     
+    var menus: [Menu] = []
     var randomMenusList: [Menu] = []
     var randomMaterialsList: [String] = []
-    var dishes = menus.filter {
-        $0.type == true
+    var dishes: [Menu] {
+        menus.filter {
+            $0.type == true
+        }
     }
-    var soups = menus.filter {
-        $0.type == false
+    var soups: [Menu] {
+        menus.filter {
+            $0.type == false
+        }
     }
     
     // MARK: - Random Actions

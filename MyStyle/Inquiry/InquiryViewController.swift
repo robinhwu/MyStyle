@@ -7,10 +7,14 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     // MARK: - Properties
+    
+    var menus: [Menu] = []
+    var fetchResultController: NSFetchedResultsController<Menu>!
     
     @IBOutlet weak var inquiryTableView: UITableView!
     @IBOutlet var searchFooter: SearchFooter!
@@ -62,6 +66,25 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
           forName: UIResponder.keyboardWillHideNotification,
           object: nil, queue: .main) { (notification) in
             self.handleKeyboard(notification: notification)
+        }
+        
+        // Load menu items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchRequest: NSFetchRequest<Menu> = Menu.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [nameSortDescriptor]
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            do {
+                menus = try context.fetch(fetchRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
         }
     }
     

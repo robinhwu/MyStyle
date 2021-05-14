@@ -111,9 +111,9 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     func configureView() {
         if let menu = menu {
             nameLabel.text = menu.name
-//            for material in menu.meterials {
-//                selectedMenuMaterails.append(material.name)
-//            }
+            for material in menu.materials as! Set<Material>{
+                selectedMenuMaterails.append(material.name!)
+            }
         }
     }
     
