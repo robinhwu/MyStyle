@@ -95,6 +95,8 @@ class PlusMenuViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         thumbnailImageView.isUserInteractionEnabled = true
         thumbnailImageView.addGestureRecognizer(tapGestureRecognizer)
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
     func configureDataSource() -> UITableViewDiffableDataSource<Int, Material> {

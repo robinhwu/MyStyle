@@ -60,13 +60,25 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
         
         dataSource.apply(snapshot, animatingDifferences: false)
         
-        menuImage.image = UIImage(named: menu.imageName!)
+        if menu.isPreload {
+            menuImage.image = UIImage(named: menu.imageName!)
+        } else {
+            let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
+            let pngImage = UIImage(contentsOfFile: url!.path)
+            menuImage.image = pngImage
+        }
         
         let scaleTransform = CGAffineTransform.init(scaleX: 0, y: 0)
         let translateTransform = CGAffineTransform.init(translationX: 0, y: -1000)
         let combineTransform = scaleTransform.concatenating(translateTransform)
         containerView.transform = combineTransform
 
+    }
+    
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
     }
     
     override func viewWillAppear(_ animated: Bool) {

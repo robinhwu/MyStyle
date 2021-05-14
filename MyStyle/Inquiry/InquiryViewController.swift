@@ -86,7 +86,18 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
                 print(error)
             }
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     
     // MARK: - Datasource
     
@@ -107,10 +118,23 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         let menu = (isFiltering) ? result[indexPath.row] : menus[indexPath.row]
         
         cell.nameLabel.text = menu.name
-        cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
+        
+        if menu.isPreload {
+            cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
+        } else {
+            let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
+            let pngImage = UIImage(contentsOfFile: url!.path)
+            cell.thumbnailImageView.image = pngImage
+        }
+        
         return cell
     }
     
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let path = Bundle.main.path(forResource: "close.wav", ofType:nil)!

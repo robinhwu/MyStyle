@@ -56,6 +56,9 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
                 print(error)
             }
         }
+        
+        self.hideKeyboardWhenTappedAround()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

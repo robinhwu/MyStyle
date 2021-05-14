@@ -60,7 +60,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="qzE-fm-nSA" id="z0G-6U-nem"/>
                                             <outlet property="thumbnailImageView" destination="m84-3q-bPB" id="KbP-r8-Ft5"/>
-                                            <segue destination="jEe-KD-hb0" kind="presentation" identifier="ShowDetailSegue" id="QpB-A6-Up6"/>
+                                            <segue destination="jEe-KD-hb0" kind="presentation" identifier="ShowDetailSegue" modalPresentationStyle="automatic" id="QpB-A6-Up6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

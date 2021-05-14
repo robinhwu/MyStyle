@@ -94,7 +94,14 @@ class RandomDetailViewController: UIViewController, UITableViewDelegate, UITable
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Menu", for: indexPath) as! RandomMenusTableViewCell
             cell.nameLabel.text = randomMenusList[indexPath.row].name
-            cell.thumbnailImageView.image = UIImage(named: randomMenusList[indexPath.row].imageName!)
+            if randomMenusList[indexPath.row].isPreload {
+                cell.thumbnailImageView.image = UIImage(named: randomMenusList[indexPath.row].imageName!)
+            } else {
+                let menu = randomMenusList[indexPath.row]
+                let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
+                let pngImage = UIImage(contentsOfFile: url!.path)
+                cell.thumbnailImageView.image = pngImage
+            }
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Material", for: indexPath) as! RandomMaterailsTableViewCell
@@ -111,6 +118,12 @@ class RandomDetailViewController: UIViewController, UITableViewDelegate, UITable
         default:
             fatalError()
         }
+    }
+    
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

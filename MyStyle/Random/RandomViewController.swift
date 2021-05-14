@@ -6,13 +6,15 @@
 //
 
 import UIKit
-import EventKit
+import CoreData
 
 class RandomViewController: UIViewController {
     
     // MARK: - Properties
     
     var menus: [Menu] = []
+    var fetchResultController: NSFetchedResultsController<Menu>!
+    
     var randomMenusList: [Menu] = []
     var randomMaterialsList: [String] = []
     var dishes: [Menu] {
@@ -95,6 +97,30 @@ class RandomViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        // Load menu items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchRequest: NSFetchRequest<Menu> = Menu.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [nameSortDescriptor]
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            do {
+                menus = try context.fetch(fetchRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+        }
+    }
+    
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,15 +149,14 @@ class RandomViewController: UIViewController {
         }
         var randomMaterialsDict: [Material: Int] = [:]
 
-        for menu in randomMenusList {
-
-//            for materail in menu.meterials {
-//                if randomMaterialsDict[materail] != nil {
-//                    randomMaterialsDict[materail]! += 1
-//                } else {
-//                    randomMaterialsDict[materail] = 1
-//                }
-//            }
+        for menu in randomMenusList  {
+            for materail in menu.materials as! Set<Material> {
+                if randomMaterialsDict[materail] != nil {
+                    randomMaterialsDict[materail]! += 1
+                } else {
+                    randomMaterialsDict[materail] = 1
+                }
+            }
         }
 
         for (material, quantity) in randomMaterialsDict {

@@ -78,7 +78,6 @@ class MinusMenuViewController: UITableViewController, NSFetchedResultsController
                     cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
                 } else {
                     let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
-                    print(url!.path)
                     let pngImage = UIImage(contentsOfFile: url!.path)
                     cell.thumbnailImageView.image = pngImage
                 }

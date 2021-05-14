@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 class SelectViewController: UITableViewController {
     
     // MARK: - Properties
     
     var menus: [Menu] = []
+    var fetchResultController: NSFetchedResultsController<Menu>!
     
     let sectionTitle = ["已选", "待选"]
     
@@ -35,17 +37,45 @@ class SelectViewController: UITableViewController {
     
     // MARK: - Lifecycle
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = SelectDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, menu) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SelectTableViewCell
             cell.nameLabel.text = menu.name
-            cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
+            
+            if menu.isPreload {
+                cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
+            } else {
+                let url = self.documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
+                let pngImage = UIImage(contentsOfFile: url!.path)
+                cell.thumbnailImageView.image = pngImage
+            }
+            
             return cell
         })
         tableView.dataSource = dataSource
         tableView.delegate = self
+        
+        // Load menu items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchRequest: NSFetchRequest<Menu> = Menu.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [nameSortDescriptor]
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(
+                fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
+            do {
+                notSelectedMenu = try context.fetch(fetchRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+        }
         
         snapshot = NSDiffableDataSourceSnapshot<Int, Menu>()
         snapshot.appendSections([0, 1])
@@ -55,6 +85,12 @@ class SelectViewController: UITableViewController {
         DispatchQueue.main.async {
             self.dataSource.apply(self.snapshot, animatingDifferences: true)
         }
+    }
+    
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -188,18 +224,18 @@ class SelectViewController: UITableViewController {
         
         for menu in selectedMenu {
   
-//            for materail in menu.meterials {
-//                if materailDict[materail] != nil {
-//                    materailDict[materail]! += 1
-//                } else {
-//                    materailDict[materail] = 1
-//                }
-//            }
+            for materail in menu.materials as! Set<Material>{
+                if materailDict[materail] != nil {
+                    materailDict[materail]! += 1
+                } else {
+                    materailDict[materail] = 1
+                }
+            }
         }
         
-//        for (material, quantity) in materailDict {
-//            materialsList.append(material.name + " x " + String(quantity))
-//        }
+        for (material, quantity) in materailDict {
+            materialsList.append(material.name! + " x " + String(quantity))
+        }
         
         return materialsList
     }

@@ -93,7 +93,14 @@ class SelectedViewController: UIViewController, UITableViewDelegate, UITableView
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Menu", for: indexPath) as! SelectedMenuTableViewCell
             cell.nameLabel.text = menusList[indexPath.row].name
-            cell.thumbnailImageView.image = UIImage(named: menusList[indexPath.row].imageName!)
+            if menusList[indexPath.row].isPreload {
+                cell.thumbnailImageView.image = UIImage(named: menusList[indexPath.row].imageName!)
+            } else {
+                let menu = menusList[indexPath.row]
+                let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
+                let pngImage = UIImage(contentsOfFile: url!.path)
+                cell.thumbnailImageView.image = pngImage
+            }
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Material", for: indexPath) as! SelectedMaterialTableViewCell
@@ -110,6 +117,12 @@ class SelectedViewController: UIViewController, UITableViewDelegate, UITableView
         default:
             fatalError()
         }
+    }
+    
+    func documentDirectoryPath() -> URL? {
+        let path = FileManager.default.urls(for: .documentDirectory,
+                                            in: .userDomainMask)
+        return path.first
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
