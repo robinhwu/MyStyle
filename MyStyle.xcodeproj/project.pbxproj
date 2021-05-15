@@ -39,6 +39,10 @@
 		310F52582645924000878249 /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F52572645924000878249 /* SelectedViewController.swift */; };
 		310F525A2646651B00878249 /* SelectedMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F52592646651B00878249 /* SelectedMenuTableViewCell.swift */; };
 		316804D026355E7700D31978 /* PlusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */; };
+		3174CAFD264FB1D000CC7086 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3174CAFC264FB1D000CC7086 /* Onboarding.storyboard */; };
+		3174CB00264FC29400CC7086 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CAFF264FC29400CC7086 /* WalkthroughContentViewController.swift */; };
+		3174CB02264FC3FC00CC7086 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CB01264FC3FC00CC7086 /* WalkthroughPageViewController.swift */; };
+		3174CB04264FC88700CC7086 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CB03264FC88700CC7086 /* WalkthroughViewController.swift */; };
 		31A5C8C62648FFB800DE72DD /* RandomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5C8C52648FFB800DE72DD /* RandomDetailViewController.swift */; };
 		31A5C8C8264908D600DE72DD /* RandomMenusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5C8C7264908D600DE72DD /* RandomMenusTableViewCell.swift */; };
 		31A5C8CA264908F900DE72DD /* RandomMaterailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A5C8C9264908F900DE72DD /* RandomMaterailsTableViewCell.swift */; };
@@ -115,6 +119,10 @@
 		310F52572645924000878249 /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedViewController.swift; path = MyStyle/Select/SelectedViewController.swift; sourceTree = SOURCE_ROOT; };
 		310F52592646651B00878249 /* SelectedMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMenuTableViewCell.swift; sourceTree = "<group>"; };
 		316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
+		3174CAFC264FB1D000CC7086 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		3174CAFF264FC29400CC7086 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		3174CB01264FC3FC00CC7086 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		3174CB03264FC88700CC7086 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		31A5C8C52648FFB800DE72DD /* RandomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDetailViewController.swift; sourceTree = "<group>"; };
 		31A5C8C7264908D600DE72DD /* RandomMenusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMenusTableViewCell.swift; sourceTree = "<group>"; };
 		31A5C8C9264908F900DE72DD /* RandomMaterailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMaterailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,6 +191,7 @@
 		3102C7A026289AC600DC226D /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				3174CAFE264FC21300CC7086 /* Walkthrough */,
 				310F524A263C3ED900878249 /* Sounds */,
 				310A14182629291E00506242 /* Select */,
 				310A14172629291400506242 /* Random */,
@@ -230,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				3102C7A726289AC600DC226D /* Main.storyboard */,
+				3174CAFC264FB1D000CC7086 /* Onboarding.storyboard */,
 				31A712F52635240A00FC8044 /* Select.storyboard */,
 				310A1423262929AE00506242 /* Random.storyboard */,
 				310A13FA262918C400506242 /* Inquiry.storyboard */,
@@ -318,6 +328,16 @@
 				310F52522645767B00878249 /* open.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3174CAFE264FC21300CC7086 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				3174CAFF264FC29400CC7086 /* WalkthroughContentViewController.swift */,
+				3174CB01264FC3FC00CC7086 /* WalkthroughPageViewController.swift */,
+				3174CB03264FC88700CC7086 /* WalkthroughViewController.swift */,
+			);
+			path = Walkthrough;
 			sourceTree = "<group>";
 		};
 		31DE7B43262DCF1B00EC1AE1 /* MinusMenu */ = {
@@ -472,6 +492,7 @@
 				310F52532645767B00878249 /* open.mp3 in Resources */,
 				310A14102629280600506242 /* PlusMinus.storyboard in Resources */,
 				310F52552645767B00878249 /* close.mp3 in Resources */,
+				3174CAFD264FB1D000CC7086 /* Onboarding.storyboard in Resources */,
 				310A13FB262918C400506242 /* Inquiry.storyboard in Resources */,
 				3102C7A926289AC600DC226D /* Main.storyboard in Resources */,
 			);
@@ -503,7 +524,9 @@
 				31AF6237262FF3ED0061EF3F /* SearchFooter.swift in Sources */,
 				3102C7E82628A54900DC226D /* InquiryViewController.swift in Sources */,
 				310A1444262950C000506242 /* PlusMaterialViewController.swift in Sources */,
+				3174CB02264FC3FC00CC7086 /* WalkthroughPageViewController.swift in Sources */,
 				3102C7DF26289BBC00DC226D /* RoundedCornerButton.swift in Sources */,
+				3174CB04264FC88700CC7086 /* WalkthroughViewController.swift in Sources */,
 				31DE7B85262EA61F00EC1AE1 /* InquiryTableViewCell.swift in Sources */,
 				31DE7B51262DCFA600EC1AE1 /* PlusMenuTableViewCell.swift in Sources */,
 				310F52582645924000878249 /* SelectedViewController.swift in Sources */,
@@ -513,6 +536,7 @@
 				3102C7A626289AC600DC226D /* GatewayViewController.swift in Sources */,
 				31A5C8CA264908F900DE72DD /* RandomMaterailsTableViewCell.swift in Sources */,
 				3102C7A226289AC600DC226D /* AppDelegate.swift in Sources */,
+				3174CB00264FC29400CC7086 /* WalkthroughContentViewController.swift in Sources */,
 				31E35ACA262977160096C25B /* Data.swift in Sources */,
 				31EAE8402630257100E7D2ED /* InquiryDetailTableViewCell.swift in Sources */,
 				310F525A2646651B00878249 /* SelectedMenuTableViewCell.swift in Sources */,

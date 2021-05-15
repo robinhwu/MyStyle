@@ -16,10 +16,17 @@ class GatewayViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-//    override func viewDidAppear(_ animated: Bool) {
-//        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughController") as? WalkthroughPageViewController {
-//            present(pageViewController, animated: true, completion: nil)
-//        }
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough") {
+            return
+        }
+
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
+            walkthroughViewController.modalPresentationStyle = .fullScreen
+            present(walkthroughViewController, animated: true, completion: nil)
+        }
+    }
 }
 
