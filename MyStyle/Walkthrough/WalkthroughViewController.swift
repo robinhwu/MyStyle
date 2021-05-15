@@ -26,6 +26,15 @@ class WalkthroughViewController: UIViewController {
         }
     }
     
+    var walkthroughPageViewController: WalkthroughPageViewController?
+    
+    @IBAction func pageControlTapped(_ sender: Any) {
+        let index = pageControl.currentPage
+        walkthroughPageViewController?.currentIndex = index
+        updateUI()
+        walkthroughPageViewController?.tappedPageControl(at: index)
+    }
+    
     @IBAction func skipButtonTapped(sender: UIButton) {
         UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
         dismiss(animated: true, completion: nil)
@@ -49,11 +58,9 @@ class WalkthroughViewController: UIViewController {
         if let index = walkthroughPageViewController?.currentIndex {
             switch index {
             case 0...2:
-//                nextButton.setTitle("NEXT", for: .normal)
                 nextButton.setTitle("下一页", for: .normal)
                 skipButton.isHidden = false
             case 3:
-//                nextButton.setTitle("GET STARTED", for: .normal)
                 nextButton.setTitle("开始", for: .normal)
                 skipButton.isHidden = true
             default: break
@@ -61,8 +68,6 @@ class WalkthroughViewController: UIViewController {
             pageControl.currentPage = index
         }
     }
-    
-    var walkthroughPageViewController: WalkthroughPageViewController?
     
     // MARK: - Lifecycle
     

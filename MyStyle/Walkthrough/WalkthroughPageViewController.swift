@@ -55,6 +55,12 @@ class WalkthroughPageViewController: UIPageViewController {
      }
      */
     
+    func tappedPageControl(at index: Int) {
+        if let tappedPageControl = contentViewController(at: index) {
+            setViewControllers([tappedPageControl], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
     func forwardPage() {
         currentIndex += 1
         if let nextViewController = contentViewController(at: currentIndex) {

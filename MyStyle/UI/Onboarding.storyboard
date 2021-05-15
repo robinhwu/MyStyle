@@ -40,6 +40,9 @@
                                                 <rect key="frame" x="25.666666666666657" y="0.0" width="139" height="26.333333333333332"/>
                                                 <color key="pageIndicatorTintColor" systemColor="systemGray4Color"/>
                                                 <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
+                                                <connections>
+                                                    <action selector="pageControlTapped:" destination="9k3-Ca-iJb" eventType="valueChanged" id="pGy-oB-qQ3"/>
+                                                </connections>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clc-Pw-bbq">
                                                 <rect key="frame" x="0.0" y="46.333333333333371" width="190" height="50"/>
@@ -141,6 +144,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="i09-ir-G0K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="InL-OR-Dal" firstAttribute="centerX" secondItem="ukE-bY-d7f" secondAttribute="centerX" id="1Xj-ze-PBz"/>
