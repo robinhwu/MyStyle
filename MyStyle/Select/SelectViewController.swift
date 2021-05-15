@@ -106,6 +106,13 @@ class SelectViewController: UITableViewController {
         if let view = keyWindow, faButton.isDescendant(of: view) {
             faButton.removeFromSuperview()
         }
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            for menu in selectedMenu {
+                menu.chosen = false
+            }
+            appDelegate.saveContext()
+        }
     }
     
     func setupButton() {

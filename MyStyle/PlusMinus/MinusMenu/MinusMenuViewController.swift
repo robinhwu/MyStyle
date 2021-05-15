@@ -117,7 +117,6 @@ class MinusMenuViewController: UITableViewController, NSFetchedResultsController
                     print("minus \(material.name!) count")
                     material.count -= 1
                     material.removeFromMenus(menuToDelete)
-                    appDelegate.saveContext()
                 }
                 
                 context.delete(menuToDelete)

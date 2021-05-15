@@ -113,12 +113,6 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
             appDelegate.saveContext()
         }
         
-//        var material = Material(name: materialName)
-//        
-//        material.count = 0
-//        
-//        materials.append(material)
-        
         navigationController?.popToRootViewController(animated: true)
     }
     

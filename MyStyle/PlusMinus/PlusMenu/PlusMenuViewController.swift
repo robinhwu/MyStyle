@@ -62,20 +62,28 @@ class PlusMenuViewController: UIViewController {
         
         // Load material items from database
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            let fetchRequest: NSFetchRequest<Material> = Material.fetchRequest()
-            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-            fetchRequest.sortDescriptors = [nameSortDescriptor]
-//            fetchRequest.predicate = NSPredicate(format: "%K = %@", "count", "0")
             let context = appDelegate.persistentContainer.viewContext
+            let fetchMaterialsRequest: NSFetchRequest<Material> = Material.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchMaterialsRequest.sortDescriptors = [nameSortDescriptor]
             fetchResultController = NSFetchedResultsController(
-                fetchRequest: fetchRequest,
+                fetchRequest: fetchMaterialsRequest,
                 managedObjectContext: context,
                 sectionNameKeyPath: nil,
                 cacheName: nil)
             do {
-                notChosen = try context.fetch(fetchRequest)
+                notChosen = try context.fetch(fetchMaterialsRequest)
             } catch {
-                print("Failed to retrieve record")
+                print("Failed to retrieve material")
+                print(error)
+            }
+            let fetchMenusRequest: NSFetchRequest<Menu> =
+                Menu.fetchRequest()
+            fetchMenusRequest.sortDescriptors = [nameSortDescriptor]
+            do {
+                menus = try context.fetch(fetchMenusRequest)
+            } catch {
+                print("Failed to retrieve menu")
                 print(error)
             }
         }
@@ -139,6 +147,12 @@ class PlusMenuViewController: UIViewController {
         if let view = keyWindow, faButton.isDescendant(of: view) {
             faButton.removeFromSuperview()
         }
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            for material in chosen {
+                material.chosen = false
+            }
+            appDelegate.saveContext()
+        }
     }
     
     
@@ -178,16 +192,15 @@ class PlusMenuViewController: UIViewController {
                 menu.addToMaterials(material)
             }
             
-            print("Saving data to context ...")
-            
-            appDelegate.saveContext()
-            
             for material in chosen {
                 print("plus \(material.name!) count")
                 material.count += 1
                 material.chosen = false
-                appDelegate.saveContext()
             }
+            
+            print("Saving data to context ...")
+            
+            appDelegate.saveContext()
         }
         
         navigationController?.popToRootViewController(animated: true)

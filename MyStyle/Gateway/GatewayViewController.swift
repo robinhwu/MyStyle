@@ -16,5 +16,10 @@ class GatewayViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+//    override func viewDidAppear(_ animated: Bool) {
+//        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "WalkthroughController") as? WalkthroughPageViewController {
+//            present(pageViewController, animated: true, completion: nil)
+//        }
+//    }
 }
 
