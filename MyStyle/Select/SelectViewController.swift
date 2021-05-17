@@ -12,6 +12,7 @@ class SelectViewController: UITableViewController {
     
     // MARK: - Properties
     
+    var menuItems: [Menu] = []
     var menus: [Menu] = []
     var fetchResultController: NSFetchedResultsController<Menu>!
     
@@ -79,6 +80,7 @@ class SelectViewController: UITableViewController {
         
         snapshot = NSDiffableDataSourceSnapshot<Int, Menu>()
         snapshot.appendSections([0, 1])
+        snapshot.appendItems(selectedMenu, toSection: 0)
         snapshot.appendItems(notSelectedMenu, toSection: 1)
         
         //Force the update on the main thread to silence a warning about tableview not being in the hierarchy!
@@ -98,6 +100,28 @@ class SelectViewController: UITableViewController {
         if let view = keyWindow {
             view.addSubview(faButton)
             setupButton()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Load material items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchMenusRequest: NSFetchRequest<Menu> = Menu.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchMenusRequest.sortDescriptors = [nameSortDescriptor]
+            fetchMenusRequest.predicate = NSPredicate(format: "chosen == %@", NSNumber(value: true))
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                menuItems = try context.fetch(fetchMenusRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+            for menu in menuItems {
+                menu.chosen = false
+            }
+            appDelegate.saveContext()
         }
     }
     

@@ -16,10 +16,6 @@ class MinusMaterialViewController: UITableViewController, NSFetchedResultsContro
     
     lazy var dataSource = configureDataSource()
     
-    //    var deleteMaterials = materials.filter{
-    //        $0.count == 0
-    //    }
-    
     private var materialItems:[Material] = []
     var fetchResultController: NSFetchedResultsController<Material>!
     
@@ -145,9 +141,6 @@ class MinusMaterialViewController: UITableViewController, NSFetchedResultsContro
             
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([material])
-//            self.materialItems = self.materialItems.filter{
-//                $0.name != material.name
-//            }
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
                 let context = appDelegate.persistentContainer.viewContext
                 let materialToDelete = material

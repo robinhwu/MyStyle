@@ -107,6 +107,28 @@ class PlusMenuViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Load material items from database
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let fetchMaterialsRequest: NSFetchRequest<Material> = Material.fetchRequest()
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchMaterialsRequest.sortDescriptors = [nameSortDescriptor]
+            fetchMaterialsRequest.predicate = NSPredicate(format: "chosen == %@", NSNumber(value: true))
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                materialItems = try context.fetch(fetchMaterialsRequest)
+            } catch {
+                print("Failed to retrieve record")
+                print(error)
+            }
+            for material in materialItems {
+                material.chosen = false
+            }
+            appDelegate.saveContext()
+        }
+    }
+    
     func configureDataSource() -> UITableViewDiffableDataSource<Int, Material> {
         let dataSource = PlusMenuDiffableDataSource(
             tableView: plusMinusTableView,
@@ -279,25 +301,36 @@ extension PlusMenuViewController: UITableViewDelegate {
         
         // Delete action
         let plusMinusAction = UIContextualAction(style: .destructive, title: nil) { (action, view, completionHandler) in
-            let index: Int!
+//            let index: Int!
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([material])
             if (material.chosen == true) {
                 material.chosen = false
-                self.notChosen.append(material)
-                index = self.findIndex(material: material, list: self.chosen)
-                self.chosen.remove(at: index)
                 snapshot.appendItems([material], toSection: 1)
+                self.notChosen.append(material)
+                self.chosen = self.chosen.filter{
+                    $0.name != material.name
+                }
+//                index = self.findIndex(material: material, list: self.chosen)
+//                self.chosen.remove(at: index)
+//                material.chosen = false
+//                self.notChosen.append(material)
+//                snapshot.appendItems([material], toSection: 1)
             } else {
                 material.chosen = true
-                self.chosen.append(material)
-                index = self.findIndex(material: material, list: self.notChosen)
-                self.notChosen.remove(at: index)
                 snapshot.appendItems([material], toSection: 0)
+                self.chosen.append(material)
+                self.notChosen = self.notChosen.filter{
+                    $0.name != material.name
+                }
+//                index = self.findIndex(material: material, list: self.notChosen)
+//                self.notChosen.remove(at: index)
+//                material.chosen = true
+//                self.chosen.append(material)
+//                snapshot.appendItems([material], toSection: 0)
             }
             
             self.dataSource.apply(snapshot, animatingDifferences: true)
-            
             
             // Call completion handler to dismiss the action button
             completionHandler(true)
