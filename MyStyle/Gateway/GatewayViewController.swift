@@ -24,7 +24,7 @@ class GatewayViewController: UIViewController {
 
         let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
-            walkthroughViewController.modalPresentationStyle = .fullScreen
+//            walkthroughViewController.modalPresentationStyle = .fullScreen
             present(walkthroughViewController, animated: true, completion: nil)
         }
     }
