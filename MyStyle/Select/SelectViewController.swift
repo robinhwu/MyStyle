@@ -16,7 +16,7 @@ class SelectViewController: UITableViewController {
     var menus: [Menu] = []
     var fetchResultController: NSFetchedResultsController<Menu>!
     
-    let sectionTitle = ["已选", "待选"]
+    let sectionTitle = [NSLocalizedString("已选", comment: "已选"), NSLocalizedString("待选", comment: "待选")]
     
     var selectedMenu:[Menu] = []
     var notSelectedMenu: [Menu] = []
@@ -30,7 +30,7 @@ class SelectViewController: UITableViewController {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemGreen
-        button.setTitle("确定", for: .normal)
+        button.setTitle(NSLocalizedString("确定", comment: "确定"), for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
         button.showsTouchWhenHighlighted = true
         return button

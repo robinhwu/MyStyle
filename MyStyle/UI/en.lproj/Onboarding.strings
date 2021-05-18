@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "1mm-a9-xMv"; */
+"1mm-a9-xMv.normalTitle" = "SKIP";
+
+/* Class = "UILabel"; text = "Subheading"; ObjectID = "2pc-5j-6G8"; */
+"2pc-5j-6G8.text" = "Subheading";
+
+/* Class = "UILabel"; text = "Heading"; ObjectID = "72x-Yb-tJB"; */
+"72x-Yb-tJB.text" = "Heading";
+
+/* Class = "UIButton"; normalTitle = "NEXT"; ObjectID = "clc-Pw-bbq"; */
+"clc-Pw-bbq.normalTitle" = "NEXT";

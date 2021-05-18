@@ -48,11 +48,11 @@
                                                 <rect key="frame" x="0.0" y="46.333333333333371" width="190" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="190" id="BUV-NM-qOR"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="BUV-NM-qOR"/>
                                                     <constraint firstAttribute="height" constant="50" id="cCG-QU-sGK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                <state key="normal" title="NEXT">
+                                                <state key="normal" title="Next">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -64,10 +64,10 @@
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="4oL-TS-eyx"/>
-                                                    <constraint firstAttribute="width" constant="60" id="pS3-29-LSH"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="pS3-29-LSH"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <state key="normal" title="SKIP">
+                                                <state key="normal" title="Skip">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>

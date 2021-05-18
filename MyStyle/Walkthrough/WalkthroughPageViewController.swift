@@ -17,12 +17,19 @@ class WalkthroughPageViewController: UIPageViewController {
     
     weak var walkthroughDelegate: WalkthroughPageViewControllerDelegate?
     
-    var pageHeadings = ["加减","查询","随机", "选择"]
+    var pageHeadings =
+        [NSLocalizedString("加减", comment: "加减"),
+         NSLocalizedString("查询", comment: "查询"),
+         NSLocalizedString("随机", comment: "随机"),
+         NSLocalizedString("选择", comment: "选择")]
+    
     var pageImages = ["bread", "carob", "fish", "melon"]
-    var pageSubHeadings = ["使用加减可以添加或者删除菜肴和食材",
-                           "使用查询可以了解菜肴所使用的食材",
-                           "使用随机可以产生随机生成的菜单和食材清单",
-                           "使用选择可以选择喜欢的菜肴生产菜单和食材清单"]
+    
+    var pageSubHeadings =
+        [NSLocalizedString("使用加减可以添加或者删除菜肴和食材", comment: "使用加减可以添加或者删除菜肴和食材"),
+         NSLocalizedString("使用查询可以了解菜肴所使用的食材", comment: "使用查询可以了解菜肴所使用的食材"),
+         NSLocalizedString("使用随机可以产生随机生成的菜单和食材清单", comment: "使用随机可以产生随机生成的菜单和食材清单"),
+         NSLocalizedString("使用选择可以选择喜欢的菜肴生产菜单和食材清单", comment: "使用选择可以选择喜欢的菜肴生产菜单和食材清单")]
     var currentIndex = 0
     
     // MARK: - Lifecycle

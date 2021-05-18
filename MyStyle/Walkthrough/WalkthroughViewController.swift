@@ -58,10 +58,10 @@ class WalkthroughViewController: UIViewController {
         if let index = walkthroughPageViewController?.currentIndex {
             switch index {
             case 0...2:
-                nextButton.setTitle("下一页", for: .normal)
+                nextButton.setTitle(NSLocalizedString("下一页", comment: "下一页"), for: .normal)
                 skipButton.isHidden = false
             case 3:
-                nextButton.setTitle("开始", for: .normal)
+                nextButton.setTitle(NSLocalizedString("开始", comment: "开始"), for: .normal)
                 skipButton.isHidden = true
             default: break
             }
@@ -75,8 +75,8 @@ class WalkthroughViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        nextButton.setTitle("开始", for: .normal)
-        skipButton.setTitle("跳过", for: .normal)
+        nextButton.setTitle(NSLocalizedString("开始", comment: "开始"), for: .normal)
+        skipButton.setTitle(NSLocalizedString("跳过", comment: "跳过"), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

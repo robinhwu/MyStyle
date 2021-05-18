@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textCountLabel: UILabel!
     
@@ -24,7 +24,7 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemGreen
-        button.setTitle("添加", for: .normal)
+        button.setTitle(NSLocalizedString("添加", comment: "添加"), for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
         button.showsTouchWhenHighlighted = true
         return button
@@ -33,7 +33,7 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         textField.delegate = self
         
@@ -81,24 +81,15 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     @objc func fabTapped(_ button: UIButton) {
         
         if textField.text?.count == 0 {
-            showToast(controller: self, message: "请输入食材名字。", seconds: 0.8)
+            showToast(controller: self, message: NSLocalizedString("请输入食材名字。", comment: "请输入食材名字。"), seconds: 0.8)
             return
         } else {
             materialName = textField.text
             for material in materialItems {
                 if (material.name == materialName) {
-                    showToast(controller: self, message: "\(materialName!)已存在。", seconds: 0.8)
+                    showToast(controller: self, message: materialName! + NSLocalizedString("已存在。", comment: "已存在。"), seconds: 0.8)
                     return
                 }
-            }
-        }
-        
-        materialName = textField.text
-        
-        for material in materialItems {
-            if (material.name == materialName) {
-                showToast(controller: self, message: "\(materialName!)已存在。", seconds: 0.8)
-                return
             }
         }
         
@@ -134,17 +125,17 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension PlusMaterialViewController {

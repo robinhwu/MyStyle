@@ -17,7 +17,7 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemGreen
-        button.setTitle("返回", for: .normal)
+        button.setTitle(NSLocalizedString("返回", comment: "返回"), for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
         button.showsTouchWhenHighlighted = true
         return button

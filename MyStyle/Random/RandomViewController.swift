@@ -35,7 +35,7 @@ class RandomViewController: UIViewController {
             randomMenu(quantity: 4)
             performSegue(withIdentifier: "toRandom", sender: self)
         } else {
-            showToast(controller: self, message: "菜肴数量不足！", seconds: 0.8)
+            showToast(controller: self, message: NSLocalizedString("菜肴数量不足！", comment: "菜肴数量不足！"), seconds: 0.8)
         }
     }
     
@@ -45,7 +45,7 @@ class RandomViewController: UIViewController {
             randomMenu(quantity: 5)
             performSegue(withIdentifier: "toRandom", sender: self)
         } else {
-            showToast(controller: self, message: "菜肴数量不足！", seconds: 0.8)
+            showToast(controller: self, message: NSLocalizedString("菜肴数量不足！", comment: "菜肴数量不足！"), seconds: 0.8)
         }
     }
     
@@ -54,7 +54,7 @@ class RandomViewController: UIViewController {
             randomMenu(quantity: 8)
             performSegue(withIdentifier: "toRandom", sender: self)
         } else {
-            showToast(controller: self, message: "菜肴数量不足！", seconds: 0.8)
+            showToast(controller: self, message: NSLocalizedString("菜肴数量不足！", comment: "菜肴数量不足！"), seconds: 0.8)
         }
     }
     
@@ -63,7 +63,7 @@ class RandomViewController: UIViewController {
             randomMenu(quantity: 10)
             performSegue(withIdentifier: "toRandom", sender: self)
         } else {
-            showToast(controller: self, message: "菜肴数量不足！", seconds: 0.8)
+            showToast(controller: self, message: NSLocalizedString("菜肴数量不足！", comment: "菜肴数量不足！"), seconds: 0.8)
         }
     }
     

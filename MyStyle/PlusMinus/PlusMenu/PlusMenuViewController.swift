@@ -16,20 +16,21 @@ class PlusMenuViewController: UIViewController {
     
     private var materialItems:[Material] = []
     var fetchResultController: NSFetchedResultsController<Material>!
-
+    
     let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
     
     lazy var faButton: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemGreen
-        button.setTitle("添加", for: .normal)
+        button.setTitle(NSLocalizedString("添加", comment: "添加"), for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
         button.showsTouchWhenHighlighted = true
         return button
     }()
     
-    let sectionTitle = ["已选", "待选"]
+    let sectionTitle = [NSLocalizedString("已选", comment: "已选"),
+                        NSLocalizedString("待选", comment: "待选")]
     
     var picked: Bool!
     
@@ -181,19 +182,27 @@ class PlusMenuViewController: UIViewController {
     
     @objc func fabTapped(_ button: UIButton) {
         if !picked {
-            showToast(controller: self, message: "请添加菜肴图片。", seconds: 0.8)
+            showToast(controller: self,
+                      message: NSLocalizedString("请添加菜肴图片。", comment: "请添加菜肴图片。"),
+                      seconds: 0.8)
             return
         } else if textField.text?.count == 0 {
-            showToast(controller: self, message: "请输入菜肴名字。", seconds: 0.8)
+            showToast(controller: self,
+                      message: NSLocalizedString("请输入菜肴名字。", comment: "请输入菜肴名字。"),
+                      seconds: 0.8)
             return
         } else if chosen.count == 0 {
-            showToast(controller: self, message: "请添加食材。", seconds: 0.8)
+            showToast(controller: self,
+                      message: NSLocalizedString("请添加食材。", comment: "请添加食材。"),
+                      seconds: 0.8)
             return
         } else {
             menuName = textField.text
             for menu in menus {
                 if (menu.name == menuName) {
-                    showToast(controller: self, message: "\(menuName!)已存在。", seconds: 0.8)
+                    showToast(controller: self,
+                              message: menuName + NSLocalizedString("已存在。", comment: "已存在。"),
+                              seconds: 0.8)
                     return
                 }
             }
@@ -301,7 +310,7 @@ extension PlusMenuViewController: UITableViewDelegate {
         
         // Delete action
         let plusMinusAction = UIContextualAction(style: .destructive, title: nil) { (action, view, completionHandler) in
-//            let index: Int!
+            //            let index: Int!
             var snapshot = self.dataSource.snapshot()
             snapshot.deleteItems([material])
             if (material.chosen == true) {
@@ -311,11 +320,6 @@ extension PlusMenuViewController: UITableViewDelegate {
                 self.chosen = self.chosen.filter{
                     $0.name != material.name
                 }
-//                index = self.findIndex(material: material, list: self.chosen)
-//                self.chosen.remove(at: index)
-//                material.chosen = false
-//                self.notChosen.append(material)
-//                snapshot.appendItems([material], toSection: 1)
             } else {
                 material.chosen = true
                 snapshot.appendItems([material], toSection: 0)
@@ -323,11 +327,6 @@ extension PlusMenuViewController: UITableViewDelegate {
                 self.notChosen = self.notChosen.filter{
                     $0.name != material.name
                 }
-//                index = self.findIndex(material: material, list: self.notChosen)
-//                self.notChosen.remove(at: index)
-//                material.chosen = true
-//                self.chosen.append(material)
-//                snapshot.appendItems([material], toSection: 0)
             }
             
             self.dataSource.apply(snapshot, animatingDifferences: true)

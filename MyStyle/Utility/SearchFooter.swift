@@ -29,60 +29,60 @@
 import UIKit
 
 class SearchFooter: UIView {
-  let label = UILabel()
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
+    let label = UILabel()
     
-    configureView()
-  }
-  
-  required init?(coder: NSCoder) {
-    super.init(coder: coder)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        configureView()
+    }
     
-    configureView()
-  }
-  
-  override func draw(_ rect: CGRect) {
-    label.frame = bounds
-  }
-  
-  func setNotFiltering() {
-    label.text = ""
-    hideFooter()
-  }
-  
-  func setIsFilteringToShow(filteredItemCount: Int, of totalItemCount: Int) {
-    if (filteredItemCount == totalItemCount) {
-      setNotFiltering()
-    } else if (filteredItemCount == 0) {
-//      label.text = "No items match your query"
-        label.text = "没有找到菜肴"
-      showFooter()
-    } else {
-        label.text = "从\(totalItemCount)个菜肴中找到\(filteredItemCount)个菜肴"
-      showFooter()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        configureView()
     }
-  }
-  
-  func hideFooter() {
-    UIView.animate(withDuration: 0.7) {
-      self.alpha = 0.0
-    }
-  }
-  
-  func showFooter() {
-    UIView.animate(withDuration: 0.7) {
-      self.alpha = 1.0
-    }
-  }
-  
-  func configureView() {
-    backgroundColor = UIColor.systemGreen
-    alpha = 0.0
     
-    label.textAlignment = .center
-//    label.textColor = UIColor.white
-    addSubview(label)
-  }
+    override func draw(_ rect: CGRect) {
+        label.frame = bounds
+    }
+    
+    func setNotFiltering() {
+        label.text = ""
+        hideFooter()
+    }
+    
+    func setIsFilteringToShow(filteredItemCount: Int, of totalItemCount: Int) {
+        if (filteredItemCount == totalItemCount) {
+            setNotFiltering()
+        } else if (filteredItemCount == 0) {
+            //      label.text = "No items match your query"
+            label.text = NSLocalizedString("没有找到菜肴", comment: "没有找到菜肴")
+            showFooter()
+        } else {
+            label.text =  NSLocalizedString("从", comment: "从") + String(totalItemCount) + NSLocalizedString("个菜肴中找到", comment: "个菜肴中找到") + String(filteredItemCount) + NSLocalizedString("个菜肴", comment: "个菜肴")
+            showFooter()
+        }
+    }
+    
+    func hideFooter() {
+        UIView.animate(withDuration: 0.7) {
+            self.alpha = 0.0
+        }
+    }
+    
+    func showFooter() {
+        UIView.animate(withDuration: 0.7) {
+            self.alpha = 1.0
+        }
+    }
+    
+    func configureView() {
+        backgroundColor = UIColor.systemGreen
+        alpha = 0.0
+        
+        label.textAlignment = .center
+        //    label.textColor = UIColor.white
+        addSubview(label)
+    }
 }

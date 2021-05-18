@@ -30,16 +30,14 @@
 		310A143A262949F800506242 /* MinusMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1439262949F800506242 /* MinusMenuViewController.swift */; };
 		310A143F2629507500506242 /* MinusMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A143E2629507500506242 /* MinusMaterialViewController.swift */; };
 		310A1444262950C000506242 /* PlusMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1443262950C000506242 /* PlusMaterialViewController.swift */; };
-		310F524C263C3F0800878249 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 310F524B263C3F0800878249 /* click.wav */; };
-		310F524E263C3F1300878249 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 310F524D263C3F1300878249 /* click.mp3 */; };
-		310F52532645767B00878249 /* open.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 310F524F2645767A00878249 /* open.mp3 */; };
 		310F52542645767B00878249 /* close.wav in Resources */ = {isa = PBXBuildFile; fileRef = 310F52502645767B00878249 /* close.wav */; };
 		310F52552645767B00878249 /* close.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 310F52512645767B00878249 /* close.mp3 */; };
-		310F52562645767B00878249 /* open.wav in Resources */ = {isa = PBXBuildFile; fileRef = 310F52522645767B00878249 /* open.wav */; };
 		310F52582645924000878249 /* SelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F52572645924000878249 /* SelectedViewController.swift */; };
 		310F525A2646651B00878249 /* SelectedMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F52592646651B00878249 /* SelectedMenuTableViewCell.swift */; };
+		311186102653AD5700C3CD3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 311186122653AD5700C3CD3D /* Localizable.strings */; };
+		311186142653BCD600C3CD3D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311186162653BCD600C3CD3D /* Onboarding.storyboard */; };
+		311186252654168F00C3CD3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 311186272654168F00C3CD3D /* InfoPlist.strings */; };
 		316804D026355E7700D31978 /* PlusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */; };
-		3174CAFD264FB1D000CC7086 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3174CAFC264FB1D000CC7086 /* Onboarding.storyboard */; };
 		3174CB00264FC29400CC7086 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CAFF264FC29400CC7086 /* WalkthroughContentViewController.swift */; };
 		3174CB02264FC3FC00CC7086 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CB01264FC3FC00CC7086 /* WalkthroughPageViewController.swift */; };
 		3174CB04264FC88700CC7086 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CB03264FC88700CC7086 /* WalkthroughViewController.swift */; };
@@ -110,16 +108,25 @@
 		310A1439262949F800506242 /* MinusMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMenuViewController.swift; sourceTree = "<group>"; };
 		310A143E2629507500506242 /* MinusMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMaterialViewController.swift; sourceTree = "<group>"; };
 		310A1443262950C000506242 /* PlusMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMaterialViewController.swift; sourceTree = "<group>"; };
-		310F524B263C3F0800878249 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
-		310F524D263C3F1300878249 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
-		310F524F2645767A00878249 /* open.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = open.mp3; sourceTree = "<group>"; };
 		310F52502645767B00878249 /* close.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = close.wav; sourceTree = "<group>"; };
 		310F52512645767B00878249 /* close.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = close.mp3; sourceTree = "<group>"; };
-		310F52522645767B00878249 /* open.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = open.wav; sourceTree = "<group>"; };
 		310F52572645924000878249 /* SelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SelectedViewController.swift; path = MyStyle/Select/SelectedViewController.swift; sourceTree = SOURCE_ROOT; };
 		310F52592646651B00878249 /* SelectedMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMenuTableViewCell.swift; sourceTree = "<group>"; };
+		3111860B2653AD3400C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		3111860C2653AD3400C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "MyStyle/UI/zh-Hans.lproj/Select.strings"; sourceTree = "<group>"; };
+		3111860D2653AD3400C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "MyStyle/UI/zh-Hans.lproj/Random.strings"; sourceTree = "<group>"; };
+		3111860E2653AD3500C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "MyStyle/UI/zh-Hans.lproj/PlusMinus.strings"; sourceTree = "<group>"; };
+		3111860F2653AD3500C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		311186112653AD5700C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		311186132653AD9400C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		311186152653BCD600C3CD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
+		3111861C2653BCE400C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3111861E2653BCE900C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MyStyle/UI/en.lproj/Select.strings; sourceTree = "<group>"; };
+		311186202653BCEC00C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MyStyle/UI/en.lproj/Random.strings; sourceTree = "<group>"; };
+		311186222653F74200C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MyStyle/UI/en.lproj/PlusMinus.strings; sourceTree = "<group>"; };
+		311186262654168F00C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		311186282654169300C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
-		3174CAFC264FB1D000CC7086 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		3174CAFF264FC29400CC7086 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		3174CB01264FC3FC00CC7086 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		3174CB03264FC88700CC7086 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +198,7 @@
 		3102C7A026289AC600DC226D /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				3111860A2653ACE300C3CD3D /* Localize */,
 				3174CAFE264FC21300CC7086 /* Walkthrough */,
 				310F524A263C3ED900878249 /* Sounds */,
 				310A14182629291E00506242 /* Select */,
@@ -239,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				3102C7A726289AC600DC226D /* Main.storyboard */,
-				3174CAFC264FB1D000CC7086 /* Onboarding.storyboard */,
+				311186162653BCD600C3CD3D /* Onboarding.storyboard */,
 				31A712F52635240A00FC8044 /* Select.storyboard */,
 				310A1423262929AE00506242 /* Random.storyboard */,
 				310A13FA262918C400506242 /* Inquiry.storyboard */,
@@ -320,14 +328,19 @@
 		310F524A263C3ED900878249 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				310F524D263C3F1300878249 /* click.mp3 */,
-				310F524B263C3F0800878249 /* click.wav */,
 				310F52512645767B00878249 /* close.mp3 */,
 				310F52502645767B00878249 /* close.wav */,
-				310F524F2645767A00878249 /* open.mp3 */,
-				310F52522645767B00878249 /* open.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		3111860A2653ACE300C3CD3D /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				311186122653AD5700C3CD3D /* Localizable.strings */,
+				311186272654168F00C3CD3D /* InfoPlist.strings */,
+			);
+			path = Localize;
 			sourceTree = "<group>";
 		};
 		3174CAFE264FC21300CC7086 /* Walkthrough */ = {
@@ -463,6 +476,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 3102C79526289AC600DC226D;
 			productRefGroup = 3102C79F26289AC600DC226D /* Products */;
@@ -481,18 +495,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				310F524E263C3F1300878249 /* click.mp3 in Resources */,
 				3102C7B126289AC600DC226D /* LaunchScreen.storyboard in Resources */,
+				311186252654168F00C3CD3D /* InfoPlist.strings in Resources */,
 				310F52542645767B00878249 /* close.wav in Resources */,
-				310F52562645767B00878249 /* open.wav in Resources */,
 				31A712F72635240A00FC8044 /* Select.storyboard in Resources */,
 				310A1425262929AE00506242 /* Random.storyboard in Resources */,
-				310F524C263C3F0800878249 /* click.wav in Resources */,
 				3102C7AE26289AC600DC226D /* Assets.xcassets in Resources */,
-				310F52532645767B00878249 /* open.mp3 in Resources */,
 				310A14102629280600506242 /* PlusMinus.storyboard in Resources */,
+				311186102653AD5700C3CD3D /* Localizable.strings in Resources */,
 				310F52552645767B00878249 /* close.mp3 in Resources */,
-				3174CAFD264FB1D000CC7086 /* Onboarding.storyboard in Resources */,
+				311186142653BCD600C3CD3D /* Onboarding.storyboard in Resources */,
 				310A13FB262918C400506242 /* Inquiry.storyboard in Resources */,
 				3102C7A926289AC600DC226D /* Main.storyboard in Resources */,
 			);
@@ -596,6 +608,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				3102C7A826289AC600DC226D /* Base */,
+				3111860B2653AD3400C3CD3D /* zh-Hans */,
+				3111861C2653BCE400C3CD3D /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -604,6 +618,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3102C7B026289AC600DC226D /* Base */,
+				3111860F2653AD3500C3CD3D /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -612,6 +627,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				310A140F2629280600506242 /* Base */,
+				3111860E2653AD3500C3CD3D /* zh-Hans */,
+				311186222653F74200C3CD3D /* en */,
 			);
 			name = PlusMinus.storyboard;
 			sourceTree = "<group>";
@@ -620,14 +637,45 @@
 			isa = PBXVariantGroup;
 			children = (
 				310A1424262929AE00506242 /* Base */,
+				3111860D2653AD3400C3CD3D /* zh-Hans */,
+				311186202653BCEC00C3CD3D /* en */,
 			);
 			name = Random.storyboard;
+			sourceTree = "<group>";
+		};
+		311186122653AD5700C3CD3D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				311186112653AD5700C3CD3D /* en */,
+				311186132653AD9400C3CD3D /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			path = MyStyle/Localize;
+			sourceTree = SOURCE_ROOT;
+		};
+		311186162653BCD600C3CD3D /* Onboarding.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				311186152653BCD600C3CD3D /* Base */,
+			);
+			name = Onboarding.storyboard;
+			sourceTree = "<group>";
+		};
+		311186272654168F00C3CD3D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				311186262654168F00C3CD3D /* en */,
+				311186282654169300C3CD3D /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		31A712F52635240A00FC8044 /* Select.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				31A712F62635240A00FC8044 /* Base */,
+				3111860C2653AD3400C3CD3D /* zh-Hans */,
+				3111861E2653BCE900C3CD3D /* en */,
 			);
 			name = Select.storyboard;
 			sourceTree = "<group>";
@@ -639,6 +687,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -700,6 +749,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

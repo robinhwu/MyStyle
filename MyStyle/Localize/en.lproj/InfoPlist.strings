@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  MyStyle
+
+  Created by 胡建明 on 2021/5/18.
+  
+*/
+
+CFBundleDisplayName = "My Style";

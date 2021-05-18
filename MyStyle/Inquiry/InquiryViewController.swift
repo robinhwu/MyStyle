@@ -48,23 +48,23 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "请输入要查找的菜肴..."
+        searchController.searchBar.placeholder = NSLocalizedString("请输入要查找的菜肴...", comment: "请输入要查找的菜肴...")
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        searchController.searchBar.scopeButtonTitles = ["全部", "菜", "汤"]
+        searchController.searchBar.scopeButtonTitles = [NSLocalizedString("全部", comment: "全部"), NSLocalizedString("菜",comment:"菜"), NSLocalizedString("汤", comment: "汤")]
         searchController.searchBar.delegate = self
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(
-          forName: UIResponder.keyboardWillChangeFrameNotification,
-          object: nil, queue: .main) { (notification) in
+            forName: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil, queue: .main) { (notification) in
             self.handleKeyboard(notification: notification)
         }
         notificationCenter.addObserver(
-          forName: UIResponder.keyboardWillHideNotification,
-          object: nil, queue: .main) { (notification) in
+            forName: UIResponder.keyboardWillHideNotification,
+            object: nil, queue: .main) { (notification) in
             self.handleKeyboard(notification: notification)
         }
         
@@ -104,7 +104,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
             searchFooter.setIsFilteringToShow(filteredItemCount:
-                  result.count, of: categoryMenu.count)
+                                                result.count, of: categoryMenu.count)
             return result.count
         } else {
             searchFooter.setNotFiltering()
@@ -139,7 +139,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let path = Bundle.main.path(forResource: "close.wav", ofType:nil)!
         let url = URL(fileURLWithPath: path)
-
+        
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer.play()
@@ -152,11 +152,11 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     func filterContent(for searchText: String, category: String) {
         switch category {
-        case "菜":
+        case NSLocalizedString("菜", comment: "菜"):
             categoryMenu = menus.filter( {(menu) -> Bool in
                 return menu.type
             })
-        case "汤":
+        case NSLocalizedString("汤", comment: "汤"):
             categoryMenu = menus.filter( {(menu) -> Bool in
                 return !menu.type
             })
@@ -172,33 +172,33 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
                 return isMatch
             })
         }
-
+        
         inquiryTableView.reloadData()
     }
     
     func handleKeyboard(notification: Notification) {
-      // 1
-      guard notification.name == UIResponder.keyboardWillChangeFrameNotification else {
-        searchFooterBottomConstraint.constant = 0
-        view.layoutIfNeeded()
-        return
-      }
-
-      guard
-        let info = notification.userInfo,
-        let keyboardFrame = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        // 1
+        guard notification.name == UIResponder.keyboardWillChangeFrameNotification else {
+            searchFooterBottomConstraint.constant = 0
+            view.layoutIfNeeded()
+            return
+        }
+        
+        guard
+            let info = notification.userInfo,
+            let keyboardFrame = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
         else {
-          return
-      }
-
-      // 2
-      let keyboardHeight = keyboardFrame.cgRectValue.size.height
-      UIView.animate(withDuration: 0.1, animations: { () -> Void in
-        self.searchFooterBottomConstraint.constant = keyboardHeight
-        self.view.layoutIfNeeded()
-      })
+            return
+        }
+        
+        // 2
+        let keyboardHeight = keyboardFrame.cgRectValue.size.height
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.searchFooterBottomConstraint.constant = keyboardHeight
+            self.view.layoutIfNeeded()
+        })
     }
-
+    
     
     /*
      // MARK: - Navigation
@@ -212,11 +212,11 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
-          segue.identifier == "ShowDetailSegue",
-          let indexPath = inquiryTableView.indexPathForSelectedRow,
-          let detailViewController = segue.destination as? InquiryDetailViewController
+            segue.identifier == "ShowDetailSegue",
+            let indexPath = inquiryTableView.indexPathForSelectedRow,
+            let detailViewController = segue.destination as? InquiryDetailViewController
         else {
-          return
+            return
         }
         
         let menu = (isFiltering) ? result[indexPath.row] : menus[indexPath.row]
@@ -226,19 +226,19 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
 }
 
 extension InquiryViewController: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    let searchBar = searchController.searchBar
-      let category =
-        searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-    filterContent(for: searchBar.text!, category: category)
-  }
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let category =
+            searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContent(for: searchBar.text!, category: category)
+    }
 }
 
 extension InquiryViewController: UISearchBarDelegate {
-  func searchBar(_ searchBar: UISearchBar,
-      selectedScopeButtonIndexDidChange selectedScope: Int) {
-    let category =
-      searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-    filterContent(for: searchBar.text!, category: category)
-  }
+    func searchBar(_ searchBar: UISearchBar,
+                   selectedScopeButtonIndexDidChange selectedScope: Int) {
+        let category =
+            searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContent(for: searchBar.text!, category: category)
+    }
 }

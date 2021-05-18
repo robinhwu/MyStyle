@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  MyStyle
+
+  Created by 胡建明 on 2021/5/18.
+  
+*/
+
+"使用加减可以添加或者删除菜肴和食材" = "Use Plus&Minus to add or delete menus";
+"使用查询可以了解菜肴所使用的食材" = "Use Inquiry to get materials list of the menu";
+"使用随机可以产生随机生成的菜单和食材清单" = "Use Random to get a random materials list of the menu";
+"使用选择可以选择喜欢的菜肴生产菜单和食材清单" = "Use select to select menus";
+"加减" = "Plus&Minus";
+"查询" = "Inquiry";
+"随机" = "Random";
+"选择" = "Selection";
+"下一页" = "Next";
+"开始" = "Start";
+"跳过" = "Skip";
+"添加" = "Plus";
+"已选" = "Selected";
+"待选" = "Not Selected";
+"请添加菜肴图片。" = "Please add menu's picture.";
+"请输入菜肴名字。" = "Please enter menu's name.";
+"请添加食材。" = "Please add materials.";
+"已存在。" = " already exists.";
+"请输入要查找的菜肴..." = "Please enter your inquiry...";
+"全部" ="All";
+"菜" = "Menu";
+"汤" = "Soup";
+"返回" = "Return";
+"菜肴数量不足！" = "Not enough menus!";
+"菜肴" = "Menu";
+"食材" = "Material";
+"确定" = "OK";
+"没有找到菜肴" = "No items match your query";
+"从" = "From ";
+"个菜肴中找到" = " menus find ";
+"个菜肴" = " menus";

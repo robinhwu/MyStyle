@@ -20,13 +20,13 @@ class RandomDetailViewController: UIViewController, UITableViewDelegate, UITable
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemGreen
-        button.setTitle("返回", for: .normal)
+        button.setTitle(NSLocalizedString("返回", comment: "返回"), for: .normal)
         button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
         button.showsTouchWhenHighlighted = true
         return button
     }()
     
-    let sectionTitle = ["菜肴", "食材"]
+    let sectionTitle = [NSLocalizedString("菜肴", comment: "菜肴"), NSLocalizedString("食材", comment: "食材")]
     var randomMenusList: [Menu]!
     var randomMaterialsList: [String]!
     
