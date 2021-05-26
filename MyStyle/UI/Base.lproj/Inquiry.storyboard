@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="-917" y="-566"/>
         </scene>
-        <!--Inquiry Detail View Controller-->
+        <!--查询-->
         <scene sceneID="X2l-bL-mJK">
             <objects>
                 <viewController id="jEe-KD-hb0" customClass="InquiryDetailViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                             <constraint firstItem="SuC-tV-D1V" firstAttribute="top" secondItem="BSm-gy-55A" secondAttribute="top" id="kBP-l4-h2g"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5VS-rs-Et9"/>
+                    <navigationItem key="navigationItem" title="查询" id="5VS-rs-Et9"/>
                     <connections>
                         <outlet property="containerView" destination="P86-dI-BAV" id="rjb-i7-tjT"/>
                         <outlet property="materialListTableView" destination="SIj-Wt-LQ0" id="KzK-Rv-vY6"/>

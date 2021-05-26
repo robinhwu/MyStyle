@@ -29,7 +29,7 @@ class WalkthroughPageViewController: UIPageViewController {
         [NSLocalizedString("使用加减可以添加或者删除菜肴和食材", comment: "使用加减可以添加或者删除菜肴和食材"),
          NSLocalizedString("使用查询可以了解菜肴所使用的食材", comment: "使用查询可以了解菜肴所使用的食材"),
          NSLocalizedString("使用随机可以产生随机生成的菜单和食材清单", comment: "使用随机可以产生随机生成的菜单和食材清单"),
-         NSLocalizedString("使用选择可以选择喜欢的菜肴生产菜单和食材清单", comment: "使用选择可以选择喜欢的菜肴生产菜单和食材清单")]
+         NSLocalizedString("使用选择可以选择喜欢的菜肴并生成菜单和食材清单", comment: "使用选择可以选择喜欢的菜肴并生成菜单和食材清单")]
     var currentIndex = 0
     
     // MARK: - Lifecycle

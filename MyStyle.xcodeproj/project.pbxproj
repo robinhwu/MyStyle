@@ -20,7 +20,6 @@
 		3102C7E82628A54900DC226D /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102C7E72628A54900DC226D /* InquiryViewController.swift */; };
 		310373E026314C620021BCEE /* MinusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310373DF26314C620021BCEE /* MinusMenuDiffableDataSource.swift */; };
 		310373E826318FB30021BCEE /* MinusMaterailDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310373E726318FB30021BCEE /* MinusMaterailDiffableDataSource.swift */; };
-		310A13FB262918C400506242 /* Inquiry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310A13FA262918C400506242 /* Inquiry.storyboard */; };
 		310A1407262927BF00506242 /* PlusMinusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1406262927BF00506242 /* PlusMinusViewController.swift */; };
 		310A14102629280600506242 /* PlusMinus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310A140E2629280600506242 /* PlusMinus.storyboard */; };
 		310A141A2629295F00506242 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A14192629295F00506242 /* RandomViewController.swift */; };
@@ -37,6 +36,9 @@
 		311186102653AD5700C3CD3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 311186122653AD5700C3CD3D /* Localizable.strings */; };
 		311186142653BCD600C3CD3D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311186162653BCD600C3CD3D /* Onboarding.storyboard */; };
 		311186252654168F00C3CD3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 311186272654168F00C3CD3D /* InfoPlist.strings */; };
+		311186312656085B00C3CD3D /* Inquiry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311186332656085B00C3CD3D /* Inquiry.storyboard */; };
+		3111863B26560CF500C3CD3D /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3111863926560CF500C3CD3D /* Setup.storyboard */; };
+		3111863E26560D8600C3CD3D /* SetupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3111863D26560D8600C3CD3D /* SetupTableViewController.swift */; };
 		316804D026355E7700D31978 /* PlusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */; };
 		3174CB00264FC29400CC7086 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CAFF264FC29400CC7086 /* WalkthroughContentViewController.swift */; };
 		3174CB02264FC3FC00CC7086 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174CB01264FC3FC00CC7086 /* WalkthroughPageViewController.swift */; };
@@ -98,7 +100,6 @@
 		3102C7E72628A54900DC226D /* InquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		310373DF26314C620021BCEE /* MinusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
 		310373E726318FB30021BCEE /* MinusMaterailDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMaterailDiffableDataSource.swift; sourceTree = "<group>"; };
-		310A13FA262918C400506242 /* Inquiry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Inquiry.storyboard; sourceTree = "<group>"; };
 		310A1406262927BF00506242 /* PlusMinusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMinusViewController.swift; sourceTree = "<group>"; };
 		310A140F2629280600506242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/PlusMinus.storyboard; sourceTree = "<group>"; };
 		310A14192629295F00506242 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
@@ -116,16 +117,31 @@
 		3111860C2653AD3400C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "MyStyle/UI/zh-Hans.lproj/Select.strings"; sourceTree = "<group>"; };
 		3111860D2653AD3400C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "MyStyle/UI/zh-Hans.lproj/Random.strings"; sourceTree = "<group>"; };
 		3111860E2653AD3500C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "MyStyle/UI/zh-Hans.lproj/PlusMinus.strings"; sourceTree = "<group>"; };
-		3111860F2653AD3500C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		311186112653AD5700C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		311186132653AD9400C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		311186152653BCD600C3CD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboarding.storyboard; sourceTree = "<group>"; };
-		3111861C2653BCE400C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3111861E2653BCE900C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MyStyle/UI/en.lproj/Select.strings; sourceTree = "<group>"; };
 		311186202653BCEC00C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MyStyle/UI/en.lproj/Random.strings; sourceTree = "<group>"; };
 		311186222653F74200C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MyStyle/UI/en.lproj/PlusMinus.strings; sourceTree = "<group>"; };
 		311186262654168F00C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		311186282654169300C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		311186322656085B00C3CD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Inquiry.storyboard; sourceTree = "<group>"; };
+		311186352656085F00C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Inquiry.strings; sourceTree = "<group>"; };
+		311186372656088D00C3CD3D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Inquiry.strings"; sourceTree = "<group>"; };
+		3111863826560C4E00C3CD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		3111863A26560CF500C3CD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/Setup.storyboard; sourceTree = "<group>"; };
+		3111863D26560D8600C3CD3D /* SetupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTableViewController.swift; sourceTree = "<group>"; };
+		3129A1D0265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		3129A1D1265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Onboarding.strings"; sourceTree = "<group>"; };
+		3129A1D2265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "MyStyle/UI/zh-Hant.lproj/Setup.strings"; sourceTree = "<group>"; };
+		3129A1D3265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "MyStyle/UI/zh-Hant.lproj/Select.strings"; sourceTree = "<group>"; };
+		3129A1D4265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "MyStyle/UI/zh-Hant.lproj/Random.strings"; sourceTree = "<group>"; };
+		3129A1D5265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Inquiry.strings"; sourceTree = "<group>"; };
+		3129A1D6265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "MyStyle/UI/zh-Hant.lproj/PlusMinus.strings"; sourceTree = "<group>"; };
+		3129A1D8265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3129A1D9265BF366007C06B4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3129A1DA265BF78F007C06B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Onboarding.strings; sourceTree = "<group>"; };
+		3129A1DB265BF792007C06B4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Onboarding.strings"; sourceTree = "<group>"; };
 		316804CF26355E7700D31978 /* PlusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
 		3174CAFF264FC29400CC7086 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		3174CB01264FC3FC00CC7086 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +153,8 @@
 		31A712F62635240A00FC8044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/Select.storyboard; sourceTree = "<group>"; };
 		31AF622B262FBAC20061EF3F /* InquiryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryDetailViewController.swift; sourceTree = "<group>"; };
 		31AF6236262FF3ED0061EF3F /* SearchFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
+		31B8EF542656119B002D006E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = MyStyle/UI/en.lproj/Setup.strings; sourceTree = "<group>"; };
+		31B8EF562656119C002D006E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "MyStyle/UI/zh-Hans.lproj/Setup.strings"; sourceTree = "<group>"; };
 		31BB65CD264A3278009A581F /* ShowToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowToast.swift; sourceTree = "<group>"; };
 		31CEFEF32646CFD800042BD7 /* SelectedMaterialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedMaterialTableViewCell.swift; sourceTree = "<group>"; };
 		31DE7B39262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,6 +216,7 @@
 		3102C7A026289AC600DC226D /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				3111863C26560D4B00C3CD3D /* Setup */,
 				3111860A2653ACE300C3CD3D /* Localize */,
 				3174CAFE264FC21300CC7086 /* Walkthrough */,
 				310F524A263C3ED900878249 /* Sounds */,
@@ -248,9 +267,10 @@
 			children = (
 				3102C7A726289AC600DC226D /* Main.storyboard */,
 				311186162653BCD600C3CD3D /* Onboarding.storyboard */,
+				3111863926560CF500C3CD3D /* Setup.storyboard */,
 				31A712F52635240A00FC8044 /* Select.storyboard */,
 				310A1423262929AE00506242 /* Random.storyboard */,
-				310A13FA262918C400506242 /* Inquiry.storyboard */,
+				311186332656085B00C3CD3D /* Inquiry.storyboard */,
 				310A140E2629280600506242 /* PlusMinus.storyboard */,
 				3102C7AF26289AC600DC226D /* LaunchScreen.storyboard */,
 			);
@@ -341,6 +361,14 @@
 				311186272654168F00C3CD3D /* InfoPlist.strings */,
 			);
 			path = Localize;
+			sourceTree = "<group>";
+		};
+		3111863C26560D4B00C3CD3D /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				3111863D26560D8600C3CD3D /* SetupTableViewController.swift */,
+			);
+			path = Setup;
 			sourceTree = "<group>";
 		};
 		3174CAFE264FC21300CC7086 /* Walkthrough */ = {
@@ -477,6 +505,7 @@
 				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 3102C79526289AC600DC226D;
 			productRefGroup = 3102C79F26289AC600DC226D /* Products */;
@@ -496,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3102C7B126289AC600DC226D /* LaunchScreen.storyboard in Resources */,
+				3111863B26560CF500C3CD3D /* Setup.storyboard in Resources */,
 				311186252654168F00C3CD3D /* InfoPlist.strings in Resources */,
 				310F52542645767B00878249 /* close.wav in Resources */,
 				31A712F72635240A00FC8044 /* Select.storyboard in Resources */,
@@ -505,7 +535,7 @@
 				311186102653AD5700C3CD3D /* Localizable.strings in Resources */,
 				310F52552645767B00878249 /* close.mp3 in Resources */,
 				311186142653BCD600C3CD3D /* Onboarding.storyboard in Resources */,
-				310A13FB262918C400506242 /* Inquiry.storyboard in Resources */,
+				311186312656085B00C3CD3D /* Inquiry.storyboard in Resources */,
 				3102C7A926289AC600DC226D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +578,7 @@
 				3102C7A626289AC600DC226D /* GatewayViewController.swift in Sources */,
 				31A5C8CA264908F900DE72DD /* RandomMaterailsTableViewCell.swift in Sources */,
 				3102C7A226289AC600DC226D /* AppDelegate.swift in Sources */,
+				3111863E26560D8600C3CD3D /* SetupTableViewController.swift in Sources */,
 				3174CB00264FC29400CC7086 /* WalkthroughContentViewController.swift in Sources */,
 				31E35ACA262977160096C25B /* Data.swift in Sources */,
 				31EAE8402630257100E7D2ED /* InquiryDetailTableViewCell.swift in Sources */,
@@ -609,7 +640,8 @@
 			children = (
 				3102C7A826289AC600DC226D /* Base */,
 				3111860B2653AD3400C3CD3D /* zh-Hans */,
-				3111861C2653BCE400C3CD3D /* en */,
+				3111863826560C4E00C3CD3D /* en */,
+				3129A1D0265BF366007C06B4 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -618,7 +650,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3102C7B026289AC600DC226D /* Base */,
-				3111860F2653AD3500C3CD3D /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -629,6 +660,7 @@
 				310A140F2629280600506242 /* Base */,
 				3111860E2653AD3500C3CD3D /* zh-Hans */,
 				311186222653F74200C3CD3D /* en */,
+				3129A1D6265BF366007C06B4 /* zh-Hant */,
 			);
 			name = PlusMinus.storyboard;
 			sourceTree = "<group>";
@@ -639,6 +671,7 @@
 				310A1424262929AE00506242 /* Base */,
 				3111860D2653AD3400C3CD3D /* zh-Hans */,
 				311186202653BCEC00C3CD3D /* en */,
+				3129A1D4265BF366007C06B4 /* zh-Hant */,
 			);
 			name = Random.storyboard;
 			sourceTree = "<group>";
@@ -648,6 +681,7 @@
 			children = (
 				311186112653AD5700C3CD3D /* en */,
 				311186132653AD9400C3CD3D /* zh-Hans */,
+				3129A1D8265BF366007C06B4 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			path = MyStyle/Localize;
@@ -657,6 +691,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				311186152653BCD600C3CD3D /* Base */,
+				3129A1D1265BF366007C06B4 /* zh-Hant */,
+				3129A1DA265BF78F007C06B4 /* en */,
+				3129A1DB265BF792007C06B4 /* zh-Hans */,
 			);
 			name = Onboarding.storyboard;
 			sourceTree = "<group>";
@@ -666,8 +703,31 @@
 			children = (
 				311186262654168F00C3CD3D /* en */,
 				311186282654169300C3CD3D /* zh-Hans */,
+				3129A1D9265BF366007C06B4 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		311186332656085B00C3CD3D /* Inquiry.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				311186322656085B00C3CD3D /* Base */,
+				311186352656085F00C3CD3D /* en */,
+				311186372656088D00C3CD3D /* zh-Hans */,
+				3129A1D5265BF366007C06B4 /* zh-Hant */,
+			);
+			name = Inquiry.storyboard;
+			sourceTree = "<group>";
+		};
+		3111863926560CF500C3CD3D /* Setup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3111863A26560CF500C3CD3D /* Base */,
+				31B8EF542656119B002D006E /* en */,
+				31B8EF562656119C002D006E /* zh-Hans */,
+				3129A1D2265BF366007C06B4 /* zh-Hant */,
+			);
+			name = Setup.storyboard;
 			sourceTree = "<group>";
 		};
 		31A712F52635240A00FC8044 /* Select.storyboard */ = {
@@ -676,6 +736,7 @@
 				31A712F62635240A00FC8044 /* Base */,
 				3111860C2653AD3400C3CD3D /* zh-Hans */,
 				3111861E2653BCE900C3CD3D /* en */,
+				3129A1D3265BF366007C06B4 /* zh-Hant */,
 			);
 			name = Select.storyboard;
 			sourceTree = "<group>";

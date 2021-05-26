@@ -9,7 +9,7 @@
 "使用加减可以添加或者删除菜肴和食材" = "Use Plus&Minus to add or delete menus";
 "使用查询可以了解菜肴所使用的食材" = "Use Inquiry to get materials list of the menu";
 "使用随机可以产生随机生成的菜单和食材清单" = "Use Random to get a random materials list of the menu";
-"使用选择可以选择喜欢的菜肴并生成菜单和食材清单" = "Use select to select menus";
+"使用选择可以选择喜欢的菜肴生产菜单和食材清单" = "Use select to select menus";
 "加减" = "Plus&Minus";
 "查询" = "Inquiry";
 "随机" = "Random";

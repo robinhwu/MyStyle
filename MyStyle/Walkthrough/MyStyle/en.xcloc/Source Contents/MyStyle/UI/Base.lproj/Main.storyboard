@@ -119,13 +119,7 @@
                             <constraint firstItem="8zW-4b-GYY" firstAttribute="width" relation="lessThanOrEqual" secondItem="fsv-TY-aAs" secondAttribute="width" constant="-32" id="p2m-4z-HfA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="我的菜" id="IW6-8w-cZv">
-                        <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="Aue-DY-bHz">
-                            <connections>
-                                <segue destination="5Dy-3s-5gu" kind="show" id="HF2-23-UPS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="我的菜" id="IW6-8w-cZv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,22 +183,11 @@
             </objects>
             <point key="canvasLocation" x="1101" y="248"/>
         </scene>
-        <!--Setup-->
-        <scene sceneID="uxE-SM-NaX">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Setup" id="5Dy-3s-5gu" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Hf6-6R-dgk"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HDJ-Fp-6GR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1062" y="-246"/>
-        </scene>
     </scenes>
     <resources>
         <image name="bread" width="298" height="298"/>
         <image name="carob" width="298" height="298"/>
         <image name="fish" width="298" height="298"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="melon" width="298" height="298"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

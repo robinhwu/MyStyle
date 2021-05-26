@@ -1,0 +1,21 @@
+
+/* Class = "UINavigationItem"; title = "随机"; ObjectID = "PP6-88-AvC"; */
+"PP6-88-AvC.title" = "隨機";
+
+/* Class = "UILabel"; text = "四菜一汤"; ObjectID = "YtO-UK-kJN"; */
+"YtO-UK-kJN.text" = "四菜一湯";
+
+/* Class = "UILabel"; text = "三菜一汤"; ObjectID = "cMO-g7-rGF"; */
+"cMO-g7-rGF.text" = "三菜一湯";
+
+/* Class = "UILabel"; text = "六菜两汤"; ObjectID = "nzK-cN-tkp"; */
+"nzK-cN-tkp.text" = "六菜兩湯";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "oe6-Bj-RMq"; */
+"oe6-Bj-RMq.text" = "Name";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "tPF-BW-1kS"; */
+"tPF-BW-1kS.text" = "Name";
+
+/* Class = "UILabel"; text = "八菜两汤"; ObjectID = "y7i-ek-Lx8"; */
+"y7i-ek-Lx8.text" = "八菜兩湯";

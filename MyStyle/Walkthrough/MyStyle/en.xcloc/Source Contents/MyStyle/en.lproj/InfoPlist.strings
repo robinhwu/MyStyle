@@ -1,0 +1,4 @@
+/* Bundle name */
+"CFBundleName" = "MyStyle";
+/* Privacy - Calendars Usage Description */
+"NSCalendarsUsageDescription" = "This Application need to access your calender to add event on it";

@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "3z4-ta-qTf"; */
+"3z4-ta-qTf.text" = "Name";
+
+/* Class = "UILabel"; text = "加料"; ObjectID = "4AY-1y-8TE"; */
+"4AY-1y-8TE.text" = "加料";
+
+/* Class = "UILabel"; text = "汤"; ObjectID = "54U-CU-NLa"; */
+"54U-CU-NLa.text" = "湯";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "62g-be-iRD"; */
+"62g-be-iRD.text" = "Name";
+
+/* Class = "UITextField"; placeholder = "请输入食材名字："; ObjectID = "7If-Qh-HlI"; */
+"7If-Qh-HlI.placeholder" = "請輸入食材名字：";
+
+/* Class = "UILabel"; text = "加菜"; ObjectID = "9YX-Lj-7hq"; */
+"9YX-Lj-7hq.text" = "加菜";
+
+/* Class = "UINavigationItem"; title = "加料"; ObjectID = "GBZ-EI-5sd"; */
+"GBZ-EI-5sd.title" = "加料";
+
+/* Class = "UINavigationItem"; title = "减料"; ObjectID = "Mut-Mr-Au9"; */
+"Mut-Mr-Au9.title" = "減料";
+
+/* Class = "UILabel"; text = " 0/6"; ObjectID = "Nff-yG-9eI"; */
+"Nff-yG-9eI.text" = " 0/6";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Qgl-6U-eBh"; */
+"Qgl-6U-eBh.text" = "Name";
+
+/* Class = "UILabel"; text = "减料"; ObjectID = "R2K-o1-aSN"; */
+"R2K-o1-aSN.text" = "減料";
+
+/* Class = "UINavigationItem"; title = "加菜"; ObjectID = "V6W-eS-LIe"; */
+"V6W-eS-LIe.title" = "加菜";
+
+/* Class = "UILabel"; text = "0/6"; ObjectID = "W3l-Ds-1kN"; */
+"W3l-Ds-1kN.text" = "0/6";
+
+/* Class = "UITextField"; placeholder = "请输入菜肴名字："; ObjectID = "dn7-hf-PDH"; */
+"dn7-hf-PDH.placeholder" = "請輸入菜餚名字：";
+
+/* Class = "UINavigationItem"; title = "加减"; ObjectID = "gHU-eE-hJ4"; */
+"gHU-eE-hJ4.title" = "加減";
+
+/* Class = "UINavigationItem"; title = "减菜"; ObjectID = "kbB-A8-xB4"; */
+"kbB-A8-xB4.title" = "減菜";
+
+/* Class = "UILabel"; text = "减菜"; ObjectID = "sit-1B-cZN"; */
+"sit-1B-cZN.text" = "減菜";
+
+/* Class = "UILabel"; text = "菜"; ObjectID = "wSa-Jx-N2s"; */
+"wSa-Jx-N2s.text" = "菜";

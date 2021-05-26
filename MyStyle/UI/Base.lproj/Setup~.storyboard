@@ -122,7 +122,7 @@
                     <navigationItem key="navigationItem" title="我的菜" id="IW6-8w-cZv">
                         <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="Aue-DY-bHz">
                             <connections>
-                                <segue destination="5Dy-3s-5gu" kind="show" id="HF2-23-UPS"/>
+                                <segue destination="dq5-ir-TPJ" kind="show" id="HF2-23-UPS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -169,6 +169,54 @@
             </objects>
             <point key="canvasLocation" x="1083" y="-218"/>
         </scene>
+        <!--设置-->
+        <scene sceneID="dSB-gx-Dzb">
+            <objects>
+                <tableViewController id="dq5-ir-TPJ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="T0q-ah-DuD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <sections>
+                            <tableViewSection id="4HB-ir-fCY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="w2O-Ai-EhV">
+                                        <rect key="frame" x="20" y="18" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w2O-Ai-EhV" id="i6C-G3-Ea2">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W0n-pb-90z">
+                                        <rect key="frame" x="20" y="61.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W0n-pb-90z" id="prk-1U-G0s">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Jvw-vM-UXj">
+                                        <rect key="frame" x="20" y="105" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jvw-vM-UXj" id="4En-De-9e2">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="dq5-ir-TPJ" id="Dd7-wL-J3I"/>
+                            <outlet property="delegate" destination="dq5-ir-TPJ" id="DHt-ge-Wpn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="设置" id="fCN-it-fdr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5E9-da-TZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="-254"/>
+        </scene>
         <!--Random-->
         <scene sceneID="ssu-Go-Se1">
             <objects>
@@ -188,16 +236,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ar6-7M-eXE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101" y="248"/>
-        </scene>
-        <!--Setup-->
-        <scene sceneID="uxE-SM-NaX">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Setup" id="5Dy-3s-5gu" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Hf6-6R-dgk"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HDJ-Fp-6GR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1062" y="-246"/>
         </scene>
     </scenes>
     <resources>

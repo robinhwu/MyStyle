@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="MyStyle/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="zh-Hant">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5" build-num="12E262"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>MyStyle</source>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSCalendarsUsageDescription" xml:space="preserve">
+        <source>This Application need to access your calender to add event on it</source>
+        <note>Privacy - Calendars Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="MyStyle/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="zh-Hant">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5" build-num="12E262"/>
+    </header>
+    <body>
+      <trans-unit id="从(totalItemCount)个菜肴中找到(filteredItemCount)个菜肴" xml:space="preserve">
+        <source>从(totalItemCount)个菜肴中找到(filteredItemCount)个菜肴</source>
+        <note>从\(totalItemCount)个菜肴中找到\(filteredItemCount)个菜肴</note>
+      </trans-unit>
+      <trans-unit id="使用加减可以添加或者删除菜肴和食材" xml:space="preserve">
+        <source>使用加减可以添加或者删除菜肴和食材</source>
+        <note>使用加减可以添加或者删除菜肴和食材</note>
+      </trans-unit>
+      <trans-unit id="使用查询可以了解菜肴所使用的食材" xml:space="preserve">
+        <source>使用查询可以了解菜肴所使用的食材</source>
+        <note>使用查询可以了解菜肴所使用的食材</note>
+      </trans-unit>
+      <trans-unit id="使用选择可以选择喜欢的菜肴生产菜单和食材清单" xml:space="preserve">
+        <source>使用选择可以选择喜欢的菜肴生产菜单和食材清单</source>
+        <note>使用选择可以选择喜欢的菜肴生产菜单和食材清单</note>
+      </trans-unit>
+      <trans-unit id="使用随机可以产生随机生成的菜单和食材清单" xml:space="preserve">
+        <source>使用随机可以产生随机生成的菜单和食材清单</source>
+        <note>使用随机可以产生随机生成的菜单和食材清单</note>
+      </trans-unit>
+      <trans-unit id="全部" xml:space="preserve">
+        <source>全部</source>
+        <note>全部</note>
+      </trans-unit>
+      <trans-unit id="加减" xml:space="preserve">
+        <source>加减</source>
+        <note>加减</note>
+      </trans-unit>
+      <trans-unit id="已选" xml:space="preserve">
+        <source>已选</source>
+        <note>已选</note>
+      </trans-unit>
+      <trans-unit id="待选" xml:space="preserve">
+        <source>待选</source>
+        <note>待选</note>
+      </trans-unit>
+      <trans-unit id="查询" xml:space="preserve">
+        <source>查询</source>
+        <note>查询</note>
+      </trans-unit>
+      <trans-unit id="汤" xml:space="preserve">
+        <source>汤</source>
+        <note>汤</note>
+      </trans-unit>
+      <trans-unit id="没有找到菜肴" xml:space="preserve">
+        <source>没有找到菜肴</source>
+        <note>没有找到菜肴</note>
+      </trans-unit>
+      <trans-unit id="添加" xml:space="preserve">
+        <source>添加</source>
+        <note>添加</note>
+      </trans-unit>
+      <trans-unit id="确定" xml:space="preserve">
+        <source>确定</source>
+        <note>确定</note>
+      </trans-unit>
+      <trans-unit id="菜" xml:space="preserve">
+        <source>菜</source>
+        <note>菜</note>
+      </trans-unit>
+      <trans-unit id="菜肴" xml:space="preserve">
+        <source>菜肴</source>
+        <note>菜肴</note>
+      </trans-unit>
+      <trans-unit id="菜肴已存在。" xml:space="preserve">
+        <source>菜肴已存在。</source>
+        <note>菜肴已存在。</note>
+      </trans-unit>
+      <trans-unit id="菜肴数量不足！" xml:space="preserve">
+        <source>菜肴数量不足！</source>
+        <note>菜肴数量不足！</note>
+      </trans-unit>
+      <trans-unit id="请添加菜肴图片。" xml:space="preserve">
+        <source>请添加菜肴图片。</source>
+        <note>请添加菜肴图片。</note>
+      </trans-unit>
+      <trans-unit id="请添加食材。" xml:space="preserve">
+        <source>请添加食材。</source>
+        <note>请添加食材。</note>
+      </trans-unit>
+      <trans-unit id="请输入菜肴名字。" xml:space="preserve">
+        <source>请输入菜肴名字。</source>
+        <note>请输入菜肴名字。</note>
+      </trans-unit>
+      <trans-unit id="请输入要查找的菜肴..." xml:space="preserve">
+        <source>请输入要查找的菜肴...</source>
+        <note>请输入要查找的菜肴...</note>
+      </trans-unit>
+      <trans-unit id="返回" xml:space="preserve">
+        <source>返回</source>
+        <note>返回</note>
+      </trans-unit>
+      <trans-unit id="选择" xml:space="preserve">
+        <source>选择</source>
+        <note>选择</note>
+      </trans-unit>
+      <trans-unit id="随机" xml:space="preserve">
+        <source>随机</source>
+        <note>随机</note>
+      </trans-unit>
+      <trans-unit id="食材" xml:space="preserve">
+        <source>食材</source>
+        <note>食材</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="MyStyle/UI/Base.lproj/Main.storyboard" source-language="en" target-language="zh-Hant" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5" build-num="12E262"/>
+    </header>
+    <body>
+      <trans-unit id="6VB-y5-cQt.text" xml:space="preserve">
+        <source>查询</source>
+        <target>查询</target>
+        <note>Class = "UILabel"; text = "查询"; ObjectID = "6VB-y5-cQt";</note>
+      </trans-unit>
+      <trans-unit id="IW6-8w-cZv.title" xml:space="preserve">
+        <source>我的菜</source>
+        <target>我的菜</target>
+        <note>Class = "UINavigationItem"; title = "我的菜"; ObjectID = "IW6-8w-cZv";</note>
+      </trans-unit>
+      <trans-unit id="PAw-SM-9ju.text" xml:space="preserve">
+        <source>加减</source>
+        <target>加减</target>
+        <note>Class = "UILabel"; text = "加减"; ObjectID = "PAw-SM-9ju";</note>
+      </trans-unit>
+      <trans-unit id="af3-Eq-Ebz.text" xml:space="preserve">
+        <source>选择</source>
+        <target>选择</target>
+        <note>Class = "UILabel"; text = "选择"; ObjectID = "af3-Eq-Ebz";</note>
+      </trans-unit>
+      <trans-unit id="xzt-A5-3HT.text" xml:space="preserve">
+        <source>随机</source>
+        <target>随机</target>
+        <note>Class = "UILabel"; text = "随机"; ObjectID = "xzt-A5-3HT";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="MyStyle/UI/MyStyle/UI/Base.lproj/PlusMinus.storyboard" source-language="en" target-language="zh-Hant" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5" build-num="12E262"/>
+    </header>
+    <body>
+      <trans-unit id="3z4-ta-qTf.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "3z4-ta-qTf";</note>
+      </trans-unit>
+      <trans-unit id="4AY-1y-8TE.text" xml:space="preserve">
+        <source>加料</source>
+        <target>加料</target>
+        <note>Class = "UILabel"; text = "加料"; ObjectID = "4AY-1y-8TE";</note>
+      </trans-unit>
+      <trans-unit id="7If-Qh-HlI.placeholder" xml:space="preserve">
+        <source>请输入食材名字：</source>
+        <target>请输入食材名字：</target>
+        <note>Class = "UITextField"; placeholder = "请输入食材名字："; ObjectID = "7If-Qh-HlI";</note>
+      </trans-unit>
+      <trans-unit id="9YX-Lj-7hq.text" xml:space="preserve">
+        <source>加菜</source>
+        <target>加菜</target>
+        <note>Class = "UILabel"; text = "加菜"; ObjectID = "9YX-Lj-7hq";</note>
+      </trans-unit>
+      <trans-unit id="54U-CU-NLa.text" xml:space="preserve">
+        <source>汤</source>
+        <target>汤</target>
+        <note>Class = "UILabel"; text = "汤"; ObjectID = "54U-CU-NLa";</note>
+      </trans-unit>
+      <trans-unit id="62g-be-iRD.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "62g-be-iRD";</note>
+      </trans-unit>
+      <trans-unit id="GBZ-EI-5sd.title" xml:space="preserve">
+        <source>加料</source>
+        <target>加料</target>
+        <note>Class = "UINavigationItem"; title = "加料"; ObjectID = "GBZ-EI-5sd";</note>
+      </trans-unit>
+      <trans-unit id="Mut-Mr-Au9.title" xml:space="preserve">
+        <source>减料</source>
+        <target>减料</target>
+        <note>Class = "UINavigationItem"; title = "减料"; ObjectID = "Mut-Mr-Au9";</note>
+      </trans-unit>
+      <trans-unit id="Nff-yG-9eI.text" xml:space="preserve">
+        <source> 0/6</source>
+        <target> 0/6</target>
+        <note>Class = "UILabel"; text = " 0/6"; ObjectID = "Nff-yG-9eI";</note>
+      </trans-unit>
+      <trans-unit id="Qgl-6U-eBh.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "Qgl-6U-eBh";</note>
+      </trans-unit>
+      <trans-unit id="R2K-o1-aSN.text" xml:space="preserve">
+        <source>减料</source>
+        <target>减料</target>
+        <note>Class = "UILabel"; text = "减料"; ObjectID = "R2K-o1-aSN";</note>
+      </trans-unit>
+      <trans-unit id="V6W-eS-LIe.title" xml:space="preserve">
+        <source>加菜</source>
+        <target>加菜</target>
+        <note>Class = "UINavigationItem"; title = "加菜"; ObjectID = "V6W-eS-LIe";</note>
+      </trans-unit>
+      <trans-unit id="W3l-Ds-1kN.text" xml:space="preserve">
+        <source>0/6</source>
+        <target>0/6</target>
+        <note>Class = "UILabel"; text = "0/6"; ObjectID = "W3l-Ds-1kN";</note>
+      </trans-unit>
+      <trans-unit id="dn7-hf-PDH.placeholder" xml:space="preserve">
+        <source>请输入菜肴名字：</source>
+        <target>请输入菜肴名字：</target>
+        <note>Class = "UITextField"; placeholder = "请输入菜肴名字："; ObjectID = "dn7-hf-PDH";</note>
+      </trans-unit>
+      <trans-unit id="gHU-eE-hJ4.title" xml:space="preserve">
+        <source>加减</source>
+        <target>加减</target>
+        <note>Class = "UINavigationItem"; title = "加减"; ObjectID = "gHU-eE-hJ4";</note>
+      </trans-unit>
+      <trans-unit id="kbB-A8-xB4.title" xml:space="preserve">
+        <source>减菜</source>
+        <target>减菜</target>
+        <note>Class = "UINavigationItem"; title = "减菜"; ObjectID = "kbB-A8-xB4";</note>
+      </trans-unit>
+      <trans-unit id="sit-1B-cZN.text" xml:space="preserve">
+        <source>减菜</source>
+        <target>减菜</target>
+        <note>Class = "UILabel"; text = "减菜"; ObjectID = "sit-1B-cZN";</note>
+      </trans-unit>
+      <trans-unit id="wSa-Jx-N2s.text" xml:space="preserve">
+        <source>菜</source>
+        <target>菜</target>
+        <note>Class = "UILabel"; text = "菜"; ObjectID = "wSa-Jx-N2s";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="MyStyle/UI/MyStyle/UI/Base.lproj/Random.storyboard" source-language="en" target-language="zh-Hant" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5" build-num="12E262"/>
+    </header>
+    <body>
+      <trans-unit id="PP6-88-AvC.title" xml:space="preserve">
+        <source>随机</source>
+        <target>随机</target>
+        <note>Class = "UINavigationItem"; title = "随机"; ObjectID = "PP6-88-AvC";</note>
+      </trans-unit>
+      <trans-unit id="YtO-UK-kJN.text" xml:space="preserve">
+        <source>四菜一汤</source>
+        <target>四菜一汤</target>
+        <note>Class = "UILabel"; text = "四菜一汤"; ObjectID = "YtO-UK-kJN";</note>
+      </trans-unit>
+      <trans-unit id="cMO-g7-rGF.text" xml:space="preserve">
+        <source>三菜一汤</source>
+        <target>三菜一汤</target>
+        <note>Class = "UILabel"; text = "三菜一汤"; ObjectID = "cMO-g7-rGF";</note>
+      </trans-unit>
+      <trans-unit id="nzK-cN-tkp.text" xml:space="preserve">
+        <source>六菜两汤</source>
+        <target>六菜两汤</target>
+        <note>Class = "UILabel"; text = "六菜两汤"; ObjectID = "nzK-cN-tkp";</note>
+      </trans-unit>
+      <trans-unit id="oe6-Bj-RMq.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "oe6-Bj-RMq";</note>
+      </trans-unit>
+      <trans-unit id="tPF-BW-1kS.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "tPF-BW-1kS";</note>
+      </trans-unit>
+      <trans-unit id="y7i-ek-Lx8.text" xml:space="preserve">
+        <source>八菜两汤</source>
+        <target>八菜两汤</target>
+        <note>Class = "UILabel"; text = "八菜两汤"; ObjectID = "y7i-ek-Lx8";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="MyStyle/UI/MyStyle/UI/Base.lproj/Select.storyboard" source-language="en" target-language="zh-Hant" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.5" build-num="12E262"/>
+    </header>
+    <body>
+      <trans-unit id="7lo-tf-EXR.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "7lo-tf-EXR";</note>
+      </trans-unit>
+      <trans-unit id="NoW-uM-qqD.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "NoW-uM-qqD";</note>
+      </trans-unit>
+      <trans-unit id="SCg-G9-jpa.title" xml:space="preserve">
+        <source>已选择</source>
+        <target>已选择</target>
+        <note>Class = "UINavigationItem"; title = "已选择"; ObjectID = "SCg-G9-jpa";</note>
+      </trans-unit>
+      <trans-unit id="Yed-BN-eWm.text" xml:space="preserve">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Class = "UILabel"; text = "Name"; ObjectID = "Yed-BN-eWm";</note>
+      </trans-unit>
+      <trans-unit id="ZXp-gl-diY.title" xml:space="preserve">
+        <source>选择</source>
+        <target>选择</target>
+        <note>Class = "UINavigationItem"; title = "选择"; ObjectID = "ZXp-gl-diY";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
