@@ -10,11 +10,11 @@ import MessageUI
 
 class SetupTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
-    let setupList = ["切换语言", "给个好评", "联系作者", "赞助"]
+    let setupList = ["分享一下", "给个好评", "联系作者", "赞助"]
     
     private let productURL =
         URL(string: "https://itunes.apple.com/app/id1569286468")!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,26 +28,23 @@ class SetupTableViewController: UITableViewController, MFMailComposeViewControll
     
     // MARK: - Table view data source
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        print(indexPath.row)
         cell.textLabel?.text = setupList[indexPath.row]
         return cell
     }
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch indexPath.row {
         case 0:
-            print("^^^^^^")
+            share()
         case 1:
-            print("******")
+            writeReview()
         case 2:
             sendEmail()
         case 3:
-            print("@@@@@@")
+            performSegue(withIdentifier: "donate", sender: self)
         default:
             return
         }
@@ -85,6 +82,13 @@ class SetupTableViewController: UITableViewController, MFMailComposeViewControll
         controller.dismiss(animated: true, completion: nil)
     }
     
+    private func share() {
+        if !productURL.absoluteString.isEmpty {
+            let objectToShare = [productURL]
+            let vc = UIActivityViewController(activityItems: objectToShare, applicationActivities: nil)
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

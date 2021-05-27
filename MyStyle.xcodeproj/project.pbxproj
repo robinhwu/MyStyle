@@ -20,6 +20,8 @@
 		3102C7E82628A54900DC226D /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3102C7E72628A54900DC226D /* InquiryViewController.swift */; };
 		310373E026314C620021BCEE /* MinusMenuDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310373DF26314C620021BCEE /* MinusMenuDiffableDataSource.swift */; };
 		310373E826318FB30021BCEE /* MinusMaterailDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310373E726318FB30021BCEE /* MinusMaterailDiffableDataSource.swift */; };
+		310639EC265EAF3D000F386D /* DonateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310639EB265EAF3D000F386D /* DonateTableViewController.swift */; };
+		310639F4265F40D9000F386D /* DonateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310639F3265F40D9000F386D /* DonateTableViewCell.swift */; };
 		310A1407262927BF00506242 /* PlusMinusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1406262927BF00506242 /* PlusMinusViewController.swift */; };
 		310A14102629280600506242 /* PlusMinus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310A140E2629280600506242 /* PlusMinus.storyboard */; };
 		310A141A2629295F00506242 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A14192629295F00506242 /* RandomViewController.swift */; };
@@ -100,6 +102,8 @@
 		3102C7E72628A54900DC226D /* InquiryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		310373DF26314C620021BCEE /* MinusMenuDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMenuDiffableDataSource.swift; sourceTree = "<group>"; };
 		310373E726318FB30021BCEE /* MinusMaterailDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMaterailDiffableDataSource.swift; sourceTree = "<group>"; };
+		310639EB265EAF3D000F386D /* DonateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateTableViewController.swift; sourceTree = "<group>"; };
+		310639F3265F40D9000F386D /* DonateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateTableViewCell.swift; sourceTree = "<group>"; };
 		310A1406262927BF00506242 /* PlusMinusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMinusViewController.swift; sourceTree = "<group>"; };
 		310A140F2629280600506242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/PlusMinus.storyboard; sourceTree = "<group>"; };
 		310A14192629295F00506242 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				3111863D26560D8600C3CD3D /* SetupTableViewController.swift */,
+				310639EB265EAF3D000F386D /* DonateTableViewController.swift */,
+				310639F3265F40D9000F386D /* DonateTableViewCell.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -581,6 +587,7 @@
 				3111863E26560D8600C3CD3D /* SetupTableViewController.swift in Sources */,
 				3174CB00264FC29400CC7086 /* WalkthroughContentViewController.swift in Sources */,
 				31E35ACA262977160096C25B /* Data.swift in Sources */,
+				310639EC265EAF3D000F386D /* DonateTableViewController.swift in Sources */,
 				31EAE8402630257100E7D2ED /* InquiryDetailTableViewCell.swift in Sources */,
 				310F525A2646651B00878249 /* SelectedMenuTableViewCell.swift in Sources */,
 				31AF622C262FBAC20061EF3F /* InquiryDetailViewController.swift in Sources */,
@@ -590,6 +597,7 @@
 				310373E826318FB30021BCEE /* MinusMaterailDiffableDataSource.swift in Sources */,
 				31E35AD12629783B0096C25B /* Menu.swift in Sources */,
 				31CEFEF42646CFD800042BD7 /* SelectedMaterialTableViewCell.swift in Sources */,
+				310639F4265F40D9000F386D /* DonateTableViewCell.swift in Sources */,
 				310373E026314C620021BCEE /* MinusMenuDiffableDataSource.swift in Sources */,
 				3102C7A426289AC600DC226D /* SceneDelegate.swift in Sources */,
 				31DE7B3A262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift in Sources */,

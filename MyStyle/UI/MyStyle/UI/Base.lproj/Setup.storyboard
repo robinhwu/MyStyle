@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,6 +48,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lEi-3v-H3P" kind="show" identifier="donate" id="3Gd-eg-cz0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -61,6 +65,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5E9-da-TZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="-265"/>
+        </scene>
+        <!--Donate Table View Controller-->
+        <scene sceneID="qlM-Bn-rKr">
+            <objects>
+                <tableViewController id="lEi-3v-H3P" customClass="DonateTableViewController" customModule="MyStyle" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3vp-2f-zFn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="JJT-LK-rJ3" customClass="DonateTableViewCell" customModule="MyStyle" customModuleProvider="target">
+                                <rect key="frame" x="20" y="49.5" width="374" height="43"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JJT-LK-rJ3" id="WkN-DX-Xc8">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="x55-Lm-yvg">
+                                            <rect key="frame" x="20" y="11" width="334" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJl-3l-dDm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jp-Xo-uBS">
+                                                    <rect key="frame" x="187" y="0.0" width="147" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="x55-Lm-yvg" firstAttribute="top" secondItem="WkN-DX-Xc8" secondAttribute="topMargin" id="8PA-yO-ZdK"/>
+                                        <constraint firstItem="x55-Lm-yvg" firstAttribute="leading" secondItem="WkN-DX-Xc8" secondAttribute="leadingMargin" id="HMG-7m-7aj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="x55-Lm-yvg" secondAttribute="bottom" id="QWC-oj-Drq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="x55-Lm-yvg" secondAttribute="trailing" id="pJ8-3k-cGw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="sJl-3l-dDm" id="pdX-t6-2n8"/>
+                                    <outlet property="price" destination="4jp-Xo-uBS" id="hgg-Bf-D1v"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="lEi-3v-H3P" id="7mt-bx-M3E"/>
+                            <outlet property="delegate" destination="lEi-3v-H3P" id="7XL-h7-B1l"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BbY-1x-8JV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWq-HG-udd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="-265"/>
         </scene>
     </scenes>
 </document>
