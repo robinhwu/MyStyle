@@ -25,9 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("Documents Directory: ", FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).last ?? "Not Found!")
         
+        IAPService.shared.startObserving()
+        
         return true
     }
 
+    func applicationWillTerminate(_ application: UIApplication) {
+        IAPService.shared.stopObserving()
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

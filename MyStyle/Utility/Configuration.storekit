@@ -1,0 +1,63 @@
+{
+  "identifier" : "D2854C36",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "4A74B2EF",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "banana",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "banana",
+      "referenceName" : "banana",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "E1682841",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "watermenlon",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "watermelon",
+      "referenceName" : null,
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6B27CB57",
+      "localizations" : [
+        {
+          "description" : "",
+          "displayName" : "pineapple",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "pineapple",
+      "referenceName" : null,
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

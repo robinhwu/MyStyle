@@ -22,6 +22,8 @@
 		310373E826318FB30021BCEE /* MinusMaterailDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310373E726318FB30021BCEE /* MinusMaterailDiffableDataSource.swift */; };
 		310639EC265EAF3D000F386D /* DonateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310639EB265EAF3D000F386D /* DonateTableViewController.swift */; };
 		310639F4265F40D9000F386D /* DonateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310639F3265F40D9000F386D /* DonateTableViewCell.swift */; };
+		31063A8226614758000F386D /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31063A8126614758000F386D /* IAPService.swift */; };
+		31063A842661476F000F386D /* IAPProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31063A832661476F000F386D /* IAPProducts.swift */; };
 		310A1407262927BF00506242 /* PlusMinusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A1406262927BF00506242 /* PlusMinusViewController.swift */; };
 		310A14102629280600506242 /* PlusMinus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310A140E2629280600506242 /* PlusMinus.storyboard */; };
 		310A141A2629295F00506242 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310A14192629295F00506242 /* RandomViewController.swift */; };
@@ -104,6 +106,9 @@
 		310373E726318FB30021BCEE /* MinusMaterailDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinusMaterailDiffableDataSource.swift; sourceTree = "<group>"; };
 		310639EB265EAF3D000F386D /* DonateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateTableViewController.swift; sourceTree = "<group>"; };
 		310639F3265F40D9000F386D /* DonateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateTableViewCell.swift; sourceTree = "<group>"; };
+		310639F5265F67F7000F386D /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		31063A8126614758000F386D /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
+		31063A832661476F000F386D /* IAPProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProducts.swift; sourceTree = "<group>"; };
 		310A1406262927BF00506242 /* PlusMinusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMinusViewController.swift; sourceTree = "<group>"; };
 		310A140F2629280600506242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MyStyle/UI/Base.lproj/PlusMinus.storyboard; sourceTree = "<group>"; };
 		310A14192629295F00506242 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +225,7 @@
 		3102C7A026289AC600DC226D /* MyStyle */ = {
 			isa = PBXGroup;
 			children = (
+				310639F6265F69D7000F386D /* In-App-Purchase */,
 				3111863C26560D4B00C3CD3D /* Setup */,
 				3111860A2653ACE300C3CD3D /* Localize */,
 				3174CAFE264FC21300CC7086 /* Walkthrough */,
@@ -298,6 +304,7 @@
 				31DE7B3E262DC83600EC1AE1 /* UIColorExtensions.swift */,
 				31BB65CD264A3278009A581F /* ShowToast.swift */,
 				3102C7DE26289BBC00DC226D /* RoundedCornerButton.swift */,
+				310639F5265F67F7000F386D /* Configuration.storekit */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -311,6 +318,15 @@
 				31EAE83F2630257100E7D2ED /* InquiryDetailTableViewCell.swift */,
 			);
 			path = Inquiry;
+			sourceTree = "<group>";
+		};
+		310639F6265F69D7000F386D /* In-App-Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				31063A8126614758000F386D /* IAPService.swift */,
+				31063A832661476F000F386D /* IAPProducts.swift */,
+			);
+			path = "In-App-Purchase";
 			sourceTree = "<group>";
 		};
 		310A14052629279E00506242 /* PlusMinus */ = {
@@ -583,6 +599,7 @@
 				31DE7B7B262E81B400EC1AE1 /* MinusMaterialTableViewCell.swift in Sources */,
 				3102C7A626289AC600DC226D /* GatewayViewController.swift in Sources */,
 				31A5C8CA264908F900DE72DD /* RandomMaterailsTableViewCell.swift in Sources */,
+				31063A8226614758000F386D /* IAPService.swift in Sources */,
 				3102C7A226289AC600DC226D /* AppDelegate.swift in Sources */,
 				3111863E26560D8600C3CD3D /* SetupTableViewController.swift in Sources */,
 				3174CB00264FC29400CC7086 /* WalkthroughContentViewController.swift in Sources */,
@@ -603,6 +620,7 @@
 				31DE7B3A262DBB2B00EC1AE1 /* MinusMenuTableViewCell.swift in Sources */,
 				310A14352629362F00506242 /* PlusMenuViewController.swift in Sources */,
 				31A5C8C8264908D600DE72DD /* RandomMenusTableViewCell.swift in Sources */,
+				31063A842661476F000F386D /* IAPProducts.swift in Sources */,
 				31BB65CE264A3278009A581F /* ShowToast.swift in Sources */,
 				31A5C8C62648FFB800DE72DD /* RandomDetailViewController.swift in Sources */,
 				310A141F2629297400506242 /* SelectViewController.swift in Sources */,

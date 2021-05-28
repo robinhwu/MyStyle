@@ -14,12 +14,7 @@ class DonateTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        IAPService.shared.getProducts()
     }
 
     // MARK: - TableView
@@ -42,10 +37,17 @@ class DonateTableViewController: UITableViewController {
         // Configure the cell...
         cell.name.text = nameList[indexPath.row]
         cell.price.text = priceList[indexPath.row]
+        cell.price?.textColor = .systemBlue
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: IAPService.shared.purchase(product: .banana)
+        case 1: IAPService.shared.purchase(product: .pineapple)
+        case 2: IAPService.shared.purchase(product: .watermenlon)
+        default: return
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
