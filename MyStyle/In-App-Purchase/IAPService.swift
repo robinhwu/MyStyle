@@ -18,7 +18,7 @@ class IAPService: NSObject {
     func getProducts() {
         let products: Set = [IAPProducts.banana.rawValue,
                              IAPProducts.pineapple.rawValue,
-                             IAPProducts.watermenlon.rawValue]
+                             IAPProducts.watermelon.rawValue]
         let request = SKProductsRequest(productIdentifiers: products)
         request.delegate = self
         request.start()
@@ -71,7 +71,7 @@ extension IAPService: SKPaymentTransactionObserver {
         for transaction in transactions {
             print(transaction.transactionState.statue(), transaction.payment.productIdentifier)
             switch transaction.transactionState {
-            case .purchasing, .deferred: break
+            case .purchasing: break
             default: queue.finishTransaction(transaction)
             }
         }

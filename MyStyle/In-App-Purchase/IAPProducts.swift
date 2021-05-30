@@ -10,5 +10,5 @@ import Foundation
 enum IAPProducts: String {
     case banana               = "banana"
     case pineapple            = "pineapple"
-    case watermenlon          = "watermelon"
+    case watermelon          = "watermelon"
 }

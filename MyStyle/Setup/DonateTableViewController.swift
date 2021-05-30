@@ -45,7 +45,7 @@ class DonateTableViewController: UITableViewController {
         switch indexPath.row {
         case 0: IAPService.shared.purchase(product: .banana)
         case 1: IAPService.shared.purchase(product: .pineapple)
-        case 2: IAPService.shared.purchase(product: .watermenlon)
+        case 2: IAPService.shared.purchase(product: .watermelon)
         default: return
         }
         tableView.deselectRow(at: indexPath, animated: true)
