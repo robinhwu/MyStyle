@@ -7,7 +7,7 @@
     {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "4A74B2EF",
+      "internalID" : "B3B0391B",
       "localizations" : [
         {
           "description" : "",
@@ -17,27 +17,27 @@
       ],
       "productID" : "banana",
       "referenceName" : "banana",
-      "type" : "NonConsumable"
+      "type" : "Consumable"
     },
     {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "E1682841",
+      "internalID" : "105629AC",
       "localizations" : [
         {
           "description" : "",
-          "displayName" : "watermenlon",
+          "displayName" : "watermelon",
           "locale" : "en_US"
         }
       ],
       "productID" : "watermelon",
-      "referenceName" : null,
-      "type" : "NonConsumable"
+      "referenceName" : "watermelon",
+      "type" : "Consumable"
     },
     {
       "displayPrice" : "0.99",
       "familyShareable" : false,
-      "internalID" : "6B27CB57",
+      "internalID" : "5438AB2A",
       "localizations" : [
         {
           "description" : "",
@@ -46,8 +46,8 @@
         }
       ],
       "productID" : "pineapple",
-      "referenceName" : null,
-      "type" : "NonConsumable"
+      "referenceName" : "pineapple",
+      "type" : "Consumable"
     }
   ],
   "settings" : {

@@ -117,37 +117,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVK-Kz-WmK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qiz-DU-ynt">
-                                        <rect key="frame" x="188.5" y="402.5" width="37" height="37"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="qiz-DU-ynt" firstAttribute="centerX" secondItem="lVK-Kz-WmK" secondAttribute="centerX" id="jSI-wm-ifZ"/>
-                                    <constraint firstItem="qiz-DU-ynt" firstAttribute="centerY" secondItem="lVK-Kz-WmK" secondAttribute="centerY" id="jsS-jS-FY9"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aUt-mH-Aqd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lVK-Kz-WmK" firstAttribute="leading" secondItem="aUt-mH-Aqd" secondAttribute="leading" id="02E-WH-8It"/>
                             <constraint firstItem="aUt-mH-Aqd" firstAttribute="trailing" secondItem="elR-Q9-1oh" secondAttribute="trailing" id="04d-BI-bHH"/>
                             <constraint firstItem="elR-Q9-1oh" firstAttribute="leading" secondItem="aUt-mH-Aqd" secondAttribute="leading" id="UR6-sG-VDH"/>
                             <constraint firstAttribute="bottom" secondItem="elR-Q9-1oh" secondAttribute="bottom" id="Wgg-yk-3sO"/>
                             <constraint firstItem="elR-Q9-1oh" firstAttribute="top" secondItem="oCK-XZ-8nD" secondAttribute="top" id="ZIJ-9Z-M8V"/>
-                            <constraint firstItem="lVK-Kz-WmK" firstAttribute="top" secondItem="oCK-XZ-8nD" secondAttribute="top" id="a0f-PL-Ajg"/>
-                            <constraint firstAttribute="bottom" secondItem="lVK-Kz-WmK" secondAttribute="bottom" id="q8T-be-bVt"/>
-                            <constraint firstItem="aUt-mH-Aqd" firstAttribute="trailing" secondItem="lVK-Kz-WmK" secondAttribute="trailing" id="tdc-xt-6Ug"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n1x-pz-g0a"/>
                     <connections>
                         <outlet property="donateTableView" destination="elR-Q9-1oh" id="Yly-Rd-lFj"/>
-                        <outlet property="overlayView" destination="lVK-Kz-WmK" id="U1g-u7-WrL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqp-fb-UNq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
