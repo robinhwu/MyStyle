@@ -160,7 +160,11 @@ class RandomViewController: UIViewController {
         }
 
         for (material, quantity) in randomMaterialsDict {
-            randomMaterialsList.append(material.name! + " x " + String(quantity))
+            if material.isPreload {
+                randomMaterialsList.append(NSLocalizedString(material.name!, comment: material.name!) + " x " + String(quantity))
+            } else {
+                randomMaterialsList.append(material.name! + " x " + String(quantity))
+            }
         }
         
     }

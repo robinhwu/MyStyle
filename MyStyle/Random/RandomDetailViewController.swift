@@ -93,14 +93,15 @@ class RandomDetailViewController: UIViewController, UITableViewDelegate, UITable
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Menu", for: indexPath) as! RandomMenusTableViewCell
-            cell.nameLabel.text = randomMenusList[indexPath.row].name
             if randomMenusList[indexPath.row].isPreload {
                 cell.thumbnailImageView.image = UIImage(named: randomMenusList[indexPath.row].imageName!)
+                cell.nameLabel.text = NSLocalizedString(randomMenusList[indexPath.row].name!, comment: randomMenusList[indexPath.row].name!)
             } else {
                 let menu = randomMenusList[indexPath.row]
                 let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
                 let pngImage = UIImage(contentsOfFile: url!.path)
                 cell.thumbnailImageView.image = pngImage
+                cell.nameLabel.text = randomMenusList[indexPath.row].name
             }
             return cell
         case 1:

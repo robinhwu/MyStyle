@@ -104,6 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             materialItem.name = material.name
             materialItem.count = Int32(material.count)
             materialItem.chosen = material.chosen
+            materialItem.isPreload = true
         }
         do {
             try context.save()

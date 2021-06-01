@@ -122,9 +122,19 @@ class InquiryDetailViewController: UIViewController, UITableViewDelegate {
     
     func configureView() {
         if let menu = menu {
-            nameLabel.text = menu.name
+            if menu.isPreload {
+                nameLabel.text = NSLocalizedString(menu.name!, comment: menu.name!)
+            } else {
+                nameLabel.text = menu.name
+            }
+            
             for material in menu.materials as! Set<Material>{
-                selectedMenuMaterails.append(material.name!)
+                if material.isPreload {
+                    selectedMenuMaterails.append(NSLocalizedString(material.name!, comment: material.name!))
+                } else {
+                    selectedMenuMaterails.append(material.name!)
+                }
+                
             }
         }
     }

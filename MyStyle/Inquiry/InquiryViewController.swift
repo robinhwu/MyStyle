@@ -49,6 +49,7 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = NSLocalizedString("请输入要查找的菜肴...", comment: "请输入要查找的菜肴...")
+        searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = searchController
         definesPresentationContext = true
@@ -117,14 +118,14 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
         
         let menu = (isFiltering) ? result[indexPath.row] : menus[indexPath.row]
         
-        cell.nameLabel.text = menu.name
-        
         if menu.isPreload {
             cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
+            cell.nameLabel.text = NSLocalizedString(menu.name!, comment: menu.name!)
         } else {
             let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
             let pngImage = UIImage(contentsOfFile: url!.path)
             cell.thumbnailImageView.image = pngImage
+            cell.nameLabel.text = menu.name
         }
         
         return cell
@@ -168,11 +169,10 @@ class InquiryViewController: UIViewController, UITableViewDelegate,UITableViewDa
             result = categoryMenu
         } else {
             result = categoryMenu.filter({ (menu) -> Bool in
-                let isMatch = menu.name!.localizedCaseInsensitiveContains(searchText)
+                let isMatch = NSLocalizedString(menu.name!, comment: menu.name!).localizedCaseInsensitiveContains(searchText)
                 return isMatch
             })
         }
-        
         inquiryTableView.reloadData()
     }
     

@@ -72,14 +72,14 @@ class MinusMenuViewController: UITableViewController, NSFetchedResultsController
             cellProvider: { [self]  tableView, indexPath, menu in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MinusMenuTableViewCell
                 
-                cell.nameLabel.text = menu.name
-                
                 if menu.isPreload {
                     cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
+                    cell.nameLabel.text = NSLocalizedString(menu.name!, comment: menu.name!)
                 } else {
                     let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
                     let pngImage = UIImage(contentsOfFile: url!.path)
                     cell.thumbnailImageView.image = pngImage
+                    cell.nameLabel.text = menu.name
                 }
                 return cell
             }

@@ -59,6 +59,7 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
         
         self.hideKeyboardWhenTappedAround()
         
+        textCountLabel.text = "0/12"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -108,13 +109,13 @@ class PlusMaterialViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 6
+        let maxLength = 12
         let currentString: NSString = (textField.text ?? "") as NSString
         let newString: NSString =
             currentString.replacingCharacters(in: range, with: string) as NSString
         if newString.length <= maxLength {
             let textCount = newString.length
-            textCountLabel.text = "\((0) + textCount)/6"
+            textCountLabel.text = "\((0) + textCount)/12"
             return true
         } else {
             return false

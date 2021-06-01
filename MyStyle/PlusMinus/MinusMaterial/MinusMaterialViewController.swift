@@ -69,7 +69,11 @@ class MinusMaterialViewController: UITableViewController, NSFetchedResultsContro
             cellProvider: {  tableView, indexPath, material in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MinusMaterialTableViewCell
                 
-                cell.nameLabel.text = material.name
+                if material.isPreload {
+                    cell.nameLabel.text = NSLocalizedString(material.name!, comment: material.name!)
+                } else {
+                    cell.nameLabel.text = material.name
+                }
                 
                 cell.thumbnailImageView.backgroundColor = UIColor.randomColor()
                 

@@ -44,14 +44,15 @@ class SelectViewController: UITableViewController {
         
         dataSource = SelectDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, menu) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SelectTableViewCell
-            cell.nameLabel.text = menu.name
             
             if menu.isPreload {
                 cell.thumbnailImageView.image = UIImage(named: menu.imageName!)
+                cell.nameLabel.text = NSLocalizedString(menu.name!, comment: menu.name!)
             } else {
                 let url = self.documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
                 let pngImage = UIImage(contentsOfFile: url!.path)
                 cell.thumbnailImageView.image = pngImage
+                cell.nameLabel.text = menu.name
             }
             
             return cell
@@ -265,7 +266,12 @@ class SelectViewController: UITableViewController {
         }
         
         for (material, quantity) in materailDict {
-            materialsList.append(material.name! + " x " + String(quantity))
+            
+            if material.isPreload {
+                materialsList.append(NSLocalizedString(material.name!, comment: material.name!) + " x " + String(quantity) )
+            } else {
+                materialsList.append(material.name! + " x " + String(quantity))
+            }
         }
         
         return materialsList

@@ -92,14 +92,15 @@ class SelectedViewController: UIViewController, UITableViewDelegate, UITableView
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Menu", for: indexPath) as! SelectedMenuTableViewCell
-            cell.nameLabel.text = menusList[indexPath.row].name
             if menusList[indexPath.row].isPreload {
                 cell.thumbnailImageView.image = UIImage(named: menusList[indexPath.row].imageName!)
+                cell.nameLabel.text = NSLocalizedString(menusList[indexPath.row].name!, comment: menusList[indexPath.row].name!)
             } else {
                 let menu = menusList[indexPath.row]
                 let url = documentDirectoryPath()?.appendingPathComponent(menu.imageName!)
                 let pngImage = UIImage(contentsOfFile: url!.path)
                 cell.thumbnailImageView.image = pngImage
+                cell.nameLabel.text = menusList[indexPath.row].name
             }
             return cell
         case 1:
