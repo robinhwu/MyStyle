@@ -75,7 +75,7 @@ class WalkthroughViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        nextButton.setTitle(NSLocalizedString("开始", comment: "开始"), for: .normal)
+        nextButton.setTitle(NSLocalizedString("下一页", comment: "下一页"), for: .normal)
         skipButton.setTitle(NSLocalizedString("跳过", comment: "跳过"), for: .normal)
     }
     

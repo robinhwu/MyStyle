@@ -126,7 +126,7 @@ extension IAPService: SKPaymentTransactionObserver {
             print(transaction.transactionState.statue(), transaction.payment.productIdentifier)
             switch transaction.transactionState {
             case .purchasing:
-                showUniversalLoadingView(true, loadingText: "Loading...")
+                showUniversalLoadingView(true, loadingText: NSLocalizedString("载入中...", comment: "载入中..."))
             default: queue.finishTransaction(transaction)
             }
         }

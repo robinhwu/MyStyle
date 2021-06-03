@@ -36,12 +36,6 @@ struct MaterialData:Hashable {
         self.count = 0
         self.chosen = false
     }
-    
-//    init(name: String, count: Int) {
-//        self.name = name
-//        self.count = count
-//        self.chosen = false
-//    }
 }
 
 

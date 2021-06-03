@@ -11,7 +11,7 @@ import Foundation
 //var materials: [Material] = []
 
 var menusData: [MenuData] = [
-    MenuData(name: "西红柿炒鸡蛋", type: true, meterials: [materialsData[0], materialsData[1]], imageName: "tomato_scrambled_eggs"),
+//    MenuData(name: "西红柿炒鸡蛋", type: true, meterials: [materialsData[0], materialsData[1]], imageName: "tomato_scrambled_eggs"),
     MenuData(name: "炒青菜", type: true, meterials: [materialsData[2]], imageName: "stir_fried_vegetables"),
     MenuData(name: "酸辣土豆丝", type: true, meterials: [materialsData[3]], imageName: "potato_floss"),
     MenuData(name: "酸辣汤", type: false, meterials: [materialsData[4], materialsData[5], materialsData[6], materialsData[1]], imageName: "sour_soup_with_beef"),
@@ -19,10 +19,10 @@ var menusData: [MenuData] = [
     MenuData(name: "雪菜黄鱼汤", type: false, meterials: [materialsData[9], materialsData[10], materialsData[5]], imageName: "pickled_vegetable_yellow_fish_soup"),
     MenuData(name: "罗宋汤", type: false, meterials: [materialsData[11], materialsData[3], materialsData[12], materialsData[0]], imageName: "borscht"),
     MenuData(name: "萝卜焖牛腩", type: false, meterials: [materialsData[13], materialsData[11], materialsData[14]], imageName:  "stewed_beef_brisket_with_radish"),
-    MenuData(name: "糖醋排骨", type: true, meterials: [materialsData[15]], imageName: "sweet_and_sour_short_ribs"),
-    MenuData(name: "可乐鸡翅", type: true, meterials: [materialsData[16], materialsData[17]], imageName: "coke_chicken_wings"),
+//    MenuData(name: "糖醋排骨", type: true, meterials: [materialsData[15]], imageName: "sweet_and_sour_short_ribs"),
+//    MenuData(name: "可乐鸡翅", type: true, meterials: [materialsData[16], materialsData[17]], imageName: "coke_chicken_wings"),
     MenuData(name:  "丝瓜炒鸡蛋", type: true, meterials: [materialsData[18], materialsData[1]], imageName: "scrambled_eggs_with_loofah"),
-    MenuData(name: "家常红烧肉", type: true, meterials: [materialsData[4]], imageName: "braised_pork"),
+//    MenuData(name: "家常红烧肉", type: true, meterials: [materialsData[4]], imageName: "braised_pork"),
     MenuData(name: "麻辣大闸蟹", type: true, meterials: [materialsData[19], materialsData[20], materialsData[21], materialsData[22]], imageName: "spicy_hairy_crab"),
     MenuData(name: "酸汤肥牛", type: false, meterials: [materialsData[23], materialsData[24], materialsData[25]], imageName: "sour_soup_with_beef"),
     MenuData(name: "水煮牛肉", type: false, meterials: [materialsData[23], materialsData[14], materialsData[1]], imageName: "boiled_beef"),

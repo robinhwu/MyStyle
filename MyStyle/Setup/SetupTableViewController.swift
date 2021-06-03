@@ -71,7 +71,7 @@ class SetupTableViewController: UITableViewController, MFMailComposeViewControll
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["robinhwu@icloud.com"])
-            mail.setSubject("我的菜")
+            mail.setSubject(NSLocalizedString("买什么菜", comment: "买什么菜"))
             mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
             
             present(mail, animated: true, completion: nil)
